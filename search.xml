@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[我的第一篇文章]]></title>
+    <title><![CDATA[我的第一篇博客(搭建blog)]]></title>
     <url>%2F2018%2F03%2F24%2F%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%2F</url>
-    <content type="text"><![CDATA[今天搭建了自己的博客 😝 弄了一天半，总数是把 Blog 搭建完了，吃饭 🍚 …]]></content>
+    <content type="text"><![CDATA[今天搭建了自己的博客弄了一天半，终于把博客搭建完成，吃饭 🍚 …]]></content>
       <categories>
         <category>技术</category>
       </categories>
