@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>persilee&#39;s Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://lishaoy.net/"/>
+  <updated>2018-03-25T19:49:48.000Z</updated>
+  <id>https://lishaoy.net/</id>
+  
+  <author>
+    <name>李少颖（persilee）</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我的第一篇博客(搭建blog)</title>
+    <link href="https://lishaoy.net/2018/03/24/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://lishaoy.net/2018/03/24/我的第一篇博客/</id>
+    <published>2018-03-24T12:32:26.000Z</published>
+    <updated>2018-03-25T19:49:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<div class="text-center"><br>    <h3>今天搭建了自己的博客 😝</h3><br></div><p>花费了 <strong>一天半</strong> 的时间，终于把我的 <strong>个人博客</strong> 搭建完成，下面我写下搭建博客的工程，其实还是挺简单的 🙃</p><hr><h3 id="博客所用技术-（Hexo-Next-GitHubPages）"><a href="#博客所用技术-（Hexo-Next-GitHubPages）" class="headerlink" title="博客所用技术 （Hexo + Next + GitHubPages）"></a>博客所用技术 （Hexo + Next + GitHubPages）</h3><p>在文章的末尾我会 <strong>贴出</strong> 我基于 <strong>Hexo + Next + GitHubPages</strong> 搭建博客，所参考的文章链接。</p><p>如果，你也想用这些技术搭建漂亮的博客，你就需要了解下 <code>Hexo</code> 、 <code>Next</code> 、 <code>GitHubPages</code> 这三个单词，下面会一个解释。</p><h4 id="什么是-Hexo"><a href="#什么是-Hexo" class="headerlink" title="什么是 Hexo"></a>什么是 Hexo</h4><blockquote><p><strong>Hexo</strong> 是一个快速、简洁且高效的博客框架。<strong>Hexo</strong> 使用 <em>Markdown</em>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 – <a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">Hexo</a></p></blockquote><h4 id="什么是-Next"><a href="#什么是-Next" class="headerlink" title="什么是 Next"></a>什么是 Next</h4><blockquote><p><strong>NexT</strong> 是 <strong>Hexo</strong>的一个主题（theme），拥有丰富而简单的配置，结合第三方服务，可以打造属于您自己的博客。 – <a href="http://theme-next.iissnan.com" target="_blank" rel="noopener">Next</a></p></blockquote><h4 id="什么是-GitHubPages"><a href="#什么是-GitHubPages" class="headerlink" title="什么是 GitHubPages"></a>什么是 GitHubPages</h4><blockquote><p>GitHub Pages is a static site hosting service designed to host your personal, organization, or project pages directly from a GitHub repository. – <a href="https://help.github.com/articles/what-is-github-pages/" target="_blank" rel="noopener">GitHubPages</a></p></blockquote><p><strong>翻译过来大概是：</strong> GitHub页面是一个静态的站点托管服务，旨在从GitHub存储库中直接托管您的个人、组织或项目页面。</p><p>所以，<code>Hexo</code> 、 <code>Next</code> 、 <code>GitHubPages</code> 配合起来就可以免费搭建漂亮的 <strong>个人博客</strong> , 是不是很爽 [Yeah!]</p><span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/2018/03/24/我的第一篇博客/git_hexo.jpeg" class="full-image" alt="图片" title="test"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;div class=&quot;text-center&quot;&gt;&lt;br&gt;    &lt;h3&gt;今天搭建了自己的博客 😝&lt;/h3&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;p&gt;花费了 &lt;strong&gt;一天半&lt;/strong&gt; 的时间，终于把我的 &lt;strong&gt;个人博客&lt;/strong&gt; 搭建完成，下面我写下搭建博
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://lishaoy.net/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="博客" scheme="https://lishaoy.net/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="Hexo" scheme="https://lishaoy.net/tags/Hexo/"/>
+    
+      <category term="GithubPages" scheme="https://lishaoy.net/tags/GithubPages/"/>
+    
+      <category term="Next" scheme="https://lishaoy.net/tags/Next/"/>
+    
+      <category term="Blog" scheme="https://lishaoy.net/tags/Blog/"/>
+    
+  </entry>
+  
+</feed>
