@@ -2073,7 +2073,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff54ba;
+  background: #f49a0f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3186,6 +3186,9 @@ hr {
 #container .popup-quotation .quotation-wf-group .quotation-wf-right button.quotation-write-btn,
 #container button.fake-write-btn {
   background: rgba(34,34,34,0.878);
+}
+.my_post_copyright {
+  margin: 4em 1.5em;
 }
 @media (min-width: 992px) {
   .full-image.full-image.full-image {
