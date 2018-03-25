@@ -2073,7 +2073,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #065347;
+  background: #ff54ba;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3190,7 +3190,7 @@ hr {
 @media (min-width: 992px) {
   .full-image.full-image.full-image {
     max-width: none;
-    width: 106%;
-    margin: 25px -3%;
+    width: 107%;
+    margin: 25px -3.5%;
   }
 }
