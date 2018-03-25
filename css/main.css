@@ -1735,6 +1735,9 @@ pre .javascript .function {
     transform: rotateZ(-30deg);
   }
 }
+.post-wordcount {
+  display: inline-block;
+}
 .rtl.post-body p,
 .rtl.post-body a,
 .rtl.post-body h1,
@@ -2070,7 +2073,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff5866;
+  background: #a11d6e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2182,7 +2185,7 @@ img:hover {
   color: #87daff;
 }
 .footer {
-  font-size: 14px;
+  font-size: 12px;
   color: #999;
 }
 .footer img {
