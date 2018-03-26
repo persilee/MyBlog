@@ -2073,7 +2073,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f49a0f;
+  background: #11cdbb;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3190,10 +3190,100 @@ hr {
 .my_post_copyright {
   margin: 4em 1.5em;
 }
-@media (min-width: 992px) {
+.posts-expand .post-tags a {
+  margin: 3px 1px 0;
+  border-radius: 2px;
+}
+.posts-collapse .post.post-type-normal {
+  box-shadow: 0 0 5px rgba(202,203,203,0);
+  webkit-box-shadow: 0 0 5px rgba(202,203,203,0);
+  -moz-box-shadow: 0 0 5px rgba(202,203,204,0);
+}
+hr {
+  border: none;
+  background-color: #ccc;
+  background-image: repeating-linear-gradient(-45deg, #fff, #fff 2px, transparent 4px, transparent 4px);
+}
+.line.pages-end {
+  height: 1px;
+  width: 85%;
+  margin-left: 7.5%;
+  text-align: center;
+  margin-top: 50px;
+  border: none;
+  background-color: #ccc;
+  background-image: repeating-linear-gradient(-45deg, #fff, #fff 2px, transparent 4px, transparent 4px);
+}
+.line.pages-end span {
+  position: relative;
+  top: -16px;
+  background: #fff;
+  padding: 0 15px;
+  color: #bbb;
+  font-size: 12px;
+}
+.posts-expand .post-body img {
+  margin: 0 auto;
+}
+@media screen and (min-width: 1600px) {
   .full-image.full-image.full-image {
     max-width: none;
     width: 107%;
     margin: 25px -3.5%;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1599px) {
+  .full-image.full-image.full-image {
+    width: 109%;
+    margin: 25px -4.4%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .full-image.full-image.full-image {
+    max-width: none;
+    width: 109%;
+    margin: 25px -4.5%;
+  }
+  .github-corner {
+    display: none;
+  }
+}
+@media screen and (min-width: 414px) and (max-width: 767px) {
+  .full-image.full-image.full-image {
+    max-width: none;
+    width: 117%;
+    margin: 25px -8.5%;
+  }
+  .github-corner {
+    display: none;
+  }
+  .my_post_copyright {
+    margin: 3em 0em;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 413px) {
+  .full-image.full-image.full-image {
+    max-width: none;
+    width: 120%;
+    margin: 25px -10%;
+  }
+  .github-corner {
+    display: none;
+  }
+  .my_post_copyright {
+    margin: 3em 0em;
+  }
+}
+@media screen and (max-width: 374px) {
+  .full-image.full-image.full-image {
+    max-width: none;
+    width: 125%;
+    margin: 25px -12%;
+  }
+  .github-corner {
+    display: none;
+  }
+  .my_post_copyright {
+    margin: 3em 0em;
   }
 }
