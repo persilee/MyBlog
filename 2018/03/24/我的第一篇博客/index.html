@@ -549,10 +549,11 @@
     var clipboard = new Clipboard('.fa-clipboard');
     clipboard.on('success', $(function(){
       $(".fa-clipboard").click(function(){
-        swal({     
+        swal({
+          title: "",     
           text: '复制成功',   
           timer: 500,
-          buttons: false
+          showConfirmButton: false
         });
       });
     }));  
