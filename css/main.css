@@ -2073,7 +2073,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #bdffff;
+  background: #ff3034;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3194,6 +3194,34 @@ hr {
   margin: 3px 1px 0;
   border-radius: 2px;
 }
+.posts-collapse .post.post-type-normal {
+  box-shadow: 0 0 5px rgba(202,203,203,0);
+  webkit-box-shadow: 0 0 5px rgba(202,203,203,0);
+  -moz-box-shadow: 0 0 5px rgba(202,203,204,0);
+}
+hr {
+  border: none;
+  background-color: #ccc;
+  background-image: repeating-linear-gradient(-45deg, #fff, #fff 2px, transparent 4px, transparent 4px);
+}
+.line.pages-end {
+  height: 1px;
+  width: 85%;
+  margin-left: 7.5%;
+  text-align: center;
+  margin-top: 50px;
+  border: none;
+  background-color: #ccc;
+  background-image: repeating-linear-gradient(-45deg, #fff, #fff 2px, transparent 4px, transparent 4px);
+}
+.line.pages-end span {
+  position: relative;
+  top: -16px;
+  background: #fff;
+  padding: 0 15px;
+  color: #bbb;
+  font-size: 12px;
+}
 @media screen and (min-width: 1600px) {
   .full-image.full-image.full-image {
     max-width: none;
@@ -3226,6 +3254,9 @@ hr {
   .github-corner {
     display: none;
   }
+  .my_post_copyright {
+    margin: 3em 0em;
+  }
 }
 @media screen and (min-width: 375px) and (max-width: 413px) {
   .full-image.full-image.full-image {
@@ -3236,6 +3267,9 @@ hr {
   .github-corner {
     display: none;
   }
+  .my_post_copyright {
+    margin: 3em 0em;
+  }
 }
 @media screen and (max-width: 375px) {
   .full-image.full-image.full-image {
@@ -3245,5 +3279,8 @@ hr {
   }
   .github-corner {
     display: none;
+  }
+  .my_post_copyright {
+    margin: 3em 0em;
   }
 }
