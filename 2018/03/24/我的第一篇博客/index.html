@@ -534,8 +534,8 @@
   <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
   <!-- JS库 sweetalert 可修改路径 -->
   <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.7.1/jquery.min.js"></script>
-  <script src="https://cdn.staticfile.org/sweetalert/1.1.0/sweetalert.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/sweetalert/1.1.0/sweetalert.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert@2.0.0/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert@2.0.0/dist/sweetalert.css">
   <p><span>本文标题:</span><a href="/2018/03/24/我的第一篇博客/">我的第一篇博客(搭建blog)</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 李少颖（persilee） 的个人博客">李少颖（persilee）</a></p>
   <p><span>发布时间:</span>2018年03月24日 - 20:03</p>
@@ -549,12 +549,10 @@
     var clipboard = new Clipboard('.fa-clipboard');
     clipboard.on('success', $(function(){
       $(".fa-clipboard").click(function(){
-        swal({   
-          title: "",   
+        swal({     
           text: '复制成功',   
-          html: false,
-          timer: 600,   
-          showConfirmButton: false
+          timer: 500,
+          buttons: false
         });
       });
     }));  
