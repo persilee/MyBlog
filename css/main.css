@@ -2073,7 +2073,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #26f6f2;
+  background: #c2ffff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3186,4 +3186,60 @@ hr {
 #container .popup-quotation .quotation-wf-group .quotation-wf-right button.quotation-write-btn,
 #container button.fake-write-btn {
   background: rgba(34,34,34,0.878);
+}
+.my_post_copyright {
+  margin: 4em 1.5em;
+}
+@media screen and (min-width: 1600px) {
+  .full-image.full-image.full-image {
+    max-width: none;
+    width: 107%;
+    margin: 25px -3.5%;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1599px) {
+  .full-image.full-image.full-image {
+    width: 109%;
+    margin: 25px -4.4%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .full-image.full-image.full-image {
+    max-width: none;
+    width: 109%;
+    margin: 25px -4.5%;
+  }
+  .github-corner {
+    display: none;
+  }
+}
+@media screen and (min-width: 414px) and (max-width: 767px) {
+  .full-image.full-image.full-image {
+    max-width: none;
+    width: 117%;
+    margin: 25px -8.5%;
+  }
+  .github-corner {
+    display: none;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 413px) {
+  .full-image.full-image.full-image {
+    max-width: none;
+    width: 120%;
+    margin: 25px -10%;
+  }
+  .github-corner {
+    display: none;
+  }
+}
+@media screen and (max-width: 375px) {
+  .full-image.full-image.full-image {
+    max-width: none;
+    width: 120%;
+    margin: 25px -10%;
+  }
+  .github-corner {
+    display: none;
+  }
 }
