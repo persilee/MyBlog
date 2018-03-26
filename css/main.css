@@ -2073,7 +2073,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c2ffff;
+  background: #bdffff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3190,6 +3190,10 @@ hr {
 .my_post_copyright {
   margin: 4em 1.5em;
 }
+.posts-expand .post-tags a {
+  margin: 3px 1px 0;
+  border-radius: 2px;
+}
 @media screen and (min-width: 1600px) {
   .full-image.full-image.full-image {
     max-width: none;
@@ -3236,8 +3240,8 @@ hr {
 @media screen and (max-width: 375px) {
   .full-image.full-image.full-image {
     max-width: none;
-    width: 120%;
-    margin: 25px -10%;
+    width: 125%;
+    margin: 25px -12%;
   }
   .github-corner {
     display: none;
