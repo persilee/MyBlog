@@ -2073,7 +2073,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #11cdbb;
+  background: #ff94a2;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3200,6 +3200,7 @@ hr {
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0);
 }
 hr {
+  margin: 40px 0;
   border: none;
   background-color: #ccc;
   background-image: repeating-linear-gradient(-45deg, #fff, #fff 2px, transparent 4px, transparent 4px);
@@ -3222,8 +3223,32 @@ hr {
   color: #bbb;
   font-size: 12px;
 }
-.posts-expand .post-body img {
+.posts-expand .post-body img:not(.full-image) {
   margin: 0 auto;
+  box-shadow: 1px 1px 15px rgba(51,51,51,0.278);
+}
+code {
+  color: rgba(212,2,55,0.89);
+  background: #fbf0f0;
+  border-radius: 2px;
+  box-shadow: 0 0 2px #fdb9b9;
+}
+.highlight {
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(64,64,64,0.722);
+}
+pre,
+.highlight {
+  background: #404040;
+}
+.highlight .code pre {
+  background: #404040;
+}
+.highlight .gutter pre {
+  background-color: rgba(0,0,0,0.85);
+}
+.posts-expand .post-body ul li {
+  list-style: disc;
 }
 @media screen and (min-width: 1600px) {
   .full-image.full-image.full-image {
