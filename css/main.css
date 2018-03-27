@@ -2073,7 +2073,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #daff47;
+  background: #37ff1c;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3225,6 +3225,23 @@ hr {
 .posts-expand .post-body img:not(.full-image) {
   margin: 0 auto;
   box-shadow: 1px 1px 15px rgba(51,51,51,0.278);
+}
+code {
+  color: rgba(212,2,55,0.89);
+  background: #fbf0f0;
+  border-radius: 2px;
+  box-shadow: 0 0 2px #fdb9b9;
+}
+.highlight {
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(64,64,64,0.722);
+}
+pre,
+.highlight {
+  background: #404040;
+}
+.highlight .code pre {
+  background: #404040;
 }
 @media screen and (min-width: 1600px) {
   .full-image.full-image.full-image {
