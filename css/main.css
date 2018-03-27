@@ -2073,7 +2073,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff94a2;
+  background: #5922ed;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3226,6 +3226,16 @@ hr {
 .posts-expand .post-body img:not(.full-image) {
   margin: 0 auto;
   box-shadow: 1px 1px 15px rgba(51,51,51,0.278);
+  border: none;
+}
+.posts-expand .post-body img[alt=no-shadow] {
+  margin: 0 auto;
+  box-shadow: none;
+  border: none;
+}
+.post-gallery .post-gallery-img img {
+  box-shadow: none !important;
+  border: none !important;
 }
 code {
   color: rgba(212,2,55,0.89);
