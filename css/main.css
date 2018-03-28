@@ -2073,7 +2073,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9658ff;
+  background: #4bd90b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3262,6 +3262,26 @@ pre,
 }
 .posts-expand .post-body ul li {
   list-style: disc;
+}
+.per-m-auto {
+  margin: 0 auto;
+  width: 40%;
+}
+.per-table {
+  border: none;
+  margin: 0;
+}
+.per-table>tbody>tr:nth-of-type(odd) {
+  background-color: #fff;
+}
+.per-table>tbody>tr>td:first-child {
+  text-align: right;
+}
+.per-table td,
+.per-table th {
+  background-color: #fff;
+  border: none;
+  padding: 1px;
 }
 @media screen and (min-width: 1600px) {
   .full-image.full-image.full-image {
