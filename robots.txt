@@ -6,5 +6,5 @@ Disallow: /css/
 Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
-Sitemap: http://thief.one/sitemap.xml
-Sitemap: http://thief.one/baidusitemap.xml
+Sitemap: https://www.lishaoy.net/sitemap.xml
+Sitemap: https://www.lishaoy.net/baidusitemap.xml
