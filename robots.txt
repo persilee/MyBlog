@@ -11,5 +11,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: http://www.lishaoy.net/sitemap.xml
-Sitemap: http://www.lishaoy.net/baidusitemap.xml
+Sitemap: http://lishaoy.net/sitemap.xml
+Sitemap: http://lishaoy.net/baidusitemap.xml
