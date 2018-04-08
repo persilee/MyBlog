@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>persilee&#39;s Blog</title>
+    <link>https://www.lishaoy.net/</link>
+    <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
+    
+    <description>李少颖的博客-web全栈工程师,摄影师,爱好设计,熟悉vue,react,webpack,css3,es6,html5,nodejs,php,java,hexo,next,electron,iview等技术!</description>
+    <pubDate>Sun, 08 Apr 2018 08:41:41 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>IVAN AIVAZOVSKY 赏析</title>
+      <link>https://www.lishaoy.net/IVANAIVAZOVSKY.html</link>
+      <guid>https://www.lishaoy.net/IVANAIVAZOVSKY.html</guid>
+      <pubDate>Sat, 07 Apr 2018 02:39:13 GMT</pubDate>
+      <description>
+      
+        &lt;span itemprop=&quot;image&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/ImageObject&quot;&gt;&lt;img itemprop=&quot;url image&quot; src=&quot;/IVANAIVAZOVSKY/home.png&quot; class=&quot;full-image&quot; alt=&quot;IVAN AIVAZOVSKY&quot; title=&quot;IVAN AIVAZOVSKY&quot;&gt;&lt;meta itemprop=&quot;width&quot; content=&quot;auto&quot;&gt;&lt;meta itemprop=&quot;height&quot; content=&quot;auto&quot;&gt;&lt;/span&gt;
+&lt;p&gt;&lt;em&gt;在 &lt;a href=&quot;https://www.awwwards.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;awwwards&lt;/a&gt; 上发现一个设计和交互超级棒的网页  &lt;a href=&quot;http://ivanaivazovsky.life&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ivanaivazovsky.life&lt;/a&gt;，整个设计非常简洁大胆，色彩基本只有黑白色，看起来非常舒服，直接看效果吧！&lt;/em&gt; 🍷 &lt;/p&gt;
+&lt;hr&gt;
+      
+      </description>
+      
+      <comments>https://www.lishaoy.net/IVANAIVAZOVSKY.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>CSSModules</title>
+      <link>https://www.lishaoy.net/CSSModules.html</link>
+      <guid>https://www.lishaoy.net/CSSModules.html</guid>
+      <pubDate>Sat, 07 Apr 2018 01:58:11 GMT</pubDate>
+      <description>
+      
+        &lt;span itemprop=&quot;image&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/ImageObject&quot;&gt;&lt;img itemprop=&quot;url image&quot; src=&quot;/CSSModules/cssmodules.png&quot; class=&quot;full-image&quot; alt=&quot;CSS Modules&quot; title=&quot;CSS Modules&quot;&gt;&lt;meta itemprop=&quot;width&quot; content=&quot;auto&quot;&gt;&lt;meta itemprop=&quot;height&quot; content=&quot;auto&quot;&gt;&lt;/span&gt;
+&lt;p&gt;这篇文章来一起了解 &lt;code&gt;css&lt;/code&gt; 模块化的用法和原理 ，&lt;strong&gt;dome&lt;/strong&gt; 地址：&lt;a href=&quot;https://github.com/persilee/webpack_test&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;css modules&lt;/a&gt; 😮&lt;/p&gt;
+&lt;hr&gt;
+      
+      </description>
+      
+      <comments>https://www.lishaoy.net/CSSModules.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>如何使用 markdown 语法写博客</title>
+      <link>https://www.lishaoy.net/markdownGrammar.html</link>
+      <guid>https://www.lishaoy.net/markdownGrammar.html</guid>
+      <pubDate>Fri, 06 Apr 2018 23:25:19 GMT</pubDate>
+      <description>
+      
+        &lt;span itemprop=&quot;image&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/ImageObject&quot;&gt;&lt;img itemprop=&quot;url image&quot; src=&quot;/markdownGrammar/markdown.png&quot; class=&quot;full-image&quot; alt=&quot;markdown&quot; title=&quot;markdown&quot;&gt;&lt;meta itemprop=&quot;width&quot; content=&quot;auto&quot;&gt;&lt;meta itemprop=&quot;height&quot; content=&quot;auto&quot;&gt;&lt;/span&gt;
+&lt;p&gt;平时我写日记、文档和博客都会用到 &lt;code&gt;markdown&lt;/code&gt; 语法，我用的是 &lt;code&gt;马克飞象&lt;/code&gt; 先在本地写好，而且可以和 &lt;code&gt;印象笔记&lt;/code&gt; 同步，如果知识积累的多了，也会总结下，分享到社区，直接 &lt;kbd&gt;⌘ -  C&lt;/kbd&gt;  然后 &lt;kbd&gt;⌘ -  V&lt;/kbd&gt;  就可以了，特别方便。 🙂&lt;/p&gt;
+&lt;hr&gt;
+      
+      </description>
+      
+      <comments>https://www.lishaoy.net/markdownGrammar.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>被遗忘的CSS</title>
+      <link>https://www.lishaoy.net/upsetCssSummary.html</link>
+      <guid>https://www.lishaoy.net/upsetCssSummary.html</guid>
+      <pubDate>Fri, 06 Apr 2018 22:45:52 GMT</pubDate>
+      <description>
+      
+        &lt;span itemprop=&quot;image&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/ImageObject&quot;&gt;&lt;img itemprop=&quot;url image&quot; src=&quot;/upsetCssSummary/css.png&quot; class=&quot;full-image&quot; alt=&quot;css&quot; title=&quot;css&quot;&gt;&lt;meta itemprop=&quot;width&quot; content=&quot;auto&quot;&gt;&lt;meta itemprop=&quot;height&quot; content=&quot;auto&quot;&gt;&lt;/span&gt;
+&lt;p&gt;平时在工作中遇到一些比较偏门的 &lt;code&gt;css&lt;/code&gt; ，用过一两次，但是老是记不住，于是又需要去 &lt;strong&gt;baidu、 google&lt;/strong&gt; ，所以都积累起来，方便以后查看（持续更新…） 😀&lt;/p&gt;
+&lt;hr&gt;
+      
+      </description>
+      
+      <comments>https://www.lishaoy.net/upsetCssSummary.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>php &amp;&amp; thinkPHP 初识</title>
+      <link>https://www.lishaoy.net/phpThinkPHPBasis.html</link>
+      <guid>https://www.lishaoy.net/phpThinkPHPBasis.html</guid>
+      <pubDate>Fri, 06 Apr 2018 07:59:52 GMT</pubDate>
+      <description>
+      
+        &lt;span itemprop=&quot;image&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/ImageObject&quot;&gt;&lt;img itemprop=&quot;url image&quot; src=&quot;/phpThinkPHPBasis/php.png&quot; class=&quot;full-image&quot; alt=&quot;php &amp;&amp; thinkPHP 基础&quot; title=&quot;php &amp;&amp; thinkPHP 基础&quot;&gt;&lt;meta itemprop=&quot;width&quot; content=&quot;auto&quot;&gt;&lt;meta itemprop=&quot;height&quot; content=&quot;auto&quot;&gt;&lt;/span&gt;
+&lt;p&gt;这篇文章主要带大家认识一下 &lt;code&gt;PHP&lt;/code&gt; 、 &lt;code&gt;thinkPHP&lt;/code&gt; ，都是一下基础，其中包括 &lt;strong&gt;PHP语法（变量、字符串、数组、表单、数据库）&lt;/strong&gt; 、&lt;strong&gt;面向对象（Class创建、属性、继承、访问控制、抽象、接口等）&lt;/strong&gt; 、 &lt;strong&gt;thinkPHP（控制器、视图、模型等）&lt;/strong&gt; 😝&lt;/p&gt;
+&lt;hr&gt;
+      
+      </description>
+      
+      <comments>https://www.lishaoy.net/phpThinkPHPBasis.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>浅谈JavaScript作用域</title>
+      <link>https://www.lishaoy.net/javascriptScope.html</link>
+      <guid>https://www.lishaoy.net/javascriptScope.html</guid>
+      <pubDate>Sat, 31 Mar 2018 17:03:45 GMT</pubDate>
+      <description>
+      
+        &lt;span itemprop=&quot;image&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/ImageObject&quot;&gt;&lt;img itemprop=&quot;url image&quot; src=&quot;/javascriptScope/javascriptScope01.png&quot; class=&quot;full-image&quot;&gt;&lt;meta itemprop=&quot;width&quot; content=&quot;auto&quot;&gt;&lt;meta itemprop=&quot;height&quot; content=&quot;auto&quot;&gt;&lt;/span&gt;
+&lt;p&gt;我们在面试时，总会碰到一些奇奇怪怪的关于 &lt;strong&gt;作用域&lt;/strong&gt; 的面试题，其实弄清楚原理，万变不离其宗，大部分的面试题都可以得 ‘姐’。 &lt;/p&gt;
+&lt;p&gt;所以，今天我们来谈谈 &lt;code&gt;JavaScript&lt;/code&gt; 的 &lt;strong&gt;作用域(javascript scope)&lt;/strong&gt; ，这是老生常谈的话题，这里我们会从 &lt;strong&gt;作用域&lt;/strong&gt; 开始，会延伸到 &lt;strong&gt;预解析规则（预编译）、表达式 、变量提升 、函数提升 、 匿名函数表达式 、 具名函数表达式&lt;/strong&gt; 等，彻底搞明白作用域这些事 🤓&lt;/p&gt;
+&lt;hr&gt;
+      
+      </description>
+      
+      <comments>https://www.lishaoy.net/javascriptScope.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>初 ☘ 夏 ☀️</title>
+      <link>https://www.lishaoy.net/summer.html</link>
+      <guid>https://www.lishaoy.net/summer.html</guid>
+      <pubDate>Fri, 30 Mar 2018 18:13:59 GMT</pubDate>
+      <description>
+      
+        &lt;span itemprop=&quot;image&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/ImageObject&quot;&gt;&lt;img itemprop=&quot;url image&quot; src=&quot;/summer/summer01.png&quot; class=&quot;full-image&quot;&gt;&lt;meta itemprop=&quot;width&quot; content=&quot;auto&quot;&gt;&lt;meta itemprop=&quot;height&quot; content=&quot;auto&quot;&gt;&lt;/span&gt;
+&lt;div class=&quot;text-center&quot;&gt;
+&lt;strong&gt;七月的风懒懒的 连云都变热热的 夏天的风正暖暖吹过 穿过头发穿过耳朵……&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;table class=&quot;per-table&quot;&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;摄影/后期：&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;子木&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;模特：&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;Danny&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;地点：&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;花卉世界&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;拍摄于：&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;2015年7月12&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+      
+      </description>
+      
+      <comments>https://www.lishaoy.net/summer.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>girlfriends</title>
+      <link>https://www.lishaoy.net/shenzhenUuniversity.html</link>
+      <guid>https://www.lishaoy.net/shenzhenUuniversity.html</guid>
+      <pubDate>Thu, 29 Mar 2018 17:11:45 GMT</pubDate>
+      <description>
+      
+        &lt;span itemprop=&quot;image&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/ImageObject&quot;&gt;&lt;img itemprop=&quot;url image&quot; src=&quot;/shenzhenUuniversity/girlfriends02.png&quot; class=&quot;full-image&quot;&gt;&lt;meta itemprop=&quot;width&quot; content=&quot;auto&quot;&gt;&lt;meta itemprop=&quot;height&quot; content=&quot;auto&quot;&gt;&lt;/span&gt;
+&lt;div class=&quot;text-center&quot;&gt;
+&lt;strong&gt;悲伤一起哭，欢乐一起笑，好书一起读，好歌一起听……&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;table class=&quot;per-table&quot;&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;摄影/后期：&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;子木&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;模特：&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;Donna and cherry&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;地点：&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;深圳大学天台&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;拍摄于：&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;2015年8月23&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+      
+      </description>
+      
+      <comments>https://www.lishaoy.net/shenzhenUuniversity.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>猫吧</title>
+      <link>https://www.lishaoy.net/catBar20150927.html</link>
+      <guid>https://www.lishaoy.net/catBar20150927.html</guid>
+      <pubDate>Wed, 28 Mar 2018 10:20:47 GMT</pubDate>
+      <description>
+      
+        &lt;span itemprop=&quot;image&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/ImageObject&quot;&gt;&lt;img itemprop=&quot;url image&quot; src=&quot;/catBar20150927/catBar04.png&quot; class=&quot;full-image&quot;&gt;&lt;meta itemprop=&quot;width&quot; content=&quot;auto&quot;&gt;&lt;meta itemprop=&quot;height&quot; content=&quot;auto&quot;&gt;&lt;/span&gt;
+&lt;div class=&quot;text-center&quot;&gt;
+&lt;strong&gt;很久之前拍的照片,猫吧里貌似有5只大肥猫 🐱 …&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;table class=&quot;per-table&quot;&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;摄影/后期：&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;子木&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;模特：&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;👩‍⚖️‍ &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;地点：&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;深圳福田 🐱 &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;拍摄于：&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;2015年9月27&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+      
+      </description>
+      
+      <comments>https://www.lishaoy.net/catBar20150927.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>如何用 CSS + HTML + JS 创建桌面应用</title>
+      <link>https://www.lishaoy.net/nwjsElectronjs.html</link>
+      <guid>https://www.lishaoy.net/nwjsElectronjs.html</guid>
+      <pubDate>Tue, 27 Mar 2018 17:42:26 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;最近研究了一下基于 &lt;code&gt;Chromium&lt;/code&gt; 定制浏览器的方案，查阅了大量资料，具体方案也有了大概的蓝图 😉 &lt;/p&gt;
+      
+      </description>
+      
+      <comments>https://www.lishaoy.net/nwjsElectronjs.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>用 Hexo + Next + GitHubPages 搭建漂亮的免费博客</title>
+      <link>https://www.lishaoy.net/hexoGithubpagesNext.html</link>
+      <guid>https://www.lishaoy.net/hexoGithubpagesNext.html</guid>
+      <pubDate>Sat, 24 Mar 2018 12:32:26 GMT</pubDate>
+      <description>
+      
+        &lt;span itemprop=&quot;image&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/ImageObject&quot;&gt;&lt;img itemprop=&quot;url image&quot; src=&quot;/hexoGithubpagesNext/git_hexo.jpeg&quot; class=&quot;full-image&quot; alt=&quot;GitHubPages + Hexo&quot; title=&quot;GitHubPages + Hexo&quot;&gt;&lt;meta itemprop=&quot;width&quot; content=&quot;auto&quot;&gt;&lt;meta itemprop=&quot;height&quot; content=&quot;auto&quot;&gt;&lt;/span&gt;
+&lt;div class=&quot;text-center&quot;&gt;
+    &lt;h3&gt;今天搭建了自己的博客 😝&lt;/h3&gt;
+&lt;/div&gt;
+
+&lt;p&gt;花费了 &lt;strong&gt;一天半&lt;/strong&gt; 的时间，终于把我的 &lt;strong&gt;个人博客&lt;/strong&gt; 搭建完成，下面我写下搭建博客的过程，其实挺简单的 🙃&lt;/p&gt;
+&lt;hr&gt;
+      
+      </description>
+      
+      <comments>https://www.lishaoy.net/hexoGithubpagesNext.html#disqus_thread</comments>
+    </item>
+    
+  </channel>
+</rss>
