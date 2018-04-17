@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.lishaoy.net/createPromise.html</loc>
+    
+    <lastmod>2018-04-17T19:01:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.lishaoy.net/IVANAIVAZOVSKY.html</loc>
+    
+    <lastmod>2018-04-17T18:07:16.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.lishaoy.net/phpThinkPHPBasis.html</loc>
     
     <lastmod>2018-04-14T07:56:03.000Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>https://www.lishaoy.net/hexoGithubpagesNext.html</loc>
     
     <lastmod>2018-04-14T07:56:03.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.lishaoy.net/IVANAIVAZOVSKY.html</loc>
-    
-    <lastmod>2018-04-08T08:41:41.000Z</lastmod>
     
   </url>
   
@@ -86,13 +93,6 @@
   </url>
   
   <url>
-    <loc>https://www.lishaoy.net/tags/index.html</loc>
-    
-    <lastmod>2018-03-25T16:08:11.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.lishaoy.net/about/index.html</loc>
     
     <lastmod>2018-03-25T16:08:11.000Z</lastmod>
@@ -101,6 +101,13 @@
   
   <url>
     <loc>https://www.lishaoy.net/categories/index.html</loc>
+    
+    <lastmod>2018-03-25T16:08:11.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.lishaoy.net/tags/index.html</loc>
     
     <lastmod>2018-03-25T16:08:11.000Z</lastmod>
     
