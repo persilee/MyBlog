@@ -5,10 +5,10 @@
     
   <url>
     <loc>https://www.lishaoy.net/createPromise.html</loc>
-    <lastmod>2018-04-17T19:01:26.000Z</lastmod>
+    <lastmod>2018-04-18T18:38:18.000Z</lastmod>
     <data>
         <display>
-        <title>createPromise</title>
+        <title>Promise诞生记</title>
         <pubTime>2018-04-17T17:34:09.000Z</pubTime>
         
         <tag>es6</tag>
@@ -21,6 +21,7 @@
     </data>
     </url>
 
+    
     
   <url>
     <loc>https://www.lishaoy.net/IVANAIVAZOVSKY.html</loc>
@@ -38,6 +39,28 @@
            
              
               <breadCrumb title="视野" url="https://www.lishaoy.net/categories/%E8%A7%86%E9%87%8E/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.lishaoy.net/phpThinkPHPBasis.html</loc>
+    <lastmod>2018-04-14T07:56:03.000Z</lastmod>
+    <data>
+        <display>
+        <title>PHP ThinkPHP 初识</title>
+        <pubTime>2018-04-06T07:59:52.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+        <tag>thinkPHP</tag>
+         
+         
+           
+             
+              <breadCrumb title="PHP" url="https://www.lishaoy.net/categories/PHP/"/>
           
         </display>
     </data>
@@ -73,21 +96,19 @@
 
     
   <url>
-    <loc>https://www.lishaoy.net/phpThinkPHPBasis.html</loc>
-    <lastmod>2018-04-14T07:56:03.000Z</lastmod>
+    <loc>https://www.lishaoy.net/markdownGrammar.html</loc>
+    <lastmod>2018-04-08T08:41:41.000Z</lastmod>
     <data>
         <display>
-        <title>PHP ThinkPHP 初识</title>
-        <pubTime>2018-04-06T07:59:52.000Z</pubTime>
+        <title>如何使用 markdown 语法写博客</title>
+        <pubTime>2018-04-06T23:25:19.000Z</pubTime>
         
-        <tag>php</tag>
-         
-        <tag>thinkPHP</tag>
+        <tag>markdown</tag>
          
          
            
              
-              <breadCrumb title="PHP" url="https://www.lishaoy.net/categories/PHP/"/>
+              <breadCrumb title="工具（Tools）" url="https://www.lishaoy.net/categories/%E5%B7%A5%E5%85%B7%EF%BC%88Tools%EF%BC%89/"/>
           
         </display>
     </data>
@@ -114,26 +135,6 @@
            
              
               <breadCrumb title="JavaScript" url="https://www.lishaoy.net/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.lishaoy.net/markdownGrammar.html</loc>
-    <lastmod>2018-04-08T08:41:41.000Z</lastmod>
-    <data>
-        <display>
-        <title>如何使用 markdown 语法写博客</title>
-        <pubTime>2018-04-06T23:25:19.000Z</pubTime>
-        
-        <tag>markdown</tag>
-         
-         
-           
-             
-              <breadCrumb title="工具（Tools）" url="https://www.lishaoy.net/categories/%E5%B7%A5%E5%85%B7%EF%BC%88Tools%EF%BC%89/"/>
           
         </display>
     </data>
@@ -215,11 +216,11 @@
         <title>girlfriends</title>
         <pubTime>2018-03-29T17:11:45.000Z</pubTime>
         
+        <tag>摄影</tag>
+         
         <tag>闺蜜</tag>
          
         <tag>深圳大学</tag>
-         
-        <tag>摄影</tag>
          
         <tag>天台</tag>
          
@@ -241,11 +242,11 @@
         <title>猫吧</title>
         <pubTime>2018-03-28T10:20:47.000Z</pubTime>
         
-        <tag>摄影</tag>
-         
         <tag>猫吧</tag>
          
         <tag>cat</tag>
+         
+        <tag>摄影</tag>
          
         <tag>照片</tag>
          
