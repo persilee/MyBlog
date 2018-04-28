@@ -13,6 +13,20 @@ $(function () {
     $('#header').toggleClass('header-has-sidebar');
   });
 
+  $('.popup-trigger.faa-parent.animated-hover').on('click',function(){
+    $('.github-corner').hide();
+    $('.sidebar-toggle').hide();
+    $('#header').removeClass('slideInDown');
+    $('.local-search-popup .local-search-header').addClass('search-middle');
+  });
+  $('.popup-btn-close').on('click',function(){
+    $('.github-corner').show();
+    $('.sidebar-toggle').show();
+  })
+  $('#local-search-input').on('change keydown',function(){
+    $('.local-search-popup .local-search-header').removeClass('search-middle');
+  });
+
   // 鼠标往上滚动 隐藏 header , 鼠标往下滚动 显示 header
   var p = 0,
       t = 0;
@@ -69,8 +83,7 @@ $(function () {
 
   $('.vsubmit.vbtn').on('click', function () {
     setTimeout(() => {
-      console.log('aaa');
-      if (!$('.vhead').eq(0).find('.vname[href="https://lishaoy.net"]~.bozhu')) {
+      if ($('.vhead').eq(0).find('.vname[href="https://lishaoy.net"]~.bozhu')) {
         $('.vhead').eq(0).find('.vname[href="https://lishaoy.net"]').after('<span class = "bozhu">博主</span>');
       }
     }, 1000);
