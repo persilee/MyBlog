@@ -3,7 +3,12 @@ $(function () {
   //新增看娘
   var jsonPaths = ['/live2dw/assets/hijiki.model.json', '/live2dw/assets/tororo.model.json'];
   var jsonPath = jsonPaths[Math.round(Math.random())];
-
+  var opacityDefault = 0;
+  if ($(window).width() <= 1024) {
+    opacityDefault = 1;
+  }else{
+    opacityDefault = 0.8;
+  }
   L2Dwidget.init({
     "pluginRootPath": "live2dw/",
     "pluginJsPath": "lib/",
@@ -24,7 +29,7 @@ $(function () {
       "scale": 0.5
     },
     "react": {
-      "opacityDefault": 0.75,
+      "opacityDefault": opacityDefault,
       "opacityOnHover": 0.2
     }
   });
@@ -117,16 +122,16 @@ $(function () {
     $('#live2d-widget').prepend('<div class="per-tips"></div >');
 
     if (jsonPath == '/live2dw/assets/hijiki.model.json')
-      text = '喵~ 我是 <span style="color:#fdb9b9">hijiki 🐱 </span> </br>'
+      text = '喵~ 我是 <span style="color:#fdb9b9">hijiki<i style="font-size:18px;">&nbsp;🐱</i></span> </br>'
     else
-      text = '喵~ 我是 <span style="color:#fdb9b9">tororo 🐱 </span> </br>'
+      text = '喵~ 我是 <span style="color:#fdb9b9">tororo<i style="font-size:18px;">&nbsp;🐱</i></span> </br>'
     ;
     if (document.referrer !== '' && document.referrer !== 'https://lishaoy.net/') {
       var referrer = document.createElement('a');
       referrer.href = document.referrer;
       var domain = referrer.hostname.split('.')[1];
       if (referrer.hostname == 'lishaoy.net'){
-        text += '感谢您继续参观本站 🙂，欢迎来到&nbsp;<span style="color:#0099cc;">『' + document.title.split(' | ')[0] + '』</span>';
+        text += '欢迎来到&nbsp;<span style="color:#0099cc;">『' + document.title.split(' | ')[0] + '』</span>,感谢您继续参观本站 🙂';
       }else if (domain == 'baidu') {
         text += '来自 百度搜索 的朋友<br>你是搜索 <span style="color:#0099cc;">' + referrer.search.split('&wd=')[1].split('&')[0] + '</span> 找到的我吗？';
       } else if (domain == 'so') {

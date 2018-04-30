@@ -44,6 +44,7 @@ $.ajax({
         if (Array.isArray(tips.text)) text = tips.text[Math.floor(Math.random() * tips.text.length + 1) - 1];
         text = text.render({ text: $(this).text() });
         showMessage(text, 3000);
+        return false;
       });
     });
     $.each(result.click, function (index, tips) {
@@ -52,6 +53,7 @@ $.ajax({
         if (Array.isArray(tips.text)) text = tips.text[Math.floor(Math.random() * tips.text.length + 1) - 1];
         text = text.render({ text: $(this).text() });
         showMessage(text, 3000);
+        return false;
       });
     });
   }
