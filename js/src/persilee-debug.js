@@ -124,9 +124,10 @@ $(function () {
     if (document.referrer !== '' && document.referrer !== 'https://lishaoy.net/') {
       var referrer = document.createElement('a');
       referrer.href = document.referrer;
-      text += '来自 <span style="color:#0099cc;">' + referrer.hostname + '</span> 的朋友';
       var domain = referrer.hostname.split('.')[1];
-      if (domain == 'baidu') {
+      if (referrer.hostname == 'lishaoy.net'){
+        text += '感谢您继续参观本站 🙂，欢迎来到&nbsp;<span style="color:#0099cc;">『' + document.title.split(' | ')[0] + '』</span>';
+      }else if (domain == 'baidu') {
         text += '来自 百度搜索 的朋友<br>你是搜索 <span style="color:#0099cc;">' + referrer.search.split('&wd=')[1].split('&')[0] + '</span> 找到的我吗？';
       } else if (domain == 'so') {
         text += '来自 360搜索 的朋友<br>你是搜索 <span style="color:#0099cc;">' + referrer.search.split('&q=')[1].split('&')[0] + '</span> 找到的我吗？';
