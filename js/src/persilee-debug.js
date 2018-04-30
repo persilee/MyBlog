@@ -116,15 +116,38 @@ $(function () {
     }
   });
 
+  var _this = null;
+  function isUA(){
+    if ($(_this).text().indexOf('Safari') == 0) {
+      $(_this).prepend('<img class="Safari" src="/images/ua/Safari.svg">');
+    } else if ($(_this).text().indexOf('Mac OS') == 0 || $(_this).text().indexOf('iOS') == 0) {
+      $(_this).prepend('<img class="Apple" src="/images/ua/Apple.svg">')
+    } else if ($(_this).text().indexOf('Chrome') == 0) {
+      $(_this).prepend('<img class="Chrome" src="/images/ua/Chrome.svg">')
+    } else if ($(_this).text().indexOf('Firefox') == 0) {
+      $(_this).prepend('<img class="Firefox" src="/images/ua/Firefox.svg">')
+    } else if ($(_this).text().indexOf('Windows 10') == 0) {
+      $(_this).prepend('<img class="Windows10" src="/images/ua/windows10.svg">')
+    } else if ($(_this).text().indexOf('Windows 7') == 0 || $(_this).text().indexOf('Windows 8') == 0 || $(_this).text().indexOf('Windows 9') == 0) {
+      $(_this).prepend('<img class="Windows7" src="/images/ua/windows7.svg">')
+    } else if ($(_this).text().indexOf('Android') == 0) {
+      $(_this).prepend('<img class="Android" src="/images/ua/Android.svg">')
+    } else if ($(_this).text().indexOf('Ubuntu') == 0) {
+      $(_this).prepend('<img class="Ubuntu" src="/images/ua/ubuntu.svg">')
+    }
+  };
   setTimeout(() => {
     var text;
     $('.vhead .vname[href="https://lishaoy.net"]').after('<span class = "bozhu">博主</span>');
+    $('.vhead .vsys').each(function () {
+      _this = this;
+      isUA();
+    });
     $('#live2d-widget').prepend('<div class="per-tips"></div >');
-
     if (jsonPath == '/live2dw/assets/hijiki.model.json')
-      text = '喵~ 我是 <span style="color:#fdb9b9">hijiki<i style="font-size:18px;">&nbsp;🐱</i></span> </br>'
+      text = '喵~ 我是 <span style="color:#fdb9b9">hijiki&nbsp;🐱</span>...</br>'
     else
-      text = '喵~ 我是 <span style="color:#fdb9b9">tororo<i style="font-size:18px;">&nbsp;🐱</i></span> </br>'
+      text = '喵~ 我是 <span style="color:#fdb9b9">tororo&nbsp;🐱</span>...</br>'
     ;
     if (document.referrer !== '' && document.referrer !== 'https://lishaoy.net/') {
       var referrer = document.createElement('a');
@@ -168,13 +191,17 @@ $(function () {
       }
     }
     showMessage(text, 6000);
-  }, 2000);
+  }, 3000);
 
   $('.vsubmit.vbtn').on('click', function () {
     setTimeout(() => {
       if ($('.vhead').eq(0).find('.vname[href="https://lishaoy.net"]~.bozhu')) {
         $('.vhead').eq(0).find('.vname[href="https://lishaoy.net"]').after('<span class = "bozhu">博主</span>');
       }
+      $('.vhead:first .vsys').each(function () {
+        _this = this;
+        isUA();
+      });
     }, 1000);
   });
 });
