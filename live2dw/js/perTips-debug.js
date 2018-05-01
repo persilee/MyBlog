@@ -25,12 +25,12 @@ String.prototype.render = function (context) {
 
 var re = /x/;
 re.toString = function () {
-  showMessage('哈哈，你打开了控制台，是想要看看我的秘密吗？', 5000);
+  showMessage('哈哈，你打开了控制台，是想要看看我的秘密吗？', 6000);
   return '';
 };
 
 $(document).on('copy', function () {
-  showMessage('你都复制了些什么呀，转载要记得加上出处哦', 5000);
+  showMessage('你都复制了些什么呀，转载要记得加上出处哦', 6000);
 });
 
 $.ajax({
@@ -43,7 +43,7 @@ $.ajax({
         var text = tips.text;
         if (Array.isArray(tips.text)) text = tips.text[Math.floor(Math.random() * tips.text.length + 1) - 1];
         text = text.render({ text: $(this).text() });
-        showMessage(text, 3000);
+        showMessage(text, 6000);
         return false;
       });
     });
@@ -52,7 +52,7 @@ $.ajax({
         var text = tips.text;
         if (Array.isArray(tips.text)) text = tips.text[Math.floor(Math.random() * tips.text.length + 1) - 1];
         text = text.render({ text: $(this).text() });
-        showMessage(text, 3000);
+        showMessage(text, 6000);
         return false;
       });
     });
@@ -63,7 +63,7 @@ window.setInterval(showHitokoto, 30000);
 
 function showHitokoto() {
   $.getJSON('https://api.imjad.cn/hitokoto/?cat=&charset=utf-8&length=28&encode=json', function (result) {
-    showMessage(result.hitokoto, 5000);
+    showMessage(result.hitokoto, 6000);
   });
 }
 
@@ -71,11 +71,11 @@ function showMessage(text, timeout) {
   if (Array.isArray(text)) text = text[Math.floor(Math.random() * text.length + 1) - 1];
   $('.per-tips').stop();
   $('.per-tips').html(text).fadeTo(200, 1);
-  if (timeout === null) timeout = 5000;
+  if (timeout === null) timeout = 6000;
   hideMessage(timeout);
 }
 function hideMessage(timeout) {
   $('.per-tips').stop().css('opacity', 1);
-  if (timeout === null) timeout = 5000;
+  if (timeout === null) timeout = 6000;
   $('.per-tips').delay(timeout).fadeTo(200, 0);
 }

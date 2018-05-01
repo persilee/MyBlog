@@ -98,7 +98,7 @@ $(function () {
       $('#load').show();
     }
     var document_width = $(document).width();
-    if (scroll_so_far > 5) {
+    if (scroll_so_far > 57) {
       $('#header').addClass('light-header').removeClass('dark');
     } else {
       $('#header').removeClass('light-header').addClass('dark');
@@ -161,6 +161,8 @@ $(function () {
         text += '来自 360搜索 的朋友<br>你是搜索 <span style="color:#0099cc;">' + referrer.search.split('&q=')[1].split('&')[0] + '</span> 找到的我吗？';
       } else if (domain == 'google') {
         text += '来自 谷歌搜索 的朋友<br>欢迎阅读<span style="color:#0099cc;">『' + document.title.split(' - ')[0] + '』</span>';
+      }else{
+        text += '来自<span style="color:#0099cc;">&nbsp;' + referrer.hostname + '&nbsp;</span>的朋友,欢迎来到<span style="color:#0099cc;">『' + document.title.split(' | ')[0] + '』</span>&nbsp;本站参观 🙂';
       }
     } else if (localStorage.getItem('ValineCache') !== ('' || null) && window.location.href == 'https://lishaoy.net/'){
       text += '<span style="color:#0099cc;"><strong>&nbsp;' + JSON.parse(localStorage.getItem('ValineCache')).nick + '&nbsp;</strong></span>欢迎回来！要继续看 👀 些什么吗';
