@@ -90,9 +90,9 @@ $(function () {
     var scroll_so_far = $(window).scrollTop();
     var window_height = $(window).height();
     var max_scroll = document_height - window_height;
-    var scroll_percentage = scroll_so_far / (max_scroll / 102);
+    var scroll_percentage = scroll_so_far / (max_scroll / 100);
     $('#load').width(scroll_percentage + '%');
-    if (scroll_percentage >= 100){
+    if (scroll_percentage >= 99.5){
       $('#load').hide();
     }else{
       $('#load').show();
@@ -119,7 +119,7 @@ $(function () {
   var _this = null;
   function isUA(){
     if ($(_this).text().indexOf('Safari') == 0) {
-      $(_this).prepend('<img class="Safari" src="/images/ua/Safari.svg">');
+      $(_this).prepend('<img class="Safari" src="/images/ua/Safari.svg">')
     } else if ($(_this).text().indexOf('Mac OS') == 0 || $(_this).text().indexOf('iOS') == 0) {
       $(_this).prepend('<img class="Apple" src="/images/ua/Apple.svg">')
     } else if ($(_this).text().indexOf('Chrome') == 0) {
@@ -134,6 +134,8 @@ $(function () {
       $(_this).prepend('<img class="Android" src="/images/ua/Android.svg">')
     } else if ($(_this).text().indexOf('Ubuntu') == 0) {
       $(_this).prepend('<img class="Ubuntu" src="/images/ua/ubuntu.svg">')
+    } else if ($(_this).text().indexOf('Microsoft Edge') == 0 || $(_this).text().indexOf('MSIE') == 0) {
+      $(_this).prepend('<img class="Ubuntu" src="/images/ua/ie.png">')
     }
   };
   setTimeout(() => {
