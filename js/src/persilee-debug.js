@@ -164,7 +164,7 @@ $(function () {
       } else if (domain == 'google') {
         text += '来自 谷歌搜索 的朋友<br>欢迎阅读<span style="color:#0099cc;">『' + document.title.split(' - ')[0] + '』</span>';
       }else{
-        text += '来自<span style="color:#0099cc;">&nbsp;' + referrer.hostname + '&nbsp;</span>的朋友,欢迎来到<span style="color:#0099cc;">『' + document.title.split(' | ')[0] + '』</span>&nbsp;本站参观 🙂';
+        text += '来自<span style="color:#0099cc;">&nbsp;' + referrer.hostname + '&nbsp;</span>的朋友,欢迎来到<span style="color:#0099cc;">『' + document.title.split(' | ')[0] + '』</span>&nbsp;玩耍 🙂';
       }
     } else if (localStorage.getItem('ValineCache') !== ('' || null) && window.location.href == 'https://lishaoy.net/'){
       text += '<span style="color:#0099cc;"><strong>&nbsp;' + JSON.parse(localStorage.getItem('ValineCache')).nick + '&nbsp;</strong></span>欢迎回来！要继续看 👀 些什么吗';
