@@ -34,6 +34,12 @@ $(function () {
     }
   });
 
+  //给分类 li 加事件
+  $('.category-all .category-list-item').on('click',function(){
+    console.log($(this).find('a').attr('href'));
+    window.location.href = $(this).find('a').attr('href');
+    return false;
+  });
   // 调整 github logo 大小
   $('.github-corner svg').width(60).height(60);
 
