@@ -34,6 +34,11 @@ $(function () {
     }
   });
 
+  //给归档加更新时间
+  $('.archive .posts-collapse .post-title a>span.archive-title').each(function(){
+    $(this).append('<span class="archive-updated"></span>').find('.archive-updated').html('更新于：<time class="updated">' + $(this).attr('updated') + '</time');
+  });
+
   //给分类 li 加事件
   $('.category-all .category-list-item').on('click',function(){
     console.log($(this).find('a').attr('href'));
