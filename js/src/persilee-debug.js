@@ -59,7 +59,7 @@ $(function () {
   });
 
   $('.popup-trigger.faa-parent.animated-hover').on('click',function(){
-    $('.github-corner').hide();
+    // $('.github-corner').hide();
     $('.sidebar-toggle').hide();
     $('.back-to-top.back-to-top-on').hide();
     $('#sidebar').hide();
@@ -67,7 +67,7 @@ $(function () {
     $('.local-search-popup .local-search-header').addClass('search-middle');
   });
   $('.popup-btn-close').on('click',function(){
-    $('.github-corner').show();
+    // $('.github-corner').show();
     $('.sidebar-toggle').show();
     $('#sidebar').show();
     $('.back-to-top.back-to-top-on').show();
@@ -149,64 +149,72 @@ $(function () {
       $(_this).prepend('<img class="Ubuntu" src="/images/ua/ie.png">')
     }
   };
-  setTimeout(() => {
+  var addTipsTime = setInterval(function(){
     var text;
+    if ($('#live2d-widget .per-tips').length == 0) {
+      console.log('aaa');
+
+      $('#live2d-widget').prepend('<div class="per-tips"></div >');
+      if (jsonPath == '/live2dw/assets/hijiki.model.json')
+        text = '喵~ 我是 <span style="color:#fdb9b9">hijiki&nbsp;🐱</span>...</br>'
+      else
+        text = '喵~ 我是 <span style="color:#fdb9b9">tororo&nbsp;🐱</span>...</br>'
+          ;
+      if (document.referrer !== '' && document.referrer !== 'https://lishaoy.net/') {
+        var referrer = document.createElement('a');
+        referrer.href = document.referrer;
+        var domain = referrer.hostname.split('.')[1];
+        if (referrer.hostname == 'lishaoy.net') {
+          text += '欢迎来到&nbsp;<span style="color:#0099cc;">『' + document.title.split(' | ')[0] + '』</span>,感谢您继续参观本站 🙂';
+        } else if (domain == 'baidu') {
+          text += '来自 百度搜索 的朋友<br>你是搜索 <span style="color:#0099cc;">' + referrer.search.split('&wd=')[1].split('&')[0] + '</span> 找到的我吗？';
+        } else if (domain == 'so') {
+          text += '来自 360搜索 的朋友<br>你是搜索 <span style="color:#0099cc;">' + referrer.search.split('&q=')[1].split('&')[0] + '</span> 找到的我吗？';
+        } else if (domain == 'google') {
+          text += '来自 谷歌搜索 的朋友<br>欢迎阅读<span style="color:#0099cc;">『' + document.title.split(' - ')[0] + '』</span>';
+        } else {
+          text += '来自<span style="color:#0099cc;">&nbsp;' + referrer.hostname + '&nbsp;</span>的朋友,欢迎来到<span style="color:#0099cc;">『' + document.title.split(' | ')[0] + '』</span>&nbsp;玩耍 🙂';
+        }
+      } else if (localStorage.getItem('ValineCache') !== ('' || null) && window.location.href == 'https://lishaoy.net/') {
+        text += '<span style="color:#0099cc;"><strong>&nbsp;' + JSON.parse(localStorage.getItem('ValineCache')).nick + '&nbsp;</strong></span>欢迎回来！要继续看 👀 些什么吗';
+      } else {
+        if (window.location.href == 'https://lishaoy.net/') { //如果是主页
+          var now = (new Date()).getHours();
+          if (now > 23 || now <= 5) {
+            text += '你是夜猫子呀？这么晚还不睡觉，明天起的来嘛';
+          } else if (now > 5 && now <= 7) {
+            text += '早上好！一日之计在于晨，美好的一天就要开始了';
+          } else if (now > 7 && now <= 11) {
+            text += '上午好！工作顺利嘛，不要久坐，多起来走动走动哦！';
+          } else if (now > 11 && now <= 14) {
+            text += '中午了，工作了一个上午，现在是午餐时间！';
+          } else if (now > 14 && now <= 17) {
+            text += '午后很容易犯困呢，今天的运动目标完成了吗？';
+          } else if (now > 17 && now <= 19) {
+            text += '傍晚了！窗外夕阳的景色很美丽呢，最美不过夕阳红~';
+          } else if (now > 19 && now <= 21) {
+            text += '晚上好，今天过得怎么样？';
+          } else if (now > 21 && now <= 23) {
+            text += '已经这么晚了呀，早点休息吧，晚安~';
+          } else {
+            text += '快来逗我玩吧！';
+          }
+        } else {
+          text = '欢迎阅读<span style="color:#0099cc;">『' + document.title.split(' | ')[0] + '』</span>';
+        }
+      }
+      showMessage(text, 6000);
+      clearInterval(addTipsTime);
+    }
+  },100);
+
+  setTimeout(() => {
     $('.vhead .vname[href="https://lishaoy.net"]').after('<span class = "bozhu">博主</span>');
     $('.vhead .vsys').each(function () {
       _this = this;
       isUA();
     });
-    $('#live2d-widget').prepend('<div class="per-tips"></div >');
-    if (jsonPath == '/live2dw/assets/hijiki.model.json')
-      text = '喵~ 我是 <span style="color:#fdb9b9">hijiki&nbsp;🐱</span>...</br>'
-    else
-      text = '喵~ 我是 <span style="color:#fdb9b9">tororo&nbsp;🐱</span>...</br>'
-    ;
-    if (document.referrer !== '' && document.referrer !== 'https://lishaoy.net/') {
-      var referrer = document.createElement('a');
-      referrer.href = document.referrer;
-      var domain = referrer.hostname.split('.')[1];
-      if (referrer.hostname == 'lishaoy.net'){
-        text += '欢迎来到&nbsp;<span style="color:#0099cc;">『' + document.title.split(' | ')[0] + '』</span>,感谢您继续参观本站 🙂';
-      }else if (domain == 'baidu') {
-        text += '来自 百度搜索 的朋友<br>你是搜索 <span style="color:#0099cc;">' + referrer.search.split('&wd=')[1].split('&')[0] + '</span> 找到的我吗？';
-      } else if (domain == 'so') {
-        text += '来自 360搜索 的朋友<br>你是搜索 <span style="color:#0099cc;">' + referrer.search.split('&q=')[1].split('&')[0] + '</span> 找到的我吗？';
-      } else if (domain == 'google') {
-        text += '来自 谷歌搜索 的朋友<br>欢迎阅读<span style="color:#0099cc;">『' + document.title.split(' - ')[0] + '』</span>';
-      }else{
-        text += '来自<span style="color:#0099cc;">&nbsp;' + referrer.hostname + '&nbsp;</span>的朋友,欢迎来到<span style="color:#0099cc;">『' + document.title.split(' | ')[0] + '』</span>&nbsp;玩耍 🙂';
-      }
-    } else if (localStorage.getItem('ValineCache') !== ('' || null) && window.location.href == 'https://lishaoy.net/'){
-      text += '<span style="color:#0099cc;"><strong>&nbsp;' + JSON.parse(localStorage.getItem('ValineCache')).nick + '&nbsp;</strong></span>欢迎回来！要继续看 👀 些什么吗';
-    } else {
-      if (window.location.href == 'https://lishaoy.net/') { //如果是主页
-        var now = (new Date()).getHours();
-        if (now > 23 || now <= 5) {
-          text += '你是夜猫子呀？这么晚还不睡觉，明天起的来嘛';
-        } else if (now > 5 && now <= 7) {
-          text += '早上好！一日之计在于晨，美好的一天就要开始了';
-        } else if (now > 7 && now <= 11) {
-          text += '上午好！工作顺利嘛，不要久坐，多起来走动走动哦！';
-        } else if (now > 11 && now <= 14) {
-          text += '中午了，工作了一个上午，现在是午餐时间！';
-        } else if (now > 14 && now <= 17) {
-          text += '午后很容易犯困呢，今天的运动目标完成了吗？';
-        } else if (now > 17 && now <= 19) {
-          text += '傍晚了！窗外夕阳的景色很美丽呢，最美不过夕阳红~';
-        } else if (now > 19 && now <= 21) {
-          text += '晚上好，今天过得怎么样？';
-        } else if (now > 21 && now <= 23) {
-          text += '已经这么晚了呀，早点休息吧，晚安~';
-        } else {
-          text += '快来逗我玩吧！';
-        }
-      } else {
-        text = '欢迎阅读<span style="color:#0099cc;">『' + document.title.split(' | ')[0] + '』</span>';
-      }
-    }
-    showMessage(text, 6000);
-  }, 3000);
+  }, 1500);
 
   $('.vsubmit.vbtn').on('click', function () {
     setTimeout(() => {
