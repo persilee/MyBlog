@@ -101,7 +101,7 @@ $(function () {
     var scroll_so_far = $(window).scrollTop();
     var window_height = $(window).height();
     var max_scroll = document_height - window_height;
-    var scroll_percentage = scroll_so_far / (max_scroll / 100);
+    var scroll_percentage = scroll_so_far / (max_scroll / 101);
     $('#load').width(scroll_percentage + '%');
     if (scroll_percentage >= 99.5){
       $('#load').hide();
@@ -152,8 +152,6 @@ $(function () {
   var addTipsTime = setInterval(function(){
     var text;
     if ($('#live2d-widget .per-tips').length == 0) {
-      console.log('aaa');
-
       $('#live2d-widget').prepend('<div class="per-tips"></div >');
       if (jsonPath == '/live2dw/assets/hijiki.model.json')
         text = '喵~ 我是 <span style="color:#fdb9b9">hijiki&nbsp;🐱</span>...</br>'
@@ -205,7 +203,6 @@ $(function () {
       }
       showMessage(text, 6000);
     } else {
-      console.log('bbb');
       clearInterval(addTipsTime);
     }
   },100);
