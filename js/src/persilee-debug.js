@@ -204,6 +204,8 @@ $(function () {
         }
       }
       showMessage(text, 6000);
+    } else {
+      console.log('bbb');
       clearInterval(addTipsTime);
     }
   },100);
