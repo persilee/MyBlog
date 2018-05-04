@@ -154,10 +154,9 @@ $(function () {
     if ($('#live2d-widget .per-tips').length == 0) {
       $('#live2d-widget').prepend('<div class="per-tips"></div >');
       if (jsonPath == '/live2dw/assets/hijiki.model.json')
-        text = '喵~ 我是 <span style="color:#fdb9b9">hijiki&nbsp;🐱</span>...</br>'
+        text = '喵~ 我是 <span style="color:#fdb9b9">hijiki&nbsp;🐱</span>...</br>';
       else
-        text = '喵~ 我是 <span style="color:#fdb9b9">tororo&nbsp;🐱</span>...</br>'
-          ;
+        text = '喵~ 我是 <span style="color:#fdb9b9">tororo&nbsp;🐱</span>...</br>';
       if (document.referrer !== '' && document.referrer !== 'https://lishaoy.net/') {
         var referrer = document.createElement('a');
         referrer.href = document.referrer;
