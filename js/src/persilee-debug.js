@@ -206,23 +206,67 @@ $(function () {
     }
   },100);
 
-  setTimeout(() => {
-    $('.vhead .vname[href="https://lishaoy.net"]').after('<span class = "bozhu">博主</span>');
-    $('.vhead .vsys').each(function () {
-      _this = this;
-      isUA();
-    });
-  }, 1500);
+    var addUVTime_g = setInterval(function () {
+      if ($('.vhead:first .vsys>img').length == 0) {
+        $('.vhead .vsys').each(function () {
+          _this = this;
+          isUA();
+        });
+      } else {
+        clearInterval(addUVTime_g);
+      }
+    }, 100);
+    var addUBZime_g = setInterval(function () {
+      if ($('.vhead .vname[href="https://lishaoy.net"]~.bozhu').length == 0) {
+        $('.vhead .vname[href="https://lishaoy.net"]').after('<span class = "bozhu">博主</span>');
+      } else {
+        clearInterval(addUBZime_g);
+      };
+    }, 100);
 
   $('.vsubmit.vbtn').on('click', function () {
-    setTimeout(() => {
-      if ($('.vhead').eq(0).find('.vname[href="https://lishaoy.net"]~.bozhu')) {
-        $('.vhead').eq(0).find('.vname[href="https://lishaoy.net"]').after('<span class = "bozhu">博主</span>');
+    var addUVTime = setInterval(function () {
+      if ($('.vhead:first .vsys>img').length == 0) {
+        $('.vhead:first .vsys').each(function () {
+          _this = this;
+          isUA();
+        });
+      } else {
+        clearInterval(addUVTime);
       }
-      $('.vhead:first .vsys').each(function () {
-        _this = this;
-        isUA();
-      });
-    }, 1000);
+    }, 100);
+    var addUBZime = setInterval(function () {
+      if ($('.vhead').eq(0).find('.vname[href="https://lishaoy.net"]~.bozhu').length == 0) {
+        $('.vhead').eq(0).find('.vname[href="https://lishaoy.net"]').after('<span class = "bozhu">博主</span>');
+      } else {
+        clearInterval(addUBZime);
+      };
+    }, 100);
   });
+  $(document).on('click','.vmore.vbtn',function(){
+    console.log('aaa');
+    var addUVTime = setInterval(function () {
+      if ($('.vhead:last .vsys>img').length == 0) {
+        $('.vhead .vsys').each(function () {
+          if ($(this).html().indexOf('img') == -1){
+            _this = this;
+            isUA();
+          }
+        });
+      } else {
+        clearInterval(addUVTime);
+      }
+    }, 100);
+    var addUBZime = setInterval(function () {
+      if ($('.vhead:last .vname[href="https://lishaoy.net"]~.bozhu').length  == 0) {
+        $('.vhead .vname[href="https://lishaoy.net"]').each(function(){
+          if ($(this).siblings('.bozhu').length == 0){
+            $(this).after('<span class = "bozhu">博主</span>');
+          }
+        });
+      } else {
+        clearInterval(addUBZime);
+      };
+    }, 100);
+  })
 });
