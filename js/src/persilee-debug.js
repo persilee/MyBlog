@@ -41,7 +41,6 @@ $(function () {
 
   //给分类 li 加事件
   $('.category-all .category-list-item').on('click',function(){
-    console.log($(this).find('a').attr('href'));
     window.location.href = $(this).find('a').attr('href');
     return false;
   });
@@ -101,9 +100,9 @@ $(function () {
     var scroll_so_far = $(window).scrollTop();
     var window_height = $(window).height();
     var max_scroll = document_height - window_height;
-    var scroll_percentage = scroll_so_far / (max_scroll / 101);
+    var scroll_percentage = scroll_so_far / (max_scroll / 100);
     $('#load').width(scroll_percentage + '%');
-    if (scroll_percentage >= 99.5){
+    if (scroll_percentage >= 100){
       $('#load').hide();
     }else{
       $('#load').show();
@@ -245,22 +244,14 @@ $(function () {
   });
   $(document).on('click','.vmore.vbtn',function(){
     var addUVTime = setInterval(function () {
-      console.log($('.vhead:last .vsys>img').length);
-
       if ($('.vhead:last .vsys>img').length == 0) {
-        console.log('aaa');
-
         $('.vhead .vsys').each(function () {
-          console.log($(this).html().indexOf('img') );
-
           if ($(this).html().indexOf('img') == -1){
             _this = this;
             isUA();
           }
         });
       } else {
-        console.log('bbb');
-
         clearInterval(addUVTime);
       }
     }, 1000);
