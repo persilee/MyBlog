@@ -2075,7 +2075,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #393eb5;
+  background: #5df7fb;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3654,15 +3654,9 @@ hr {
 blockquote {
   color: #bbb;
 }
-body::before {
-  content: '';
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -100;
+body {
   background-image: url("/images/bg.jpg");
+  background-repeat: repeat;
 }
 .posts-expand .post {
   margin-top: 120px;

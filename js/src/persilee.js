@@ -9,13 +9,13 @@ $(function () {
   var vOffset = 0;
   if ($(window).width() <= 1024) {
     opacityDefault = 1;
-    superSample = 1;
-    hOffset = -8;
-    vOffset = -65;
+    superSample = 1.6;
+    hOffset = 96;
+    vOffset = -43;
   } else {
     superSample = 1.8;
     opacityDefault = 0.8;
-    hOffset = 8;
+    hOffset = 0;
     vOffset = -126;
   }
   L2Dwidget.init({
@@ -35,7 +35,7 @@ $(function () {
     },
     "mobile": {
       "show": true,
-      "scale": 0.5
+      "scale": 0.8
     },
     "react": {
       "opacityDefault": opacityDefault,

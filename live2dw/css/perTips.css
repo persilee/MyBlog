@@ -19,15 +19,16 @@
 .per-tips {
     opacity: 0;
     width: 160px;
-    height: 65px;
+    height: auto;
+    min-height: 70px;
     margin: -75px 4px;
     color: #eee;
     padding: 5px 10px;
+    box-sizing: border-box;
     border: 1px solid rgba(120, 195, 229, 0.22);
     border-radius: 12px;
     background-color: rgba(120, 195, 229, 0.48);
     box-shadow: 0 3px 15px 2px #87daff73;
-
     font-size: 12px;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -39,6 +40,7 @@
     animation-timing-function: ease-in-out;
 
 }
+
 
 #live2d-widget #live2dcanvas {
   position: relative;
@@ -55,16 +57,13 @@
     display: none;
   } */
   .per-tips {
-    width: 80px;
-    height: 45px;
-    margin: 2px 4px;
-    top: 12px;
-    left: -5px;
-    padding: 2px 5px;
-    background-color: rgba(120, 195, 229, 0.66);
-    font-size: 12px;
-    -webkit-transform: scale(0.833);
-    transform: scale(0.833);
+    top: -46px;
+    left: 94px;
+    background-color: rgba(120, 195, 229, 0.72);
+
+  }
+  #live2d-widget {
+      transform: scale(0.6) translate(-150px, 125px);
   }
 }
 
