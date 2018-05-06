@@ -1,6 +1,79 @@
 $(function () {
 
+  //新增看娘
+  // var jsonPaths = ['/live2dw/assets/hijiki.model.json', '/live2dw/assets/tororo.model.json'];
+  // var jsonPath = jsonPaths[Math.round(Math.random())];
+  // var opacityDefault = 0;
+  // if ($(window).width() <= 1024) {
+  //   opacityDefault = 1;
+  // }else{
+  //   opacityDefault = 0.8;
+  // }
+  // L2Dwidget.init({
+  //   "pluginRootPath": "live2dw/",
+  //   "pluginJsPath": "lib/",
+  //   "pluginModelPath": "assets/",
+  //   "model": {
+  //     "jsonPath": jsonPath,
+  //   },
+  //   "display": {
+  //     "superSample": 1.8,
+  //     "position": "left",
+  //     "width": 90,
+  //     "height": 220,
+  //     "hOffset": 8,
+  //     "vOffset": -126
+  //   },
+  //   "mobile": {
+  //     "show": true,
+  //     "scale": 0.5
+  //   },
+  //   "react": {
+  //     "opacityDefault": opacityDefault,
+  //     "opacityOnHover": 0.2
+  //   }
+  // });
 
+  //给归档加更新时间
+  $('.archive .posts-collapse .post-title a>span.archive-title').each(function(){
+    $(this).append('<span class="archive-updated"></span>').find('.archive-updated').html('更新于：<time class="updated">' + $(this).attr('updated') + '</time');
+  });
+
+  //给分类 li 加事件
+  $('.category-all .category-list-item').on('click',function(){
+    window.location.href = $(this).find('a').attr('href');
+    return false;
+  });
+  // 调整 github logo 大小
+  $('.github-corner svg').width(60).height(60);
+
+  POWERMODE.colorful = true; // ture 为启用礼花特效
+  POWERMODE.shake = false; // false 为禁用震动特效
+  document.body.addEventListener('input', POWERMODE);
+
+  //让 header 适应 暗色 背景
+  $('#header').addClass('dark').addClass('animated');
+  $('.sidebar-toggle').on('click', function () {
+    $('#header').toggleClass('header-has-sidebar');
+  });
+
+  $('.popup-trigger.faa-parent.animated-hover').on('click',function(){
+    // $('.github-corner').hide();
+    $('.sidebar-toggle').hide();
+    $('.back-to-top.back-to-top-on').hide();
+    $('#sidebar').hide();
+    $('#header').removeClass('slideInDown');
+    $('.local-search-popup .local-search-header').addClass('search-middle');
+  });
+  $('.popup-btn-close').on('click',function(){
+    // $('.github-corner').show();
+    $('.sidebar-toggle').show();
+    $('#sidebar').show();
+    $('.back-to-top.back-to-top-on').show();
+  })
+  $('#local-search-input').on('change keydown',function(){
+    $('.local-search-popup .local-search-header').removeClass('search-middle');
+  });
 
   // 鼠标往上滚动 隐藏 header , 鼠标往下滚动 显示 header
   // var p = 0,
