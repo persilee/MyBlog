@@ -1,38 +1,40 @@
 $(function () {
 
   //新增看娘
-  // var jsonPaths = ['/live2dw/assets/hijiki.model.json', '/live2dw/assets/tororo.model.json'];
-  // var jsonPath = jsonPaths[Math.round(Math.random())];
-  // var opacityDefault = 0;
-  // if ($(window).width() <= 1024) {
-  //   opacityDefault = 1;
-  // }else{
-  //   opacityDefault = 0.8;
-  // }
-  // L2Dwidget.init({
-  //   "pluginRootPath": "live2dw/",
-  //   "pluginJsPath": "lib/",
-  //   "pluginModelPath": "assets/",
-  //   "model": {
-  //     "jsonPath": jsonPath,
-  //   },
-  //   "display": {
-  //     "superSample": 1.8,
-  //     "position": "left",
-  //     "width": 90,
-  //     "height": 220,
-  //     "hOffset": 8,
-  //     "vOffset": -126
-  //   },
-  //   "mobile": {
-  //     "show": true,
-  //     "scale": 0.5
-  //   },
-  //   "react": {
-  //     "opacityDefault": opacityDefault,
-  //     "opacityOnHover": 0.2
-  //   }
-  // });
+  var jsonPaths = ['/live2dw/assets/hijiki.model.json', '/live2dw/assets/tororo.model.json'];
+  var jsonPath = jsonPaths[Math.round(Math.random())];
+  var opacityDefault = 0;
+  if ($(window).width() <= 1024) {
+    opacityDefault = 1;
+  }else{
+    opacityDefault = 0.8;
+  }
+  if($(window).width() > 768){
+    L2Dwidget.init({
+      "pluginRootPath": "live2dw/",
+      "pluginJsPath": "lib/",
+      "pluginModelPath": "assets/",
+      "model": {
+        "jsonPath": jsonPath,
+      },
+      "display": {
+        "superSample": 1.8,
+        "position": "left",
+        "width": 90,
+        "height": 220,
+        "hOffset": 8,
+        "vOffset": -126
+      },
+      "mobile": {
+        "show": true,
+        "scale": 0.5
+      },
+      "react": {
+        "opacityDefault": opacityDefault,
+        "opacityOnHover": 0.2
+      }
+    });
+  }
 
   //给归档加更新时间
   $('.archive .posts-collapse .post-title a>span.archive-title').each(function(){
