@@ -1,1 +1,1 @@
-$(function(){alert("aaa"),console.log("12121212")});
+$(function(){alert("bbb"),console.log("12121212")});
