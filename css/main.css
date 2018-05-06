@@ -2075,7 +2075,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #38a255;
+  background: #c3bf5e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3155,8 +3155,7 @@ body::before {
   height: 100%;
   top: 0;
   left: 0;
-  will-change: scroll-position;
-  z-index: -1;
+  will-change: auto;
+  z-index: -100;
   background-image: url("/images/bg.jpg");
-  background-repeat: repeat;
 }
