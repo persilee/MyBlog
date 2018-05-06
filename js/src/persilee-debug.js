@@ -10,30 +10,30 @@ $(function () {
     opacityDefault = 0.8;
   }
   if($(window).width() > 768){
-    L2Dwidget.init({
-      "pluginRootPath": "live2dw/",
-      "pluginJsPath": "lib/",
-      "pluginModelPath": "assets/",
-      "model": {
-        "jsonPath": jsonPath,
-      },
-      "display": {
-        "superSample": 1.8,
-        "position": "left",
-        "width": 90,
-        "height": 220,
-        "hOffset": 8,
-        "vOffset": -126
-      },
-      "mobile": {
-        "show": true,
-        "scale": 0.5
-      },
-      "react": {
-        "opacityDefault": opacityDefault,
-        "opacityOnHover": 0.2
-      }
-    });
+    // L2Dwidget.init({
+    //   "pluginRootPath": "live2dw/",
+    //   "pluginJsPath": "lib/",
+    //   "pluginModelPath": "assets/",
+    //   "model": {
+    //     "jsonPath": jsonPath,
+    //   },
+    //   "display": {
+    //     "superSample": 1.8,
+    //     "position": "left",
+    //     "width": 90,
+    //     "height": 220,
+    //     "hOffset": 8,
+    //     "vOffset": -126
+    //   },
+    //   "mobile": {
+    //     "show": true,
+    //     "scale": 0.5
+    //   },
+    //   "react": {
+    //     "opacityDefault": opacityDefault,
+    //     "opacityOnHover": 0.2
+    //   }
+    // });
   }
 
   //给归档加更新时间
