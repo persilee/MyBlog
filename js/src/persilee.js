@@ -4,10 +4,19 @@ $(function () {
   var jsonPaths = ['/live2dw/assets/hijiki.model.json', '/live2dw/assets/tororo.model.json'];
   var jsonPath = jsonPaths[Math.round(Math.random())];
   var opacityDefault = 0;
+  var superSample = 0;
+  var hOffset = 0;
+  var vOffset = 0;
   if ($(window).width() <= 1024) {
     opacityDefault = 1;
+    superSample = 1;
+    hOffset = -8;
+    vOffset = -65;
   } else {
+    superSample = 1.8;
     opacityDefault = 0.8;
+    hOffset = 8;
+    vOffset = -126;
   }
   L2Dwidget.init({
     "pluginRootPath": "live2dw/",
@@ -17,12 +26,12 @@ $(function () {
       "jsonPath": jsonPath,
     },
     "display": {
-      "superSample": 1.8,
+      "superSample": superSample,
       "position": "left",
       "width": 90,
       "height": 220,
-      "hOffset": 8,
-      "vOffset": -126
+      "hOffset": hOffset,
+      "vOffset": vOffset
     },
     "mobile": {
       "show": true,
