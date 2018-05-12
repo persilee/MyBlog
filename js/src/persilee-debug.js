@@ -70,6 +70,7 @@ $(function () {
 
   $('.popup-trigger.faa-parent.animated-hover').on('click', function () {
     // $('.github-corner').hide();
+    $('#main').hide();
     $('.sidebar-toggle').hide();
     $('.back-to-top.back-to-top-on').hide();
     $('#sidebar').hide();
@@ -78,33 +79,13 @@ $(function () {
   });
   $('.popup-btn-close').on('click', function () {
     // $('.github-corner').show();
+    $('#main').show();
     $('.sidebar-toggle').show();
     $('#sidebar').show();
     $('.back-to-top.back-to-top-on').show();
   })
   $('#local-search-input').on('change keydown', function () {
     $('.local-search-popup .local-search-header').removeClass('search-middle');
-  });
-
-  // 鼠标往上滚动 隐藏 header , 鼠标往下滚动 显示 header
-  var p = 0,
-      t = 0;
-  $(document).on("scroll", function (e) {
-    //优化 添加 requestAnimationFrame
-      p = $(this).scrollTop();
-      if (t <= p) { //下滚
-        if ($(window).scrollTop() > 10) {
-          $('#header').addClass('slideOutUp').removeClass('slideInDown');
-          $('#load').removeClass('header');
-        }
-        if ($(window).scrollTop() == $(document).height() - $(window).height()) showMessage('喵~ 页面到底了，点击右下角箭头 ⬆️ ，可回到顶部', 3000);
-      } else { //上滚
-        $('#load').addClass('header');
-        $('#header').removeClass('slideOutUp').addClass('slideInDown');
-      }
-      setTimeout(function () {
-        t = p;
-      }, 0);
   });
 
   //给页面新增滚动进度条
@@ -127,9 +108,26 @@ $(function () {
       $('#header').removeClass('light-header').addClass('dark');
     }
   }
-  $(window).scroll(function () {
-    // 用 window.requestAnimationFrame（）让读操作和写操作分离，把所有的写操作放到下一次重新渲染。
+  // 鼠标往上滚动 隐藏 header , 鼠标往下滚动 显示 header
+  var p = 0,
+    t = 0;
+  $(document).on("scroll", function (e) {
     scroll_fn();
+    //用 window.requestAnimationFrame（）让读操作和写操作分离，把所有的写操作放到下一次重新渲染。
+    p = $(this).scrollTop();
+    if (t <= p) { //下滚
+      if ($(window).scrollTop() > 10) {
+        $('#header').addClass('slideOutUp').removeClass('slideInDown');
+        $('#load').removeClass('header');
+      }
+      if ($(window).scrollTop() == $(document).height() - $(window).height()) showMessage('喵~ 页面到底了，点击右下角箭头 ⬆️ ，可回到顶部', 3000);
+    } else { //上滚
+      $('#load').addClass('header');
+      $('#header').removeClass('slideOutUp').addClass('slideInDown');
+    }
+    setTimeout(function () {
+      t = p;
+    }, 0);
   });
   $(window).resize(function () {
     //优化 添加 requestAnimationFrame
