@@ -54,7 +54,9 @@ $(function () {
     return false;
   });
   // 调整 github logo 大小
-  $('.github-corner svg').width(60).height(60);
+  // $('.github-corner svg').width(60).height(60);
+  //优化 用一次加载样式，避免多次重排、重绘
+  $('.github-corner svg').css({"width":"60px","height":"60px"});
 
   POWERMODE.colorful = true; // ture 为启用礼花特效
   POWERMODE.shake = false; // false 为禁用震动特效
@@ -88,19 +90,21 @@ $(function () {
   var p = 0,
       t = 0;
   $(document).on("scroll", function (e) {
-    p = $(this).scrollTop();
-
-    if (t <= p) { //下滚
-      if ($(window).scrollTop() > 10) {
-        $('#header').addClass('slideOutUp').removeClass('slideInDown');
+    //优化 添加 requestAnimationFrame
+    window.requestAnimationFrame(function(){
+      p = $(this).scrollTop();
+      if (t <= p) { //下滚
+        if ($(window).scrollTop() > 10) {
+          $('#header').addClass('slideOutUp').removeClass('slideInDown');
+        }
+        if ($(window).scrollTop() == $(document).height() - $(window).height()) showMessage('喵~ 页面到底了，点击右下角箭头 ⬆️ ，可回到顶部', 3000);
+      } else { //上滚
+        $('#header').removeClass('slideOutUp').addClass('slideInDown');
       }
-      if ($(window).scrollTop() == $(document).height() - $(window).height()) showMessage('喵~ 页面到底了，点击右下角箭头 ⬆️ ，可回到顶部', 3000);
-    } else { //上滚
-      $('#header').removeClass('slideOutUp').addClass('slideInDown');
-    }
-    setTimeout(function () {
-      t = p;
-    }, 0);
+      setTimeout(function () {
+        t = p;
+      }, 0);
+    });
   });
 
   //给页面新增滚动进度条
@@ -124,10 +128,12 @@ $(function () {
     }
   }
   $(window).scroll(function () {
-    scroll_fn();
+    // 用 window.requestAnimationFrame（）让读操作和写操作分离，把所有的写操作放到下一次重新渲染。
+    window.requestAnimationFrame(scroll_fn);
   });
   $(window).resize(function () {
-    scroll_fn();
+    //优化 添加 requestAnimationFrame
+    window.requestAnimationFrame(scroll_fn);
     if ($(window).width() <= 990) {
       $('#header').removeClass('header-has-sidebar');
     } else if ($('#sidebar').width() > 0) {
