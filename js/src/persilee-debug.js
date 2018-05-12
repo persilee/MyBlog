@@ -56,10 +56,7 @@ $(function () {
   // 调整 github logo 大小
   // $('.github-corner svg').width(60).height(60);
   //优化 用一次加载样式，避免多次重排、重绘
-  $('.github-corner svg').css({
-    "width": "60px",
-    "height": "60px"
-  });
+  $('.github-corner svg').css({"width":"60px","height":"60px"});
 
   POWERMODE.colorful = true; // ture 为启用礼花特效
   POWERMODE.shake = false; // false 为禁用震动特效
@@ -91,23 +88,23 @@ $(function () {
 
   // 鼠标往上滚动 隐藏 header , 鼠标往下滚动 显示 header
   var p = 0,
-    t = 0;
+      t = 0;
   $(document).on("scroll", function (e) {
     //优化 添加 requestAnimationFrame
-    p = $(this).scrollTop();
-    if (t <= p) { //下滚
-      if ($(window).scrollTop() > 10) {
-        $('#header').addClass('slideOutUp').removeClass('slideInDown');
-        $('#load').removeClass('header');
+      p = $(this).scrollTop();
+      if (t <= p) { //下滚
+        if ($(window).scrollTop() > 10) {
+          $('#header').addClass('slideOutUp').removeClass('slideInDown');
+          $('#load').removeClass('header');
+        }
+        if ($(window).scrollTop() == $(document).height() - $(window).height()) showMessage('喵~ 页面到底了，点击右下角箭头 ⬆️ ，可回到顶部', 3000);
+      } else { //上滚
+        $('#load').addClass('header');
+        $('#header').removeClass('slideOutUp').addClass('slideInDown');
       }
-      if ($(window).scrollTop() == $(document).height() - $(window).height()) showMessage('喵~ 页面到底了，点击右下角箭头 ⬆️ ，可回到顶部', 3000);
-    } else { //上滚
-      $('#header').removeClass('slideOutUp').addClass('slideInDown');
-      $('#load').addClass('header');
-    }
-    setTimeout(function () {
-      t = p;
-    }, 0);
+      setTimeout(function () {
+        t = p;
+      }, 0);
   });
 
   //给页面新增滚动进度条
@@ -118,9 +115,9 @@ $(function () {
     var max_scroll = document_height - window_height;
     var scroll_percentage = scroll_so_far / (max_scroll / 100);
     $('#load').width(scroll_percentage + '%');
-    if (scroll_percentage >= 99.5) {
+    if (scroll_percentage >= 99.5){
       $('#load').hide();
-    } else {
+    }else{
       $('#load').show();
     }
     var document_width = $(document).width();
@@ -145,8 +142,7 @@ $(function () {
   });
 
   var _this = null;
-
-  function isUA() {
+  function isUA(){
     if ($(_this).text().indexOf('Safari') == 0) {
       $(_this).prepend('<img class="Safari" src="/images/ua/Safari.svg">')
     } else if ($(_this).text().indexOf('Mac OS') == 0 || $(_this).text().indexOf('iOS') == 0) {
@@ -167,7 +163,7 @@ $(function () {
       $(_this).prepend('<img class="Ubuntu" src="/images/ua/ie.png">')
     }
   };
-  var addTipsTime = setInterval(function () {
+  var addTipsTime = setInterval(function(){
     var text;
     if ($('#live2d-widget .per-tips').length == 0) {
       $('#live2d-widget').prepend('<div class="per-tips"></div >');
@@ -222,25 +218,25 @@ $(function () {
     } else {
       clearInterval(addTipsTime);
     }
-  }, 100);
+  },100);
 
-  var addUVTime_g = setInterval(function () {
-    if ($('.vhead:first .vsys>img').length == 0) {
-      $('.vhead .vsys').each(function () {
-        _this = this;
-        isUA();
-      });
-    } else {
-      clearInterval(addUVTime_g);
-    }
-  }, 100);
-  var addUBZime_g = setInterval(function () {
-    if ($('.vhead .vname[href="https://lishaoy.net"]~.bozhu').length == 0) {
-      $('.vhead .vname[href="https://lishaoy.net"]').after('<span class = "bozhu">博主</span>');
-    } else {
-      clearInterval(addUBZime_g);
-    };
-  }, 100);
+    var addUVTime_g = setInterval(function () {
+      if ($('.vhead:first .vsys>img').length == 0) {
+        $('.vhead .vsys').each(function () {
+          _this = this;
+          isUA();
+        });
+      } else {
+        clearInterval(addUVTime_g);
+      }
+    }, 100);
+    var addUBZime_g = setInterval(function () {
+      if ($('.vhead .vname[href="https://lishaoy.net"]~.bozhu').length == 0) {
+        $('.vhead .vname[href="https://lishaoy.net"]').after('<span class = "bozhu">博主</span>');
+      } else {
+        clearInterval(addUBZime_g);
+      };
+    }, 100);
 
   $('.vsubmit.vbtn').on('click', function () {
     var addUVTime = setInterval(function () {
@@ -261,11 +257,11 @@ $(function () {
       };
     }, 1000);
   });
-  $(document).on('click', '.vmore.vbtn', function () {
+  $(document).on('click','.vmore.vbtn',function(){
     var addUVTime = setInterval(function () {
       if ($('.vhead:last .vsys>img').length == 0) {
         $('.vhead .vsys').each(function () {
-          if ($(this).html().indexOf('img') == -1) {
+          if ($(this).html().indexOf('img') == -1){
             _this = this;
             isUA();
           }
@@ -275,9 +271,9 @@ $(function () {
       }
     }, 1000);
     var addUBZime = setInterval(function () {
-      if ($('.vhead:last .vname[href="https://lishaoy.net"]~.bozhu').length == 0) {
-        $('.vhead .vname[href="https://lishaoy.net"]').each(function () {
-          if ($(this).siblings('.bozhu').length == 0) {
+      if ($('.vhead:last .vname[href="https://lishaoy.net"]~.bozhu').length  == 0) {
+        $('.vhead .vname[href="https://lishaoy.net"]').each(function(){
+          if ($(this).siblings('.bozhu').length == 0){
             $(this).after('<span class = "bozhu">博主</span>');
           }
         });
@@ -287,3 +283,4 @@ $(function () {
     }, 1000);
   })
 });
+
