@@ -96,10 +96,12 @@ $(function () {
       if (t <= p) { //下滚
         if ($(window).scrollTop() > 10) {
           $('#header').addClass('slideOutUp').removeClass('slideInDown');
+          $('#load').removeClass('header');
         }
         if ($(window).scrollTop() == $(document).height() - $(window).height()) showMessage('喵~ 页面到底了，点击右下角箭头 ⬆️ ，可回到顶部', 3000);
       } else { //上滚
         $('#header').removeClass('slideOutUp').addClass('slideInDown');
+        $('#load').addClass('header');
       }
       setTimeout(function () {
         t = p;
