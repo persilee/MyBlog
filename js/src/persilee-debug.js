@@ -88,6 +88,40 @@ $(function () {
     $('.local-search-popup .local-search-header').removeClass('search-middle');
   });
 
+  // 防抖动函数
+  function debounce(func, wait, immediate) {
+    var timeout;
+    return function () {
+      var context = this, args = arguments;
+      var later = function () {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  };
+  // 简单的节流函数
+  function throttle(func, wait, mustRun) {
+    var timeout,
+      startTime = new Date();
+    return function () {
+      var context = this,
+        args = arguments,
+        curTime = new Date();
+      clearTimeout(timeout);
+      // 如果达到了规定的触发时间间隔，触发 handler
+      if (curTime - startTime >= mustRun) {
+        func.apply(context, args);
+        startTime = curTime;
+        // 没达到触发间隔，重新设定定时器
+      } else {
+        timeout = setTimeout(func, wait);
+      }
+    };
+  };
   //给页面新增滚动进度条
   function scroll_fn() {
     var document_height = $(document).height();
@@ -95,35 +129,36 @@ $(function () {
     var window_height = $(window).height();
     var max_scroll = document_height - window_height;
     var scroll_percentage = scroll_so_far / (max_scroll / 100);
-    $('#load').width(scroll_percentage + '%');
-    if (scroll_percentage >= 99.5){
-      $('#load').hide();
-    }else{
-      $('#load').show();
-    }
-    var document_width = $(document).width();
-    if (scroll_so_far > 57) {
-      $('#header').addClass('light-header').removeClass('dark');
-    } else {
-      $('#header').removeClass('light-header').addClass('dark');
-    }
+    window.requestAnimationFrame(function(){
+      $('#load').css('width', scroll_percentage + '%');
+      if (scroll_percentage >= 99.5) {
+        $('#load').hide();
+      } else {
+        $('#load').show();
+      }
+      if (scroll_so_far > 57) {
+        $('#header').addClass('light-header').removeClass('dark');
+      } else {
+        $('#header').removeClass('light-header').addClass('dark');
+      }
+    });
   }
   // 鼠标往上滚动 隐藏 header , 鼠标往下滚动 显示 header
   var p = 0,
     t = 0;
   $(document).on("scroll", function (e) {
-    scroll_fn();
+    throttle(scroll_fn,1000 / 60,100)();
     //用 window.requestAnimationFrame（）让读操作和写操作分离，把所有的写操作放到下一次重新渲染。
     p = $(this).scrollTop();
     if (t <= p) { //下滚
       if ($(window).scrollTop() > 10) {
-        $('#header').addClass('slideOutUp').removeClass('slideInDown');
-        $('#load').removeClass('header');
+        if (!$('#header').hasClass('slideOutUp')) $('#header').addClass('slideOutUp').removeClass('slideInDown');
+        if ($('#load').hasClass('header')) $('#load').removeClass('header');
       }
       if ($(window).scrollTop() == $(document).height() - $(window).height()) showMessage('喵~ 页面到底了，点击右下角箭头 ⬆️ ，可回到顶部', 3000);
     } else { //上滚
-      $('#load').addClass('header');
-      $('#header').removeClass('slideOutUp').addClass('slideInDown');
+      if (!$('#load').hasClass('header')) $('#load').addClass('header');
+      if ($('#header').hasClass('slideOutUp')) $('#header').removeClass('slideOutUp').addClass('slideInDown');
     }
     setTimeout(function () {
       t = p;
@@ -131,7 +166,7 @@ $(function () {
   });
   $(window).resize(function () {
     //优化 添加 requestAnimationFrame
-    scroll_fn();
+    throttle(scroll_fn, 1000 / 60, 100)();
     if ($(window).width() <= 990) {
       $('#header').removeClass('header-has-sidebar');
     } else if ($('#sidebar').width() > 0) {
