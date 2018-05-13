@@ -192,8 +192,10 @@ $(function () {
       $(_this).prepend('<img class="Android" src="/images/ua/Android.svg">')
     } else if ($(_this).text().indexOf('Ubuntu') == 0) {
       $(_this).prepend('<img class="Ubuntu" src="/images/ua/ubuntu.svg">')
+    } else if ($(_this).text().indexOf('Linux') == 0) {
+      $(_this).prepend('<img class="Linux" src="/images/ua/Linux.svg">')
     } else if ($(_this).text().indexOf('Microsoft Edge') == 0 || $(_this).text().indexOf('MSIE') == 0) {
-      $(_this).prepend('<img class="Ubuntu" src="/images/ua/ie.png">')
+      $(_this).prepend('<img class="IE" src="/images/ua/IE.png">')
     }
   };
   var addTipsTime = setInterval(function(){
