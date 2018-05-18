@@ -155,7 +155,9 @@ $(function () {
         if (!$('#header').hasClass('slideOutUp')) $('#header').addClass('slideOutUp').removeClass('slideInDown');
         if ($('#load').hasClass('header')) $('#load').removeClass('header');
       }
-      if ($(window).scrollTop() == $(document).height() - $(window).height()) showMessage('喵~ 页面到底了，点击右下角箭头 ⬆️ ，可回到顶部', 3000);
+      if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+        if (typeof showMessage == 'function') showMessage('喵~ 页面到底了，点击右下角箭头 ⬆️ ，可回到顶部', 3000);
+      }
     } else { //上滚
       if (!$('#load').hasClass('header')) $('#load').addClass('header');
       if ($('#header').hasClass('slideOutUp')) $('#header').removeClass('slideOutUp').addClass('slideInDown');
@@ -186,7 +188,7 @@ $(function () {
       $(_this).prepend('<img class="Firefox" src="/images/ua/Firefox.svg">')
     } else if ($(_this).text().indexOf('Windows 10') == 0) {
       $(_this).prepend('<img class="Windows10" src="/images/ua/windows10.svg">')
-    } else if ($(_this).text().indexOf('Windows 7') == 0 || $(_this).text().indexOf('Windows 8') == 0 || $(_this).text().indexOf('Windows 9') == 0) {
+    } else if ($(_this).text().indexOf('Windows') == 0 || $(_this).text().indexOf('Windows 7') == 0 || $(_this).text().indexOf('Windows 8') == 0 || $(_this).text().indexOf('Windows 9') == 0) {
       $(_this).prepend('<img class="Windows7" src="/images/ua/windows7.svg">')
     } else if ($(_this).text().indexOf('Android') == 0) {
       $(_this).prepend('<img class="Android" src="/images/ua/Android.svg">')
