@@ -69,9 +69,13 @@ const dateFormat = (date) => {
       var oldTime = date.getTime();
       var currTime = new Date().getTime();
       var diffValue = currTime - oldTime;
-
+      var selectedMonth = date.getMonth() + 1;
+      var currMonth = new Date().getMonth() + 1;
+      var months = currMonth - selectedMonth;
+      date.setMonth(selectedMonth);
+      date.setDate(0);
+      var dayMany = date.getDate();
       var days = Math.floor(diffValue / (24 * 3600 * 1000));
-      console.log(days)
       if (days === 0) {
         //计算相差小时数
         var leave1 = diffValue % (24 * 3600 * 1000); //计算天数后剩余的毫秒数
@@ -105,12 +109,17 @@ const dateFormat = (date) => {
           "text": "刚刚"
         };
       }
-      if (days < 8) {
+      if (days <= dayMany) {
         return {
           "counts": days,
           "text": "天前"
         };
-      } else {
+      } else if (months<3) {
+        return {
+          "counts": months,
+          "text": "月前"
+        };
+      }else {
         return dateFormat(date)
       }
     } catch (error) {
