@@ -119,10 +119,6 @@ const dateFormat = (date) => {
   }
 
   $('.post-date').each(function(){
-    // console.log(timeAgo(new Date($(this).data('datetime'))));
-    console.log($(this).data('datetime'));
-    var sTime = $(this).data('datetime');
-    console.log(timeAgo(new Date(sTime)));
     $(this).find('.post-time-text').text(timeAgo(new Date($(this).data('datetime'))).text);
     $(this).find('.post-time-count').text(timeAgo(new Date($(this).data('datetime'))).counts);
   });
