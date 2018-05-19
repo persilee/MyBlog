@@ -43,6 +43,92 @@ $(function () {
     }
   });
 
+  // 将时间转为天数
+  const padWithZeros = (vNumber, width) => {
+    var numAsString = vNumber.toString();
+    while (numAsString.length < width) {
+      numAsString = '0' + numAsString;
+    }
+    return numAsString;
+  }
+const dateFormat = (date) => {
+  var vDay = padWithZeros(date.getDate(), 2);
+  var vMonth = padWithZeros(date.getMonth() + 1, 2);
+  var vYear = padWithZeros(date.getFullYear(), 2);
+  // var vHour = padWithZeros(date.getHours(), 2);
+  // var vMinute = padWithZeros(date.getMinutes(), 2);
+  // var vSecond = padWithZeros(date.getSeconds(), 2);
+  return {
+    "counts": vDay,
+    "text": vMonth + '月'
+  };
+}
+
+  var timeAgo = function(date) {
+    try {
+      var oldTime = date.getTime();
+      var currTime = new Date().getTime();
+      var diffValue = currTime - oldTime;
+
+      var days = Math.floor(diffValue / (24 * 3600 * 1000));
+      console.log(days)
+      if (days === 0) {
+        //计算相差小时数
+        var leave1 = diffValue % (24 * 3600 * 1000); //计算天数后剩余的毫秒数
+        var hours = Math.floor(leave1 / (3600 * 1000));
+        if (hours === 0) {
+          //计算相差分钟数
+          var leave2 = leave1 % (3600 * 1000); //计算小时数后剩余的毫秒数
+          var minutes = Math.floor(leave2 / (60 * 1000));
+          if (minutes === 0) {
+            //计算相差秒数
+            var leave3 = leave2 % (60 * 1000); //计算分钟数后剩余的毫秒数
+            var seconds = Math.round(leave3 / 1000);
+            return {
+              "counts": seconds,
+              "text": "秒前"
+            };
+          }
+          return {
+            "counts": minutes,
+            "text": "分钟前"
+          };
+        }
+        return {
+          "counts": hours,
+          "text": "小时前"
+        };
+      }
+      if (days < 0){
+        return {
+          "counts": '😜',
+          "text": "刚刚"
+        };
+      }
+      if (days < 8) {
+        return {
+          "counts": days,
+          "text": "天前"
+        };
+      } else {
+        return dateFormat(date)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  $('.post-date').each(function(){
+    // console.log(timeAgo(new Date($(this).data('datetime'))));
+    console.log($(this).data('datetime'));
+    var sTime = $(this).data('datetime');
+    console.log(timeAgo(new Date(sTime)));
+    $(this).find('.post-time-text').text(timeAgo(new Date($(this).data('datetime'))).text);
+    $(this).find('.post-time-count').text(timeAgo(new Date($(this).data('datetime'))).counts);
+  });
+
+
+
   //给归档加更新时间
   $('.archive .posts-collapse .post-title a>span.archive-title').each(function () {
     $(this).append('<span class="archive-updated"></span>').find('.archive-updated').html('更新于：<time class="updated">' + $(this).attr('updated') + '</time');
