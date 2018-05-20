@@ -2354,7 +2354,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff91ff;
+  background: #ff4416;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -4299,6 +4299,10 @@ hr {
   box-shadow: none !important;
   border: none !important;
 }
+.post-body .image-caption,
+.post-body .figure .caption {
+  font-size: 12px;
+}
 .post-gallery {
   margin: 0 0 30px;
 }
@@ -4453,6 +4457,7 @@ pre,
     max-width: none;
     width: 106.6%;
     margin: 25px -3.3%;
+    margin-bottom: 0px;
   }
   .post-body .highlight {
     width: 106%;
@@ -4478,6 +4483,7 @@ pre,
   .full-image.full-image.full-image {
     width: 108.55%;
     margin: 25px -4.28%;
+    margin-bottom: 0px;
   }
   .post-body .highlight {
     width: 108%;
@@ -4512,6 +4518,7 @@ pre,
     max-width: none;
     width: 109%;
     margin: 25px -4.5%;
+    margin-bottom: 0px;
   }
   .github-corner {
     display: none;
@@ -4553,6 +4560,7 @@ pre,
     max-width: none;
     width: 117%;
     margin: 25px -8.5%;
+    margin-bottom: 0px;
   }
   .github-corner {
     display: none;
@@ -4635,6 +4643,7 @@ pre,
     max-width: none;
     width: 111%;
     margin: 25px -5.5%;
+    margin-bottom: 0px;
   }
   .post-body .highlight,
   .posts-expand .post-body>table {
@@ -4720,6 +4729,7 @@ pre,
     max-width: none;
     width: 120%;
     margin: 25px -10%;
+    margin-bottom: 0px;
   }
   .github-corner {
     display: none;
@@ -4802,6 +4812,7 @@ pre,
     max-width: none;
     width: 125%;
     margin: 25px -12.6%;
+    margin-bottom: 0px;
   }
   .github-corner {
     display: none;
