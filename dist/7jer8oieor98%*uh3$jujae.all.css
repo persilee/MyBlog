@@ -2354,7 +2354,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #62136b;
+  background: #ff91ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -4329,6 +4329,11 @@ code {
 .highlight {
   box-shadow: 0 0 3px #101010;
   margin: 25px -3%;
+}
+.highlight figcaption {
+  font-size: 16px;
+  color: rgba(0,167,123,0.72);
+  margin: 10px;
 }
 .highlight td {
   background-color: #222;
