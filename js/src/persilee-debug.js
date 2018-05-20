@@ -289,7 +289,11 @@ const dateFormat = (date) => {
       $(_this).prepend('<img class="Linux" src="/images/ua/Linux.svg">')
     } else if ($(_this).text().indexOf('Microsoft Edge') == 0 || $(_this).text().indexOf('MSIE') == 0) {
       $(_this).prepend('<img class="IE" src="/images/ua/IE.png">')
+    } else if ($(_this).text().indexOf('Sogou') == 0) {
+      $(_this).prepend('<img class="sogou" src="/images/ua/sogou.svg">')
+
     }
+
   };
   var addTipsTime = setInterval(function(){
     var text;
