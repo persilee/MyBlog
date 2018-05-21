@@ -308,18 +308,18 @@ const dateFormat = (date) => {
         referrer.href = document.referrer;
         var domain = referrer.hostname.split('.')[1];
         if (referrer.hostname == 'lishaoy.net') {
-          text += '欢迎来到&nbsp;<span style="color:#0099cc;">『' + document.title.split(' | ')[0] + '』</span>,感谢您继续参观本站 🙂';
+          text += '欢迎来到&nbsp;<span style="color:rgba(239, 47, 17, 0.8);">『' + document.title.split(' | ')[0] + '』</span>,感谢您继续参观本站 🙂';
         } else if (domain == 'baidu') {
-          text += '来自 百度搜索 的朋友<br>你是搜索 <span style="color:#0099cc;">' + referrer.search.split('&wd=')[1].split('&')[0] + '</span> 找到的我吗？';
+          text += '来自 百度搜索 的朋友<br>你是搜索 <span style="color:rgba(239, 47, 17, 0.8);">' + referrer.search.split('&wd=')[1].split('&')[0] + '</span> 找到的我吗？';
         } else if (domain == 'so') {
-          text += '来自 360搜索 的朋友<br>你是搜索 <span style="color:#0099cc;">' + referrer.search.split('&q=')[1].split('&')[0] + '</span> 找到的我吗？';
+          text += '来自 360搜索 的朋友<br>你是搜索 <span style="color:rgba(239, 47, 17, 0.8);">' + referrer.search.split('&q=')[1].split('&')[0] + '</span> 找到的我吗？';
         } else if (domain == 'google') {
-          text += '来自 谷歌搜索 的朋友<br>欢迎阅读<span style="color:#0099cc;">『' + document.title.split(' - ')[0] + '』</span>';
+          text += '来自 谷歌搜索 的朋友<br>欢迎阅读<span style="color:rgba(239, 47, 17, 0.8);">『' + document.title.split(' - ')[0] + '』</span>';
         } else {
-          text += '来自<span style="color:#0099cc;">&nbsp;' + referrer.hostname + '&nbsp;</span>的朋友,欢迎来到<span style="color:#0099cc;">『' + document.title.split(' | ')[0] + '』</span>&nbsp;玩耍 🙂';
+          text += '来自<span style="color:rgba(239, 47, 17, 0.8);">&nbsp;' + referrer.hostname + '&nbsp;</span>的朋友,欢迎来到<span style="color:rgba(239, 47, 17, 0.8);">『' + document.title.split(' | ')[0] + '』</span>&nbsp;玩耍 🙂';
         }
       } else if (localStorage.getItem('ValineCache') !== ('' || null) && window.location.href == 'https://lishaoy.net/') {
-        text += '<span style="color:#0099cc;"><strong>&nbsp;' + JSON.parse(localStorage.getItem('ValineCache')).nick + '&nbsp;</strong></span>欢迎回来！要继续看 👀 些什么吗';
+        text += '<span style="color:rgba(239, 47, 17, 0.8);"><strong>&nbsp;' + JSON.parse(localStorage.getItem('ValineCache')).nick + '&nbsp;</strong></span>欢迎回来！要继续看 👀 些什么吗';
       } else {
         if (window.location.href == 'https://lishaoy.net/') { //如果是主页
           var now = (new Date()).getHours();
@@ -343,7 +343,7 @@ const dateFormat = (date) => {
             text += '快来逗我玩吧！';
           }
         } else {
-          text = '欢迎阅读<span style="color:#0099cc;">『' + document.title.split(' | ')[0] + '』</span>';
+          text = '欢迎阅读<span style="color:rgba(239, 47, 17, 0.8);">『' + document.title.split(' | ')[0] + '』</span>';
         }
       }
       showMessage(text, 6000);
