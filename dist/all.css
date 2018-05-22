@@ -2354,7 +2354,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #deffd2;
+  background: #cf7af1;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -4321,7 +4321,8 @@ kbd {
 b,
 strong {
   color: #87daff;
-  font-size: 108%;
+  font-size: 104%;
+  text-shadow: none;
 }
 code {
   color: rgba(0,80,152,0.988);
@@ -4367,6 +4368,9 @@ pre,
 }
 .posts-expand .post-body ul li {
   list-style: disc;
+}
+.post-body p a:hover .image-caption {
+  text-decoration: none;
 }
 .per-m-auto {
   margin: 0 auto;
