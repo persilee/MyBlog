@@ -234,7 +234,7 @@ const dateFormat = (date) => {
       }
     });
   }
-  // 鼠标往上滚动 隐藏 header , 鼠标往下滚动 显示 header
+  // 鼠标往下滚动 隐藏 header , 鼠标往上滚动 显示 header
   var p = 0,
     t = 0;
   $(document).on("scroll", function (e) {
@@ -268,32 +268,39 @@ const dateFormat = (date) => {
   });
 
   var _this = null;
+  function UA(){
+      if ($(_this).text().indexOf('Safari') == 0) {
+        $(_this).prepend('<img class="Safari" src="/images/ua/Safari.svg">')
+      } else if ($(_this).text().indexOf('Mac') == 0 || $(_this).text().indexOf('iOS') == 0) {
+        $(_this).prepend('<img class="Apple" src="/images/ua/Apple.svg">')
+      } else if ($(_this).text().indexOf('Chrome') == 0) {
+        $(_this).prepend('<img class="Chrome" src="/images/ua/Chrome.svg">')
+      } else if ($(_this).text().indexOf('Firefox') == 0) {
+        $(_this).prepend('<img class="Firefox" src="/images/ua/Firefox.svg">')
+      } else if ($(_this).text().indexOf('Windows 10') == 0) {
+        $(_this).prepend('<img class="Windows10" src="/images/ua/windows10.svg">')
+      } else if ($(_this).text().indexOf('Windows') == 0 || $(_this).text().indexOf('Windows 7') == 0 || $(_this).text().indexOf('Windows 8') == 0 || $(_this).text().indexOf('Windows 9') == 0) {
+        $(_this).prepend('<img class="Windows7" src="/images/ua/windows7.svg">')
+      } else if ($(_this).text().indexOf('Android') == 0) {
+        $(_this).prepend('<img class="Android" src="/images/ua/Android.svg">')
+      } else if ($(_this).text().indexOf('Ubuntu') == 0) {
+        $(_this).prepend('<img class="Ubuntu" src="/images/ua/ubuntu.svg">')
+      } else if ($(_this).text().indexOf('Linux') == 0) {
+        $(_this).prepend('<img class="Linux" src="/images/ua/Linux.svg">')
+      } else if ($(_this).text().indexOf('Microsoft Edge') == 0 || $(_this).text().indexOf('MSIE') == 0) {
+        $(_this).prepend('<img class="IE" src="/images/ua/IE.png">')
+      } else if ($(_this).text().indexOf('Sogou') == 0) {
+        $(_this).prepend('<img class="sogou" src="/images/ua/sogou.svg">')
+
+      }
+  };
   function isUA(){
-    if ($(_this).text().indexOf('Safari') == 0) {
-      $(_this).prepend('<img class="Safari" src="/images/ua/Safari.svg">')
-    } else if ($(_this).text().indexOf('Mac OS') == 0 || $(_this).text().indexOf('iOS') == 0) {
-      $(_this).prepend('<img class="Apple" src="/images/ua/Apple.svg">')
-    } else if ($(_this).text().indexOf('Chrome') == 0) {
-      $(_this).prepend('<img class="Chrome" src="/images/ua/Chrome.svg">')
-    } else if ($(_this).text().indexOf('Firefox') == 0) {
-      $(_this).prepend('<img class="Firefox" src="/images/ua/Firefox.svg">')
-    } else if ($(_this).text().indexOf('Windows 10') == 0) {
-      $(_this).prepend('<img class="Windows10" src="/images/ua/windows10.svg">')
-    } else if ($(_this).text().indexOf('Windows') == 0 || $(_this).text().indexOf('Windows 7') == 0 || $(_this).text().indexOf('Windows 8') == 0 || $(_this).text().indexOf('Windows 9') == 0) {
-      $(_this).prepend('<img class="Windows7" src="/images/ua/windows7.svg">')
-    } else if ($(_this).text().indexOf('Android') == 0) {
-      $(_this).prepend('<img class="Android" src="/images/ua/Android.svg">')
-    } else if ($(_this).text().indexOf('Ubuntu') == 0) {
-      $(_this).prepend('<img class="Ubuntu" src="/images/ua/ubuntu.svg">')
-    } else if ($(_this).text().indexOf('Linux') == 0) {
-      $(_this).prepend('<img class="Linux" src="/images/ua/Linux.svg">')
-    } else if ($(_this).text().indexOf('Microsoft Edge') == 0 || $(_this).text().indexOf('MSIE') == 0) {
-      $(_this).prepend('<img class="IE" src="/images/ua/IE.png">')
-    } else if ($(_this).text().indexOf('Sogou') == 0) {
-      $(_this).prepend('<img class="sogou" src="/images/ua/sogou.svg">')
-
+    if($(window).width() <= 520){
+      $(_this).text($(_this).text().split(' ').shift());
+      UA();
+    }else{
+      UA();
     }
-
   };
   var addTipsTime = setInterval(function(){
     var text;
@@ -303,11 +310,11 @@ const dateFormat = (date) => {
         text = '喵~ 我是 <span style="color:#fdb9b9">hijiki&nbsp;🐱</span>...</br>';
       else
         text = '喵~ 我是 <span style="color:#fdb9b9">tororo&nbsp;🐱</span>...</br>';
-      if (document.referrer !== '' && document.referrer !== 'https://lishaoy.net/') {
+      if (document.referrer !== '' && document.referrer !== 'https://h.lishaoy.net/') {
         var referrer = document.createElement('a');
         referrer.href = document.referrer;
         var domain = referrer.hostname.split('.')[1];
-        if (referrer.hostname == 'lishaoy.net') {
+        if (referrer.hostname == 'h.lishaoy.net') {
           text += '欢迎来到&nbsp;<span style="color:rgba(239, 47, 17, 0.8);">『' + document.title.split(' | ')[0] + '』</span>,感谢您继续参观本站 🙂';
         } else if (domain == 'baidu') {
           text += '来自 百度搜索 的朋友<br>你是搜索 <span style="color:rgba(239, 47, 17, 0.8);">' + referrer.search.split('&wd=')[1].split('&')[0] + '</span> 找到的我吗？';
@@ -318,10 +325,10 @@ const dateFormat = (date) => {
         } else {
           text += '来自<span style="color:rgba(239, 47, 17, 0.8);">&nbsp;' + referrer.hostname + '&nbsp;</span>的朋友,欢迎来到<span style="color:rgba(239, 47, 17, 0.8);">『' + document.title.split(' | ')[0] + '』</span>&nbsp;玩耍 🙂';
         }
-      } else if (localStorage.getItem('ValineCache') !== ('' || null) && window.location.href == 'https://lishaoy.net/') {
+      } else if (localStorage.getItem('ValineCache') !== ('' || null) && window.location.href == 'https://h.lishaoy.net/') {
         text += '<span style="color:rgba(239, 47, 17, 0.8);"><strong>&nbsp;' + JSON.parse(localStorage.getItem('ValineCache')).nick + '&nbsp;</strong></span>欢迎回来！要继续看 👀 些什么吗';
       } else {
-        if (window.location.href == 'https://lishaoy.net/') { //如果是主页
+        if (window.location.href == 'https://h.lishaoy.net/') { //如果是主页
           var now = (new Date()).getHours();
           if (now > 23 || now <= 5) {
             text += '你是夜猫子呀？这么晚还不睡觉，明天起的来嘛';
@@ -363,7 +370,9 @@ const dateFormat = (date) => {
       }
     }, 100);
     var addUBZime_g = setInterval(function () {
-      if ($('.vhead .vname[href="https://lishaoy.net"]~.bozhu').length == 0) {
+      if ($('.vhead .vname[href="https://h.lishaoy.net"]~.bozhu').length == 0) {
+        $('.vhead .vname[href="https://h.lishaoy.net"]').after('<span class = "bozhu">博主</span>');
+      } else if ($('.vhead .vname[href="https://lishaoy.net"]~.bozhu').length == 0) {
         $('.vhead .vname[href="https://lishaoy.net"]').after('<span class = "bozhu">博主</span>');
       } else {
         clearInterval(addUBZime_g);
@@ -382,7 +391,8 @@ const dateFormat = (date) => {
       }
     }, 1000);
     var addUBZime = setInterval(function () {
-      if ($('.vhead').eq(0).find('.vname[href="https://lishaoy.net"]~.bozhu').length == 0) {
+      if ($('.vhead').eq(0).find('.vname[href="https://h.lishaoy.net"]~.bozhu').length == 0 && $('.vhead').eq(0).find('.vname[href="https://lishaoy.net"]~.bozhu').length == 0) {
+        $('.vhead').eq(0).find('.vname[href="https://h.lishaoy.net"]').after('<span class = "bozhu">博主</span>');
         $('.vhead').eq(0).find('.vname[href="https://lishaoy.net"]').after('<span class = "bozhu">博主</span>');
       } else {
         clearInterval(addUBZime);
@@ -402,17 +412,49 @@ const dateFormat = (date) => {
         clearInterval(addUVTime);
       }
     }, 1000);
-    var addUBZime = setInterval(function () {
-      if ($('.vhead:last .vname[href="https://lishaoy.net"]~.bozhu').length  == 0) {
-        $('.vhead .vname[href="https://lishaoy.net"]').each(function(){
+    var addUBZimeMore = setInterval(function () {
+      if ($('.vhead:last .vname[href="https://h.lishaoy.net"]~.bozhu').length == 0 && $('.vhead:last .vname[href="https://lishaoy.net"]~.bozhu').length == 0) {
+        $('.vhead .vname[href="https://lishaoy.net"]').each(function () {
+          if ($(this).siblings('.bozhu').length == 0) {
+            $(this).after('<span class = "bozhu">博主</span>');
+          }
+        });
+        $('.vhead .vname[href="https://h.lishaoy.net"]').each(function(){
           if ($(this).siblings('.bozhu').length == 0){
             $(this).after('<span class = "bozhu">博主</span>');
           }
         });
       } else {
-        clearInterval(addUBZime);
+        clearInterval(addUBZimeMore);
       };
     }, 1000);
   })
+
+  //百度统计
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?a6c4f77e87e7fd898fd9fff81505d737";
+    var s = document.getElementsByTagName("script")[0];
+    var l = document.getElementsByTagName("script").length;
+    var s = document.getElementsByTagName("script")[l - 1];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  //<!-- Global site tag (gtag.js) - Google Analytics -->
+  // <script async src = "https://www.googletagmanager.com/gtag/js?id=UA-120619444-2">< /script>
+  (function () {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120619444-1');
+  })();
+  // service worker 缓存
+  "serviceWorker" in navigator ? navigator.serviceWorker.register('/sw.js').then(function () {
+    navigator.serviceWorker.controller ? console.log("Assets cached by the controlling service worker.") : console.log("Please reload this page to allow the service worker to handle network operations.")
+  }).catch(function (e) {
+    console.log("ERROR: " + e)
+  }) : console.log("Service workers are not supported in the current browser.");
+  $('img.hidden').parent('a.fancybox').css('display','none');
 });
 

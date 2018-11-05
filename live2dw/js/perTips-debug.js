@@ -33,9 +33,13 @@ $(document).on('copy', function () {
   showMessage('你都复制了些什么呀，转载要记得加上出处哦', 6000);
 });
 
+var curWwwPath = window.document.location.href;
+var pathName = window.document.location.pathname;
+var pos = curWwwPath.indexOf(pathName);
+var localhostPaht = curWwwPath.substring(0, pos);
 $.ajax({
   cache: true,
-  url: "../live2dw/data/perTips.json",
+  url: localhostPaht + "/live2dw/data/perTips.json",
   dataType: "json",
   success: function (result) {
     $.each(result.mouseover, function (index, tips) {
