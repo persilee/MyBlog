@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>李少颖的博客</description>
-    <pubDate>Mon, 05 Nov 2018 23:48:44 GMT</pubDate>
+    <pubDate>Tue, 06 Nov 2018 13:03:22 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -20,8 +20,8 @@
       
         &lt;span itemprop=&quot;image&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/ImageObject&quot;&gt;&lt;img itemprop=&quot;url image&quot; src=&quot;/images/loading.gif&quot; data-original=&quot;beautifulFlutter/flutter_750x400.png&quot; class=&quot;full-image&quot; alt=&quot;Flutter&quot; title=&quot;Flutter&quot;&gt;&lt;meta itemprop=&quot;width&quot; content=&quot;auto&quot;&gt;&lt;meta itemprop=&quot;height&quot; content=&quot;auto&quot;&gt;&lt;/span&gt;
 &lt;p&gt;最近，学习了一些 &lt;code&gt;Flutter&lt;/code&gt; 相关的知识，做了如下的小移动应用，当然是一套代码即可在 &lt;code&gt;IOS&lt;/code&gt; 平台运行,也可以在 &lt;code&gt;Android&lt;/code&gt; 运行。&lt;/p&gt;
-&lt;p&gt;下面我将手拉手带大家快速的构建出漂亮的移动应用界面（如下👇小视频）&lt;/p&gt;
-&lt;video id=&quot;text1&quot; class=&quot;video-js vjs-default-skin&quot; controls preload=&quot;auto&quot; poster=&quot;https://cdn.lishaoy.net/flutter_start/flutter5.1.png&quot; data-setup=&quot;{&#39;example_option&#39;:true}&quot;&gt;
+&lt;p&gt;下面我将手拉手带您快速构建出漂亮的移动应用界面（如下👇小视频）&lt;/p&gt;
+&lt;video id=&quot;flutter&quot; class=&quot;video-js vjs-default-skin&quot; controls preload=&quot;auto&quot; poster=&quot;https://cdn.lishaoy.net/flutter_start/flutter5.1.png&quot; data-setup=&quot;{&#39;example_option&#39;:true}&quot;&gt;
     &lt;source src=&quot;https://cdn.lishaoy.net/flutter_start/flutter7.mp4&quot; type=&quot;video/mp4&quot;&gt;
 &lt;/video&gt;
 
@@ -29,7 +29,7 @@
       
       </description>
       
-      <content:encoded><![CDATA[<span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/loading.gif" data-original="beautifulFlutter/flutter_750x400.png" class="full-image" alt="Flutter" title="Flutter"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><p>最近，学习了一些 <code>Flutter</code> 相关的知识，做了如下的小移动应用，当然是一套代码即可在 <code>IOS</code> 平台运行,也可以在 <code>Android</code> 运行。</p><p>下面我将手拉手带大家快速的构建出漂亮的移动应用界面（如下👇小视频）</p><video id="text1" class="video-js vjs-default-skin" controls preload="auto" poster="https://cdn.lishaoy.net/flutter_start/flutter5.1.png" data-setup="{'example_option':true}">    <source src="https://cdn.lishaoy.net/flutter_start/flutter7.mp4" type="video/mp4"></video><hr><a id="more"></a><h2 id="初识-Flutter"><a href="#初识-Flutter" class="headerlink" title="初识 Flutter"></a>初识 Flutter</h2><p><a href="https://flutterchina.club" target="_blank" rel="noopener">Flutter</a> 是谷歌的移动UI框架，可以快速在iOS和Android上构建高质量的原生用户界面。</p><h3 id="未完待续…"><a href="#未完待续…" class="headerlink" title="未完待续…"></a>未完待续…</h3>]]></content:encoded>
+      <content:encoded><![CDATA[<span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/loading.gif" data-original="beautifulFlutter/flutter_750x400.png" class="full-image" alt="Flutter" title="Flutter"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><p>最近，学习了一些 <code>Flutter</code> 相关的知识，做了如下的小移动应用，当然是一套代码即可在 <code>IOS</code> 平台运行,也可以在 <code>Android</code> 运行。</p><p>下面我将手拉手带您快速构建出漂亮的移动应用界面（如下👇小视频）</p><video id="flutter" class="video-js vjs-default-skin" controls preload="auto" poster="https://cdn.lishaoy.net/flutter_start/flutter5.1.png" data-setup="{'example_option':true}">    <source src="https://cdn.lishaoy.net/flutter_start/flutter7.mp4" type="video/mp4"></video><hr><a id="more"></a><h2 id="初识-Flutter"><a href="#初识-Flutter" class="headerlink" title="初识 Flutter"></a>初识 Flutter</h2><p><a href="https://flutterchina.club" target="_blank" rel="noopener">Flutter</a> 是谷歌的移动UI框架，可以快速在iOS和Android上构建高质量的原生用户界面。</p><p>Google 推出 Flutter 移动应用框架已经有三年，直到今年的 Google I/O 开发大会才正式介绍 Flutter 且发布 Beta 版本, <a href="https://www.youtube.com/watch?v=w2TcYP8qiRI" target="_blank" rel="noopener">Flutter Google I/O 视频</a> 这个是 Flutter 在油管（YouTube）的 Google I/O 开发者大会的视频，请自行观看。</p><p>再来看看更加生动的视频介绍，加速您的初识 Flutter</p><video id="IntroducingFlutter" class="video-js vjs-default-skin" controls preload="auto" poster="https://cdn.lishaoy.net/beautifulFlutter/IntroducingFlutter1.png" data-setup="{'example_option':true}">    <source src="https://cdn.lishaoy.net/beautifulFlutter/IntroducingFlutter.mp4" type="video/mp4"></video><p>Google 的广告应用 Adwords，阿里的闲鱼 App 都是基于 Flutter 框架开发的。</p><h3 id="未完待续…"><a href="#未完待续…" class="headerlink" title="未完待续…"></a>未完待续…</h3>]]></content:encoded>
       
       <comments>https://www.h.lishaoy.net/beautifulFlutter.html#disqus_thread</comments>
     </item>

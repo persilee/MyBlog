@@ -1,6 +1,6 @@
 "use strict";
 (function () {
-  var cacheVersion = "20180527";
+  var cacheVersion = "201801103";
   var staticImageCacheName = "image" + cacheVersion;
   var staticAssetsCacheName = "assets" + cacheVersion;
   var contentCacheName = "content" + cacheVersion;
@@ -67,5 +67,5 @@
   });
   self.addEventListener("activate", function (event) {
     return event.waitUntil(self.clients.claim())
-  })
+  });
 })();
