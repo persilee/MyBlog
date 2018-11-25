@@ -291,7 +291,8 @@ const dateFormat = (date) => {
         $(_this).prepend('<img class="IE" src="/images/ua/IE.png">')
       } else if ($(_this).text().indexOf('Sogou') == 0) {
         $(_this).prepend('<img class="sogou" src="/images/ua/sogou.svg">')
-
+      } else if ($(_this).text().indexOf('XiaoMi') == 0) {
+        $(_this).prepend('<img class="xiaomi" src="/images/ua/xiaomi.svg">')
       }
   };
   function isUA(){

@@ -2361,7 +2361,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #cf3660;
+  background: #b834ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3897,7 +3897,8 @@ hr {
 .vhead .vsys img.Android,
 .vhead .vsys img.Firefox,
 .vhead .vsys img.Linux,
-.vhead .vsys img.sogou {
+.vhead .vsys img.sogou,
+.vhead .vsys img.xiaomi {
   width: 14px;
   height: 14px;
 }
