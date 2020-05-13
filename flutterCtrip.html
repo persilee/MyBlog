@@ -154,7 +154,7 @@
 <meta property="og:image" content="https://cdn.lishaoy.net/flutterCtrip/destination-search.gif">
 <meta property="og:image" content="https://cdn.lishaoy.net/flutterCtrip/travel.gif">
 <meta property="og:image" content="https://cdn.lishaoy.net/flutterCtrip/travel-search.gif">
-<meta property="og:updated_time" content="2020-05-12T07:51:31.364Z">
+<meta property="og:updated_time" content="2020-05-13T03:08:47.004Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flutter 10天高仿大厂App及小技巧积累总结">
 <meta name="twitter:description" content="之前，也写过几篇关于 Flutter 的博文，最近，又花了一些时间学习研究 Flutter，完成了高仿大厂 App 项目 (项目使用的接口都是来自线上真实App抓包而来，可以做到和线上项目相同的效果)，也总结积累了一些小技巧和知识点，所以，在这里记录分享出来，也希望 Flutter 生态越来越好 （flutter开发App效率真的很高，开发体验也是很好的 🙂）。">
@@ -381,7 +381,7 @@
     <div class="post-time-count">11</div>
     <div class="text-desc">
 			<div class="date-text">更新于</div>
-      <div class="post-tiem">5月12</div>
+      <div class="post-tiem">5月13</div>
       <div class="post-year">2020</div>
 		</div>
   </div>
@@ -455,8 +455,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-05-12T15:51:31+08:00">
-                2020-05-12
+              <time title="更新于" itemprop="dateModified" datetime="2020-05-13T11:08:47+08:00">
+                2020-05-13
               </time>
             
           </span>
@@ -548,7 +548,7 @@
 <li>小技巧积累总结</li>
 </ul>
 <h2 id="项目完成的功能预览"><a href="#项目完成的功能预览" class="headerlink" title="项目完成的功能预览"></a>项目完成的功能预览</h2><p>首先，我们来通过一个视频来快速预览下项目完成的功能和运行效果，如下</p>
-<video id="flutter" class="video-js vjs-default-skin" controls preload="auto" poster="https://cdn.lishaoy.net/flutterCtrip/ctrip.png" data-setup="{'example_option':true}">
+<video id="flutter" class="video-js vjs-default-skin" controls preload="auto" poster="https://cdn.lishaoy.net/ctrip/ctripV.png" data-setup="{'example_option':true}">
     <source src="https://cdn.lishaoy.net/flutterCtrip/ctrip.mp4" type="video/mp4">
 </video>
 
@@ -566,14 +566,14 @@
 <p>整个项目就是以上这些文件了 <em>（具体的就不一个一个分析了，如，感兴趣，大家可以 clone 源码运行起来，自然就清除了）</em>。</p>
 <h2 id="项目功能详细概述（所用知识点）"><a href="#项目功能详细概述（所用知识点）" class="headerlink" title="项目功能详细概述（所用知识点）"></a>项目功能详细概述（所用知识点）</h2><p>首先，来看看首页功能及所用知识点，首页重点看下以下功能实现：</p>
 <ul>
-<li>渐隐渐现的 <strong>appBbar</strong> </li>
+<li>渐隐渐现的 <strong>appBar</strong> </li>
 <li>搜索组件的封装</li>
 <li>语音搜索页面</li>
 <li>banner组件</li>
 <li>浮动的 icon 导航</li>
 <li>渐变不规则带有背景图的网格导航</li>
 </ul>
-<h3 id="渐隐渐现的-appBbar"><a href="#渐隐渐现的-appBbar" class="headerlink" title="渐隐渐现的 appBbar"></a>渐隐渐现的 appBbar</h3><p>先来看看具体效果，一睹芳容，如图：</p>
+<h3 id="渐隐渐现的-appBar"><a href="#渐隐渐现的-appBar" class="headerlink" title="渐隐渐现的 appBar"></a>渐隐渐现的 appBar</h3><p>先来看看具体效果，一睹芳容，如图：</p>
 <div style="width:36%; margin:auto"><img src="https://cdn.lishaoy.net/flutterCtrip/appBar.gif" alt="no-shadow" title="appBar"></div>
 
 <p>滚动的时候 <strong>appBar</strong> 背景色从透明变成白色或白色变成透明，这里主要用了 <strong>flutter</strong> 的 <code>NotificationListener</code> 组件，它会去监听组件树冒泡事件，当被它包裹的的组件<em>（子组件）</em> 发生变化时，<code>Notification</code> 回调函数会被触发，所以，通过它可以去监听页面的滚动，来动态改变 <strong>appBar</strong> 的透明度<em>（alpha）</em>，代码如下：</p>
@@ -724,7 +724,7 @@
   <p><span>本文标题:</span><a href="/flutterCtrip.html">Flutter 10天高仿大厂App及小技巧积累总结</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 李少颖（persilee） 的个人博客">李少颖（persilee）</a></p>
   <p><span>发布时间:</span>2020年05月11日 - 21:05</p>
-  <p><span>最后更新:</span>2020年05月12日 - 15:05</p>
+  <p><span>最后更新:</span>2020年05月13日 - 11:05</p>
   <p><span>原始链接:</span><a href="/flutterCtrip.html" title="Flutter 10天高仿大厂App及小技巧积累总结">https://www.h.lishaoy.net/flutterCtrip.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.h.lishaoy.net/flutterCtrip.html" aria-label=" 复制成功！"></i></span>
   </p>
@@ -1038,7 +1038,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目完成的功能预览"><span class="nav-number">1.</span> <span class="nav-text">项目完成的功能预览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目结构分析"><span class="nav-number">2.</span> <span class="nav-text">项目结构分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目功能详细概述（所用知识点）"><span class="nav-number">3.</span> <span class="nav-text">项目功能详细概述（所用知识点）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#渐隐渐现的-appBbar"><span class="nav-number">3.1.</span> <span class="nav-text">渐隐渐现的 appBbar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索组件的封装"><span class="nav-number">3.2.</span> <span class="nav-text">搜索组件的封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语音搜索页面"><span class="nav-number">3.3.</span> <span class="nav-text">语音搜索页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#banner组件"><span class="nav-number">3.4.</span> <span class="nav-text">banner组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮动的-icon-导航"><span class="nav-number">3.5.</span> <span class="nav-text">浮动的 icon 导航</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渐变不规则带有背景图的网格导航"><span class="nav-number">3.6.</span> <span class="nav-text">渐变不规则带有背景图的网格导航</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#左右布局tabBarListView"><span class="nav-number">3.7.</span> <span class="nav-text">左右布局tabBarListView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目的地搜索页面"><span class="nav-number">3.8.</span> <span class="nav-text">目的地搜索页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#左右布局tabBarListView-1"><span class="nav-number">3.9.</span> <span class="nav-text">左右布局tabBarListView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#瀑布流卡片"><span class="nav-number">3.10.</span> <span class="nav-text">瀑布流卡片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#旅拍搜索页"><span class="nav-number">3.11.</span> <span class="nav-text">旅拍搜索页</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小技巧积累总结"><span class="nav-number">4.</span> <span class="nav-text">小技巧积累总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PhysicalModel"><span class="nav-number">4.1.</span> <span class="nav-text">PhysicalModel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LinearGradient"><span class="nav-number">4.2.</span> <span class="nav-text">LinearGradient</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Color-int-parse-‘0xff’-gridNavItem-startColor"><span class="nav-number">4.3.</span> <span class="nav-text">Color(int.parse(‘0xff’ + gridNavItem.startColor))</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Expanded、FractionallySizedBox"><span class="nav-number">4.4.</span> <span class="nav-text">Expanded、FractionallySizedBox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MediaQuery-removePadding"><span class="nav-number">4.5.</span> <span class="nav-text">MediaQuery.removePadding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MediaQuery-of-context-size-width"><span class="nav-number">4.6.</span> <span class="nav-text">MediaQuery.of(context).size.width</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Theme-of-context-platform-TargetPlatform-iOS"><span class="nav-number">4.7.</span> <span class="nav-text">Theme.of(context).platform == TargetPlatform.iOS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#with-AutomaticKeepAliveClientMixin"><span class="nav-number">4.8.</span> <span class="nav-text">with AutomaticKeepAliveClientMixin</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目完成的功能预览"><span class="nav-number">1.</span> <span class="nav-text">项目完成的功能预览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目结构分析"><span class="nav-number">2.</span> <span class="nav-text">项目结构分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目功能详细概述（所用知识点）"><span class="nav-number">3.</span> <span class="nav-text">项目功能详细概述（所用知识点）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#渐隐渐现的-appBar"><span class="nav-number">3.1.</span> <span class="nav-text">渐隐渐现的 appBar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索组件的封装"><span class="nav-number">3.2.</span> <span class="nav-text">搜索组件的封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语音搜索页面"><span class="nav-number">3.3.</span> <span class="nav-text">语音搜索页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#banner组件"><span class="nav-number">3.4.</span> <span class="nav-text">banner组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮动的-icon-导航"><span class="nav-number">3.5.</span> <span class="nav-text">浮动的 icon 导航</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渐变不规则带有背景图的网格导航"><span class="nav-number">3.6.</span> <span class="nav-text">渐变不规则带有背景图的网格导航</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#左右布局tabBarListView"><span class="nav-number">3.7.</span> <span class="nav-text">左右布局tabBarListView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目的地搜索页面"><span class="nav-number">3.8.</span> <span class="nav-text">目的地搜索页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#左右布局tabBarListView-1"><span class="nav-number">3.9.</span> <span class="nav-text">左右布局tabBarListView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#瀑布流卡片"><span class="nav-number">3.10.</span> <span class="nav-text">瀑布流卡片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#旅拍搜索页"><span class="nav-number">3.11.</span> <span class="nav-text">旅拍搜索页</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小技巧积累总结"><span class="nav-number">4.</span> <span class="nav-text">小技巧积累总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PhysicalModel"><span class="nav-number">4.1.</span> <span class="nav-text">PhysicalModel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LinearGradient"><span class="nav-number">4.2.</span> <span class="nav-text">LinearGradient</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Color-int-parse-‘0xff’-gridNavItem-startColor"><span class="nav-number">4.3.</span> <span class="nav-text">Color(int.parse(‘0xff’ + gridNavItem.startColor))</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Expanded、FractionallySizedBox"><span class="nav-number">4.4.</span> <span class="nav-text">Expanded、FractionallySizedBox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MediaQuery-removePadding"><span class="nav-number">4.5.</span> <span class="nav-text">MediaQuery.removePadding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MediaQuery-of-context-size-width"><span class="nav-number">4.6.</span> <span class="nav-text">MediaQuery.of(context).size.width</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Theme-of-context-platform-TargetPlatform-iOS"><span class="nav-number">4.7.</span> <span class="nav-text">Theme.of(context).platform == TargetPlatform.iOS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#with-AutomaticKeepAliveClientMixin"><span class="nav-number">4.8.</span> <span class="nav-text">with AutomaticKeepAliveClientMixin</span></a></li></ol></li></ol></div>
             
 
           </div>
