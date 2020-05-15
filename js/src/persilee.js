@@ -313,26 +313,26 @@ const dateFormat = (date) => {
     if ($('#live2d-widget .per-tips').length == 0) {
       $('#live2d-widget').prepend('<div class="per-tips"></div >');
       if (jsonPath == '/live2dw/assets/hijiki.model.json')
-        text = '喵~ 我是 <span style="color:#fdb9b9">hijiki&nbsp;🐱</span>...</br>';
+        text = '喵~ 我是 <span style="color:rgba(155, 39, 176, 0.86)">hijiki&nbsp;🐱</span>...</br>';
       else
-        text = '喵~ 我是 <span style="color:#fdb9b9">tororo&nbsp;🐱</span>...</br>';
+        text = '喵~ 我是 <span style="color:rgba(155, 39, 176, 0.86)">tororo&nbsp;🐱</span>...</br>';
       if (document.referrer !== '' && document.referrer !== 'https://h.lishaoy.net/') {
         var referrer = document.createElement('a');
         referrer.href = document.referrer;
         var domain = referrer.hostname.split('.')[1];
         if (referrer.hostname == 'h.lishaoy.net') {
-          text += '欢迎来到&nbsp;<span style="color:rgba(239, 47, 17, 0.8);">『' + document.title.split(' | ')[0] + '』</span>,感谢您继续参观本站 🙂';
+          text += '欢迎来到&nbsp;<span style="color:rgba(0, 150, 136, 0.86);">『' + document.title.split(' | ')[0] + '』</span>,感谢您继续参观本站 🙂';
         } else if (domain == 'baidu') {
-          text += '来自 百度搜索 的朋友<br>你是搜索 <span style="color:rgba(239, 47, 17, 0.8);">' + referrer.search.split('&wd=')[1].split('&')[0] + '</span> 找到的我吗？';
+          text += '来自 百度搜索 的朋友<br>你是搜索 <span style="color:rgba(0, 150, 136, 0.86);">' + referrer.search.split('&wd=')[1].split('&')[0] + '</span> 找到的我吗？';
         } else if (domain == 'so') {
-          text += '来自 360搜索 的朋友<br>你是搜索 <span style="color:rgba(239, 47, 17, 0.8);">' + referrer.search.split('&q=')[1].split('&')[0] + '</span> 找到的我吗？';
+          text += '来自 360搜索 的朋友<br>你是搜索 <span style="color:rgba(0, 150, 136, 0.86);">' + referrer.search.split('&q=')[1].split('&')[0] + '</span> 找到的我吗？';
         } else if (domain == 'google') {
-          text += '来自 谷歌搜索 的朋友<br>欢迎阅读<span style="color:rgba(239, 47, 17, 0.8);">『' + document.title.split(' - ')[0] + '』</span>';
+          text += '来自 谷歌搜索 的朋友<br>欢迎阅读<span style="color:rgba(0, 150, 136, 0.86);">『' + document.title.split(' - ')[0] + '』</span>';
         } else {
-          text += '来自<span style="color:rgba(239, 47, 17, 0.8);">&nbsp;' + referrer.hostname + '&nbsp;</span>的朋友,欢迎来到<span style="color:rgba(239, 47, 17, 0.8);">『' + document.title.split(' | ')[0] + '』</span>&nbsp;玩耍 🙂';
+          text += '来自<span style="color:rgba(0, 150, 136, 0.86);">&nbsp;' + referrer.hostname + '&nbsp;</span>的朋友,欢迎来到<span style="color:rgba(0, 150, 136, 0.86);">『' + document.title.split(' | ')[0] + '』</span>&nbsp;玩耍 🙂';
         }
       } else if (localStorage.getItem('ValineCache') !== ('' || null) && window.location.href == 'https://h.lishaoy.net/') {
-        text += '<span style="color:rgba(239, 47, 17, 0.8);"><strong>&nbsp;' + JSON.parse(localStorage.getItem('ValineCache')).nick + '&nbsp;</strong></span>欢迎回来！要继续看 👀 些什么吗';
+        text += '<span style="color:rgba(0, 150, 136, 0.86);"><strong>&nbsp;' + JSON.parse(localStorage.getItem('ValineCache')).nick + '&nbsp;</strong></span>欢迎回来！要继续看 👀 些什么吗';
       } else {
         if (window.location.href == 'https://h.lishaoy.net/') { //如果是主页
           var now = (new Date()).getHours();

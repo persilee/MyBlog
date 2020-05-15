@@ -2082,7 +2082,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff52b0;
+  background: #fff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3474,19 +3474,19 @@ hr {
   color: #f5f5f5;
 }
 .tag-cloud-tags a {
-  background-color: rgba(135,218,255,0.102);
+  background-color: rgba(255,87,34,0.36);
   border: 1px solid rgba(135,218,255,0.141);
   color: #eaeaea;
   padding: 0 12px;
   border-radius: 20px;
-  box-shadow: 0 0 5px rgba(135,218,255,0.38);
+  box-shadow: 0 0 5px rgba(255,152,0,0.53);
   margin: 6px 8px 0 0;
   line-height: 1.6;
   transition: all 0.5s;
 }
 .tag-cloud-tags a:hover {
-  background-color: rgba(135,218,255,0.78);
-  box-shadow: 0 0 6px #f6f6f6;
+  background-color: rgba(0,150,136,0.78);
+  box-shadow: 0 0 6px #78909c;
 }
 .tag-cloud-title,
 .category-all-title {
@@ -3607,12 +3607,12 @@ hr {
 .archive .posts-collapse .post-header:hover a,
 .tag .posts-collapse .post-header:hover a,
 .category .posts-collapse .post-header:hover a {
-  color: #87daff;
+  color: rgba(0,150,136,0.86);
 }
 .archive .posts-collapse .post-header:hover time,
 .tag .posts-collapse .post-header:hover time,
 .category .posts-collapse .post-header:hover time {
-  color: #87daff;
+  color: rgba(0,150,136,0.86);
 }
 .archive .posts-collapse .post-header:hover::before,
 .tag .posts-collapse .post-header:hover::before,
@@ -3622,10 +3622,10 @@ hr {
   -ms-transform: scale(1.5);
   -o-transform: scale(1.5);
   transform: scale(1.5);
-  background: #87daff;
+  background: rgba(0,150,136,0.86);
 }
 .archive .posts-collapse .post-header:hover .leancloud-visitors-count {
-  color: #f00;
+  color: #ff5722;
 }
 .post-block.tag,
 .post-block.category {
@@ -3895,12 +3895,12 @@ hr {
 .per-guestbook-page .mark-main {
   font-size: 16px;
   font-weight: bold;
-  color: #87daff;
+  color: rgba(255,87,34,0.902);
 }
 .per-guestbook-page .mark-secondary {
   font-size: 14px;
   font-weight: bold;
-  color: #87daff;
+  color: rgba(255,87,34,0.902);
 }
 blockquote {
   color: rgba(255,255,255,0.86);
@@ -4391,7 +4391,7 @@ pre,
   width: 100%;
   height: 100%;
   z-index: 1000;
-  background: #000;
+  background: rgba(0,0,0,0.36);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
