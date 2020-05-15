@@ -7,6 +7,9 @@ $(function () {
   var superSample = 0;
   var hOffset = 0;
   var vOffset = 0;
+
+  $('body').addClass('change'+ (Math.floor(Math.random() * 10) + 1));
+
   if ($(window).width() <= 1024) {
     opacityDefault = 1;
     superSample = 1.6;
