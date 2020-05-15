@@ -29,8 +29,8 @@
     box-sizing: border-box;
     border: 1px solid rgba(120, 195, 229, 0.22);
     border-radius: 12px;
-    background-color: rgba(120, 195, 229, 0.48);
-    box-shadow: 0 3px 15px 2px #87daff73;
+    background-color: rgba(255, 87, 34, 0.46);
+    box-shadow: 0 3px 15px 2px #ff980054;
     font-size: 12px;
     text-overflow: ellipsis;
     line-height: 1.5;
@@ -41,7 +41,6 @@
     animation-iteration-count: infinite;
     animation-name: shake;
     animation-timing-function: ease-in-out;
-
 }
 
 

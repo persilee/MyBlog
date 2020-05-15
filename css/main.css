@@ -2082,7 +2082,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b0f9ff;
+  background: #ff52b0;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3182,6 +3182,15 @@ hr {
   color: #555;
   border-bottom-color: #555;
 }
+.sidebar-nav li:hover {
+  color: #795548;
+}
+.sidebar-nav .sidebar-nav-active:hover {
+  color: #607d8b;
+}
+.page-post-detail .sidebar-toggle-line {
+  background: #ff8a65;
+}
 .sidebar-nav .sidebar-nav-active {
   color: #607d8b;
   border-bottom-color: #607d8b;
@@ -3189,6 +3198,19 @@ hr {
 .post-toc ol a:hover {
   color: #607d8b;
   border-bottom-color: #607d8b;
+}
+.post-toc .nav .active > a {
+  color: #795548;
+  border-bottom-color: #795548;
+}
+.post-toc .nav .active-current > a {
+  color: #795548;
+}
+.post-toc .nav .active-current > a {
+  color: #795548;
+}
+.links-of-author a:before {
+  background: #ff5722;
 }
 .status_btn {
   width: auto;
@@ -3240,7 +3262,7 @@ hr {
 .post-button a.btn {
   color: #f6f6f6;
   margin: 0 !important;
-  background-color: #87daff;
+  background-color: rgba(255,87,34,0.859);
   padding: 1px 6px;
   border-radius: 4px;
   transition-property: background-color;
@@ -3250,7 +3272,7 @@ hr {
 }
 .post-date,
 .post-date .text-desc {
-  background-color: #97dffd;
+  background-color: rgba(255,87,34,0.859);
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
   position: absolute;
   top: -22px;
@@ -3301,7 +3323,7 @@ hr {
   top: 130px;
   border-color: #47456d;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
-  background-color: #97dffd;
+  background-color: rgba(255,87,34,0.859);
   margin: 5px 0 15px 2px;
   font-size: 14px;
   border-radius: 0 4px 4px 0;
@@ -3720,10 +3742,10 @@ hr {
   font-size: 12px;
   margin-right: 10px;
   color: #fff;
-  background: #78c3e5;
+  background: rgba(255,87,34,0.49);
   border-radius: 2px;
   padding: 0 3px;
-  box-shadow: 0 0 7px #78c3e5;
+  box-shadow: 0 0 7px rgba(255,152,0,0.2);
   border: 1px solid rgba(246,246,246,0.161);
   font-weight: bold;
 }
@@ -4118,7 +4140,7 @@ nav.pagination a:hover {
 }
 .footer {
   background: transparent;
-  color: #ccc;
+  color: #eee;
 }
 .footer a {
   border-bottom-color: #555;
@@ -4281,10 +4303,10 @@ strong {
   text-shadow: none;
 }
 code {
-  color: rgba(0,80,152,0.988);
-  background: rgba(135,218,255,0.722);
+  color: #5d4037;
+  background: rgba(255,87,34,0.431);
   border-radius: 4px;
-  box-shadow: 0 0 2px #87daff;
+  box-shadow: 0 0 2px #ff9800;
   font-size: 90%;
 }
 em {
