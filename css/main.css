@@ -2082,7 +2082,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fff;
+  background: #e3ffc4;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3361,8 +3361,8 @@ hr {
   height: 2px;
   width: 0px;
   border-radius: 2px;
-  background-color: #87daff;
-  box-shadow: 0 0 10px #87daff, 0 0 1px #87daff;
+  background-color: rgba(255,87,34,0.66);
+  box-shadow: 0 0 10px #ffccbc, 0 0 1px #ffab91;
   z-index: 9999;
 }
 #load.header {
@@ -3465,7 +3465,7 @@ hr {
 }
 .collection-title-per h2 {
   font-size: 30px;
-  color: rgba(135,218,255,0.929);
+  color: rgba(255,87,34,0.86);
   text-align: center;
   margin-bottom: 40px;
 }
@@ -4285,7 +4285,7 @@ hr {
 .posts-expand .post-title {
   text-align: center;
 }
-.posts-expand .post-title {
+.page .posts-expand .post-title {
   color: #fff;
 }
 kbd {
