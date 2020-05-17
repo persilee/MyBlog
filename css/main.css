@@ -2082,7 +2082,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d6e2ff;
+  background: #3339b1;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -4128,7 +4128,7 @@ posts-collapse .post-title a {
 .pagination .prev,
 .pagination .next,
 .pagination .page-number {
-  border-top: 1px solid rgba(170,170,170,0.46);
+  border-top: 1px solid rgba(238,238,238,0.588);
 }
 nav.pagination a:hover {
   color: #fff;
