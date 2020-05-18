@@ -185,7 +185,7 @@ th {
 }
 body {
   position: relative;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Roboto', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 14px;
   line-height: 2;
   color: #555;
@@ -218,7 +218,7 @@ h6 {
   padding: 0;
   font-weight: bold;
   line-height: 1.5;
-  font-family: 'Roboto Slab', 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Sansita', 'Roboto', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 h2,
 h3,
@@ -484,7 +484,7 @@ pre,
 }
 pre,
 code {
-  font-family: 'PT Mono', consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
+  font-family: 'Source Code Pro', consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
 }
 code {
   padding: 2px 4px;
@@ -1119,7 +1119,7 @@ pre .javascript .function {
   line-height: 36px;
   font-size: 24px;
   font-weight: normal;
-  font-family: 'Lobster Two', 'Lobster Two', 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Lobster Two', 'Lobster Two', 'Roboto', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .site-subtitle {
   margin-top: 10px;
@@ -1207,7 +1207,7 @@ pre .javascript .function {
   opacity: 0;
 }
 .post-body {
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Roboto', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 @media (max-width: 767px) {
   .post-body {
@@ -1480,7 +1480,7 @@ pre .javascript .function {
 .posts-expand .post-meta {
   margin: 3px 0 60px 0;
   color: #999;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Roboto', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 12px;
   text-align: center;
 }
@@ -2082,7 +2082,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #3e8f91;
+  background: #fff2a2;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -4081,7 +4081,7 @@ posts-collapse .post-title a {
   margin: 8px 8px;
 }
 .menu .menu-item a {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: bold;
 }
 .menu .menu-item a:hover {
@@ -4108,13 +4108,16 @@ posts-collapse .post-title a {
 }
 .header.dark .menu .menu-item a {
   color: #f6f6f6;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: bold;
 }
 .header.dark .menu .menu-item a:hover {
   color: #fff;
 }
 .header.dark .menu .menu-item a:hover::after {
+  background: #fff;
+}
+.header.dark .menu .menu-item a::after {
   background: #fff;
 }
 .header.dark .menu .menu-item.menu-item-active a::after {

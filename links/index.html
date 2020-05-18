@@ -108,7 +108,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.font.im/css?family=Roboto:300,300italic,400,400italic,700,700italic|Sansita:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Source Code Pro:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -214,7 +214,7 @@
 
 
   
-  <link href="https://cdn.lishaoy.net/css/all-3379196113.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.lishaoy.net/css/all-72b88b1d9f.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/video/video-js.css">
 </head>
 
@@ -1363,8 +1363,16 @@
   <script type="text/javascript" src="/js/src/persilee.js"></script>
   -->
   <script> $(function(){ $('#loader').css('display','none');});</script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120619444-1"></script>
+  <!--   google统计
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120619444-1"></script>  -->
 <style>
+    @font-face{
+      font-family: Pacifico;
+      src: url("//cdn.lishaoy.net/font/Pacifico.ttf");
+    }
+    .site-title {
+      font-family: 'Pacifico', 'Lobster Two', 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
     .comments.no-post {
       background: transparent;
     }
@@ -1412,8 +1420,8 @@
         font-size: 108%;
     }
     .v .vlist .vcard .vhead .vsys {
-        background: #87daff17;
-        color: #aaa;
+        background: rgba(255, 87, 34, 0.06);
+        color: rgba(96, 125, 139, 0.45);
         border: 1px solid #87daff1f;
         padding: 1px 5px;
         font-size: 12px;
@@ -1429,7 +1437,7 @@
       border: none;
     }
 
-    .v .vlist .vcard .vcontent a {
+    .no-post.v .vlist .vcard .vcontent a {
       color: #fffffff2;
       border-bottom-color: #ccc;
     }
@@ -1441,6 +1449,14 @@
 
     .no-post.v .vlist .vcard section {
         border-bottom: 1px dashed #f5f5f55e;
+    }
+
+    .no-post.v .vlist .vcard section .vfooter .vtime {
+        color: #eee;
+    }
+
+    .v .vlist .vcard section .vfooter .vtime {
+        color: #9E9E9E;
     }
 
     .v .vwrap .vheader .vinput {
