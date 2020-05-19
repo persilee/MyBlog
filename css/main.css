@@ -2082,7 +2082,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff7324;
+  background: #03ff05;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3159,7 +3159,7 @@ hr {
   position: relative;
   width: 100%;
   border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(249,249,249,0.08), 0 0 0 1px rgba(26,53,71,0.04), 0 1px 1px rgba(26,53,71,0.06);
+  box-shadow: 0 0 30px rgba(255,255,255,0.329);
   margin: 120px auto 80px;
 }
 .status_user {
@@ -3240,6 +3240,9 @@ hr {
     color: #fff;
     text-shadow: 0 2px 3px rgba(0,0,0,0.1);
     width: 90%;
+  }
+  a.status_btn {
+    color: #fff;
   }
   .status_user {
     background-position: center;
