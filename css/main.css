@@ -2082,7 +2082,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b170ff;
+  background: #f11866;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -4533,6 +4533,10 @@ pre,
   .post-body .note.danger {
     margin: 25px -3.9%;
   }
+  .archive .posts-collapse .post-title a span.archive-updated,
+  .archive .posts-collapse .post-title a span.leancloud_visitors {
+    display: none;
+  }
   .pagination .prev,
   .pagination .next,
   .pagination .page-number {
@@ -4586,10 +4590,14 @@ pre,
   .category-all-page .category-list {
     padding-left: 7%;
   }
+  .archive .posts-collapse .post-title a span.archive-updated,
+  .archive .posts-collapse .post-title a span.leancloud_visitors {
+    display: none;
+  }
 }
 @media screen and (min-width: 414px) and (max-width: 767px) {
   body {
-    background-color: #222;
+    background-color: rgba(34,34,34,0.36);
   }
   body::before {
     content: none;
@@ -4676,6 +4684,9 @@ pre,
   .post-date .post-day {
     font-size: 26px;
   }
+  .header.light-header .btn-bar {
+    background: #555;
+  }
 }
 @media screen and (min-width: 450px) and (max-width: 767px) {
   .full-image.full-image.full-image {
@@ -4753,6 +4764,9 @@ pre,
   .post-date .post-day {
     font-size: 26px;
   }
+  .header.light-header .btn-bar {
+    background: #555;
+  }
 }
 @media (max-width: 767px) {
   .header-inner {
@@ -4762,10 +4776,13 @@ pre,
     background: rgba(51,51,51,0.831);
     padding-bottom: 2px;
   }
+  .header.light-header .btn-bar {
+    background: #555;
+  }
 }
 @media screen and (min-width: 375px) and (max-width: 413px) {
   body {
-    background-color: #222;
+    background-color: rgba(34,34,34,0.36);
   }
   body::before {
     content: none;
@@ -4852,10 +4869,13 @@ pre,
   .post-date .post-day {
     font-size: 26px;
   }
+  .header.light-header .btn-bar {
+    background: #555;
+  }
 }
 @media screen and (max-width: 374px) {
   body {
-    background-color: #222;
+    background-color: rgba(34,34,34,0.36);
   }
   body::before {
     content: none;
@@ -4938,6 +4958,9 @@ pre,
   }
   .post-date .post-day {
     font-size: 26px;
+  }
+  .header.light-header .btn-bar {
+    background: #555;
   }
 }
 @-moz-keyframes eleZoom {
