@@ -2082,7 +2082,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #96f0d5;
+  background: #7d4105;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3537,9 +3537,11 @@ hr {
 .archive .posts-collapse .collection-title::before,
 .tag .posts-collapse .collection-title::before,
 .category .posts-collapse .collection-title::before {
-  left: 78px;
+  left: 77px;
   width: 12px;
   height: 12px;
+  background: rgba(96,124,138,0.86);
+  border: 1px solid #ddd;
 }
 .archive .collection-title .archive-year,
 .tag .collection-title .archive-year,
