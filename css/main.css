@@ -2082,7 +2082,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6cffa6;
+  background: #13ffc6;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3924,7 +3924,7 @@ blockquote {
   border-bottom-color: #607d8b;
 }
 body {
-  background-color: rgba(0,0,0,0.26);
+  background-color: rgba(0,0,0,0.36);
   text-shadow: 0 0 1px rgba(0,0,0,0.1);
 }
 body::before {
@@ -4366,6 +4366,8 @@ pre,
 }
 .post-body p a:hover {
   text-decoration: none;
+  border-bottom: 1px dashed #009688;
+  color: #009688;
 }
 .per-m-auto {
   margin: 0 auto;
