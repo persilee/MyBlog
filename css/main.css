@@ -2082,7 +2082,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #13ffc6;
+  background: #ff0f25;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -4199,12 +4199,12 @@ nav.pagination a:hover {
   -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
-.post-body p a {
+.post-body a {
   color: #9e9e9e;
   border-bottom: 1px dashed #9e9e9e;
   padding-bottom: 2px;
 }
-.post-body p a:hover {
+.post-body a:hover {
   color: #0477ab;
   text-decoration: underline;
 }
@@ -4364,7 +4364,7 @@ pre,
 .posts-expand .post-body ul li {
   list-style: disc;
 }
-.post-body p a:hover {
+.post-body a:hover {
   text-decoration: none;
   border-bottom: 1px dashed #009688;
   color: #009688;
@@ -4388,6 +4388,11 @@ pre,
   background-color: #fff;
   border: none;
   padding: 1px;
+}
+.post-body .note {
+  border: 1px solid rgba(238,238,238,0);
+  border-left-width: 2px;
+  border-radius: 1px;
 }
 .post-body .note.success,
 .post-body .note.default,

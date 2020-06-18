@@ -196,7 +196,7 @@
 
 
   
-  <link href="https://cdn.lishaoy.net/css/all-229d078b84.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.lishaoy.net/css/all-d30e361e8b.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/video/video-js.css">
 </head>
 
@@ -373,12 +373,238 @@
   
   
   
+  <div class="post-date" data-datetime="2020-06-19T06:36:43+08:00">
+    <div class="post-time-text">6月</div>
+    <div class="post-time-count">19</div>
+    <div class="text-desc">
+			<div class="date-text">更新于</div>
+      <div class="post-tiem">6月19</div>
+      <div class="post-year">2020</div>
+		</div>
+  </div>
+  
+  
+  
+
+  <div class="post-badge">
+    
+            <span class="post-category">
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Dart/" itemprop="url" rel="index">
+                    <span itemprop="name">Dart</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+    
+  </div>
+
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.h.lishaoy.net/androidCtrip.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李少颖（persilee）">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://cdn.lishaoy.net/images/lsy.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="persilee's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/androidCtrip.html" itemprop="url">Android Flutter 混合开发高仿大厂App</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="发表于" itemprop="dateCreated datePublished" datetime="2020-06-19T06:36:43+08:00">
+                2020-06-19
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-06-19T06:36:49+08:00">
+                2020-06-19
+              </time>
+            
+          </span>
+
+          
+
+
+          
+            
+          
+
+          
+          
+             <span id="/androidCtrip.html" class="leancloud_visitors" data-flag-title="Android Flutter 混合开发高仿大厂App">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count"></span> ℃
+             </span>
+          
+
+          
+
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-pencil-square-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计：</span>
+                
+                <span title="字数统计：">
+                  4,291 (字)
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长：</span>
+                
+                <span title="阅读时长：">
+                  19 (分钟)
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/loading.gif" data-original="https://cdn.lishaoy.net/ctrip/android/android_ctrip_h.png" class="full-image" alt="Flutter" title="Flutter"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>自上篇 <a href="https://h.lishaoy.net/flutterctrip" target="_blank" rel="noopener">Flutter 10天高仿大厂App及小技巧积累总结</a> 的续篇，这次更是干货满满。</p>
+<p>这篇文章将概述 <strong>Android组件化的架构搭建</strong> 及 <strong>Flutter</strong> 和 <strong>Android</strong> 如何混合开发 <em>(整个App只有首页是用原生Android完成，其他页面都是引入之前的做好的Flutter页面)</em> ，主宿主程序由 Android 搭建，采用了组件化的架构搭建整个 <strong>App</strong> ，不同业务，对应不同的 module 工程，业务之间采用接口通信 <em>(ARouter)</em> ，以 module 的形式混入 Flutter，通过 <strong>MethodChannel</strong> 和 <strong>Flutter</strong> 端进行数据通信等，且这些功能实现源码开源，感兴趣的小伙伴可以移步至 <a href="https://github.com/persilee/android_ctrip" target="_blank" rel="noopener">GitHub</a>。</p>
+<hr>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/androidCtrip.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
   <div class="post-date" data-datetime="2020-05-11T21:53:05+08:00">
     <div class="post-time-text">5月</div>
     <div class="post-time-count">11</div>
     <div class="text-desc">
 			<div class="date-text">更新于</div>
-      <div class="post-tiem">5月15</div>
+      <div class="post-tiem">6月19</div>
       <div class="post-year">2020</div>
 		</div>
   </div>
@@ -454,8 +680,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-05-15T13:23:21+08:00">
-                2020-05-15
+              <time title="更新于" itemprop="dateModified" datetime="2020-06-19T03:29:36+08:00">
+                2020-06-19
               </time>
             
           </span>
@@ -535,7 +761,7 @@
 
       
         
-          <span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/loading.gif" data-original="https://cdn.lishaoy.net/flutterCtrip/flutter-ctrip.jpg" class="full-image" alt="Flutter" title="Flutter"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+          <span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/loading.gif" data-original="https://cdn.lishaoy.net/flutterCtrip/iOS-andorid.png" class="full-image" alt="Flutter" title="Flutter"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <p>之前，也写过几篇关于 <code>Flutter</code> 的博文，最近，又花了一些时间学习研究 <code>Flutter</code>，完成了高仿大厂 <strong>App</strong> 项目 <em>(项目使用的接口都是来自线上真实App抓包而来，可以做到和线上项目相同的效果)</em>，也总结积累了一些小技巧和知识点，所以，在这里记录分享出来，也希望 <code>Flutter</code> 生态越来越好 <em>（flutter开发App效率真的很高，开发体验也是很好的 🙂）</em>。</p>
 <hr>
           <!--noindex-->
@@ -616,8 +842,8 @@
             <span class="post-category">
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/设计/" itemprop="url" rel="index">
-                    <span itemprop="name">设计</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -627,8 +853,8 @@
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
+                  <a href="/categories/设计/" itemprop="url" rel="index">
+                    <span itemprop="name">设计</span>
                   </a>
                 </span>
 
@@ -2400,232 +2626,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-date" data-datetime="2018-04-18T01:34:09+08:00">
-    <div class="post-time-text">4月</div>
-    <div class="post-time-count">18</div>
-    <div class="text-desc">
-			<div class="date-text">更新于</div>
-      <div class="post-tiem">5月22</div>
-      <div class="post-year">2018</div>
-		</div>
-  </div>
-  
-  
-  
-
-  <div class="post-badge">
-    
-            <span class="post-category">
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/JS/" itemprop="url" rel="index">
-                    <span itemprop="name">JS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-    
-  </div>
-
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.h.lishaoy.net/createPromise.html">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="李少颖（persilee）">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://cdn.lishaoy.net/images/lsy.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="persilee's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/createPromise.html" itemprop="url">Promise诞生记</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="发表于" itemprop="dateCreated datePublished" datetime="2018-04-18T01:34:09+08:00">
-                2018-04-18
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-05-22T02:51:43+08:00">
-                2018-05-22
-              </time>
-            
-          </span>
-
-          
-
-
-          
-            
-          
-
-          
-          
-             <span id="/createPromise.html" class="leancloud_visitors" data-flag-title="Promise诞生记">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度 </span>
-               
-                 <span class="leancloud-visitors-count"></span> ℃
-             </span>
-          
-
-          
-
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-pencil-square-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计：</span>
-                
-                <span title="字数统计：">
-                  651 (字)
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长：</span>
-                
-                <span title="阅读时长：">
-                  3 (分钟)
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="https://cdn.lishaoy.net/createPromise/promise.png" class="full-image" alt="Promise" title="Promise"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<p>前端近年的兴起，有大部分是因为 <code>NodeJS</code> 的诞生，而 <code>NodeJS</code> 是个适用于 <strong>异步IO</strong> 密集型的语言，一些基于 <code>NodeJS</code> 的框架，比喻 <em>KOA2、Adonis</em> 就有大量的 <code>async</code> 和 <code>await</code> 语法，<code>async</code>的函数的返回值就是 <code>Promise</code> 对象，我们可以用 <code>async</code> 和 <code>await</code> 语法，写出优雅的异步代码，来替换难看且难维护的回调函数。</p>
-<p>这里我们会渐进式的来创建一个 <code>Promise</code> 的实现，如果，你还不了解 <code>Promise</code> ，赶快移步 <a href="http://es6.ruanyifeng.com/#docs/promise" target="_blank" rel="noopener">Promise</a> 了解学习，当然这个实现会符合 <a href="https://promisesaplus.com" target="_blank" rel="noopener">Promise/A+</a> 规范，<code>JavaScript</code> 中有很多第三方的 <code>Promise</code> 库，<a href="http://bluebirdjs.com/docs/getting-started.html" target="_blank" rel="noopener">bluebird</a> 就是一个第三方 <code>Promise</code> 类库，相比其它第三方类库或标准对象来说，其有以下优点：功能更齐全而不臃肿、浏览器兼容性更好,大家可以了解下。</p>
-<hr>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/createPromise.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2676,7 +2676,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2848,7 +2848,7 @@
 
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">Blog总字数: 38.1k字</span>
+    <span class="post-count">Blog总字数: 42.4k字</span>
   </div>
 </div>
 
