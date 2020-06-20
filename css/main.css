@@ -2082,7 +2082,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff0f25;
+  background: #2f960f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3220,8 +3220,8 @@ hr {
   position: relative;
 }
 .section_p {
-  line-height: 1.75;
-  margin: 20px auto;
+  line-height: 1.66;
+  margin: 10px auto;
 }
 .status_user:after {
   content: "";
@@ -3424,44 +3424,48 @@ hr {
 }
 .category-all .category-list-item:nth-child(1)::before {
   background-image: url("/images/category/css.svg");
+  width: 42px;
+  height: 42px;
+  top: 24px;
 }
 .category-all .category-list-item:nth-child(2)::before {
   background-image: url("/images/category/dart.svg");
 }
 .category-all .category-list-item:nth-child(6)::before {
-  background-image: url("/images/category/hexo.svg");
+  background-image: url("/images/category/php.svg");
 }
 .category-all .category-list-item:nth-child(3)::before {
   background-image: url("/images/category/js.svg");
 }
 .category-all .category-list-item:nth-child(4)::before {
-  background-image: url("/images/category/node.svg");
+  background-image: url("/images/category/java.svg");
 }
 .category-all .category-list-item:nth-child(5)::before {
-  background-image: url("/images/category/php.svg");
+  background-image: url("/images/category/node.svg");
+  width: 66px;
+  height: 66px;
+  left: -6px;
+  top: 10px;
 }
 .category-all .category-list-item:nth-child(7)::before {
-  width: 60px;
-  height: 60px;
-  top: 10px;
-  left: -2px;
-  background-image: url("/images/category/tool.svg");
+  background-image: url("/images/category/hexo.svg");
 }
 .category-all .category-list-item:nth-child(9)::before {
-  width: 45px;
-  height: 45px;
-  left: 6px;
-  background-image: url("/images/category/photography.svg");
-}
-.category-all .category-list-item:nth-child(10)::before {
-  background-image: url("/images/category/design.svg");
-}
-.category-all .category-list-item:nth-child(8)::before {
   width: 55px;
   height: 55px;
   top: 12px;
   left: 0;
   background-image: url("/images/category/Optimize.svg");
+}
+.category-all .category-list-item:nth-child(10)::before {
+  background-image: url("/images/category/design.svg");
+}
+.category-all .category-list-item:nth-child(8)::before {
+  width: 60px;
+  height: 60px;
+  top: 10px;
+  left: -2px;
+  background-image: url("/images/category/tool.svg");
 }
 .category-all .category-list-item:hover::before {
   -webkit-transform: scale(1.1);
