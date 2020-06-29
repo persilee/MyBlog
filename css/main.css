@@ -2082,7 +2082,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ccffe4;
+  background: #ff52ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3335,6 +3335,7 @@ hr {
   display: inline-block;
   padding: 7px 26px 7px 32px;
   line-height: 1;
+  z-index: 99;
 }
 .post-badge a {
   border-bottom: none;

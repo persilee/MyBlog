@@ -779,7 +779,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -801,7 +801,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -967,7 +967,7 @@
 
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">Blog总字数: 42.0k字</span>
+    <span class="post-count">Blog总字数: 44.6k字</span>
   </div>
 </div>
 
@@ -1599,6 +1599,22 @@
     .video-js {
       max-width: -webkit-fill-available;
       max-width: 850px;
+    }
+
+    .video {
+      position: relative;
+      padding-bottom: 69.66%;
+      height: 0;
+      overflow: hidden;
+    }
+    .video iframe,
+    .video object,
+    .video embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
 
     .no-post.v::-webkit-input-placeholder{

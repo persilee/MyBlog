@@ -1,0 +1,1819 @@
+<!DOCTYPE html>
+
+<!--
+                           _ooOoo_
+                          o8888888o
+                          88" . "88
+                          (| -_- |)
+                          O\  =  /O
+                       ____/`---'\____
+                     .'  \\|     |//  `.
+                    /  \\|||  :  |||//  \
+                   /  _||||| -:- |||||-  \
+                   |   | \\\  -  /// |   |
+                   | \_|  ''\---/''  |   |
+                   \  .-\__  `-`  ___/-. /
+                 ___`. .'  /--.--\  `. . __
+              ."" '<  `.___\_<|>_/___.'  >'"".
+             | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+             \  \ `-.   \_ __\ /__ _/   .-` /  /
+        ======`-.____`-.___\_____/___.-`____.-'======
+                           `=---='
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 佛祖保佑       永无BUG  By:- lishaoy.net
+-->
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<link href="//lishaoy.net" rel="dns-prefetch">
+<link href="//www.lishaoy.net" rel="dns-prefetch">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="baidu-site-verification" content="7S8EhsCBzP">
+<meta name="google-site-verification" content="c7v-UByxWR7Pl8zy2sW85x1mKLtl7kCPtIaZyr-vjsI">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+	<meta name="description" content="李少颖的博客">
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.font.im/css?family=Roboto:300,300italic,400,400italic,700,700italic|Sansita:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Source Code Pro:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+  <meta name="keywords" content="Flutter,Dart,Future,Stream,">
+
+
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="persilee's Blog" type="application/atom+xml">
+
+
+
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+
+
+
+
+
+<meta name="description" content="本篇文章将介绍从 setState 开始，到 futureBuilder 、 streamBuilder 来优雅的构建你的项目，而不引发 setState 带来的副作用，如对文章感兴趣，请 点击查看源码。">
+<meta name="keywords" content="Flutter,Dart,Future,Stream">
+<meta property="og:type" content="article">
+<meta property="og:title" content="优雅的使用 FutureBuilder and StreamBuilder 构建项目">
+<meta property="og:url" content="https://www.h.lishaoy.net/futrueBuilder-streamBuilder.html">
+<meta property="og:site_name" content="persilee&#39;s Blog">
+<meta property="og:description" content="本篇文章将介绍从 setState 开始，到 futureBuilder 、 streamBuilder 来优雅的构建你的项目，而不引发 setState 带来的副作用，如对文章感兴趣，请 点击查看源码。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://www.h.lishaoy.net/images/loading.gif">
+<meta property="og:image" content="https://cdn.lishaoy.net/fureBuilderStreamBuilder/list-data.png">
+<meta property="og:image" content="https://cdn.lishaoy.net/fureBuilderStreamBuilder/indicator.png">
+<meta property="og:image" content="https://cdn.lishaoy.net/fureBuilderStreamBuilder/error.png">
+<meta property="og:image" content="https://cdn.lishaoy.net/fureBuilderStreamBuilder/no-data.png">
+<meta property="og:updated_time" content="2020-06-29T11:43:24.393Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="优雅的使用 FutureBuilder and StreamBuilder 构建项目">
+<meta name="twitter:description" content="本篇文章将介绍从 setState 开始，到 futureBuilder 、 streamBuilder 来优雅的构建你的项目，而不引发 setState 带来的副作用，如对文章感兴趣，请 点击查看源码。">
+<meta name="twitter:image" content="https://www.h.lishaoy.net/images/loading.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.h.lishaoy.net/futrueBuilder-streamBuilder.html">
+
+
+
+
+
+  <title>优雅的使用 FutureBuilder and StreamBuilder 构建项目 | persilee's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <link href="https://cdn.lishaoy.net/css/all-dc9e559faa.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdn.lishaoy.net/css/video-js.css">
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <div id="loader">
+    <div></div>
+  </div>
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+    <a href="https://github.com/persilee" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">persilee's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" class="faa-parent animated-hover" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home faa-wrench"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" class="faa-parent animated-hover" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link faa-shake"></i> <br>
+            
+            友链
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook/" class="faa-parent animated-hover" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comment-o faa-tada"></i> <br>
+            
+            留言板
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" class="faa-parent animated-hover" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive faa-float"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" class="faa-parent animated-hover" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user faa-horizontal"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger faa-parent animated-hover">
+          
+            
+              <i class="menu-item-icon fa fa-search faa-burst fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+          
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-date" data-datetime="2020-06-29T19:59:16+08:00">
+    <div class="post-time-text">6月</div>
+    <div class="post-time-count">29</div>
+    <div class="text-desc">
+			<div class="date-text">更新于</div>
+      <div class="post-tiem">6月29</div>
+      <div class="post-year">2020</div>
+		</div>
+  </div>
+  
+  
+  
+
+  <div class="post-badge">
+    
+            <span class="post-category">
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Dart/" itemprop="url" rel="index">
+                    <span itemprop="name">Dart</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+    
+  </div>
+
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.h.lishaoy.net/futrueBuilder-streamBuilder.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李少颖（persilee）">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://cdn.lishaoy.net/images/lsy.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="persilee's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">优雅的使用 FutureBuilder and StreamBuilder 构建项目</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="发表于" itemprop="dateCreated datePublished" datetime="2020-06-29T19:59:16+08:00">
+                2020-06-29
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-06-29T19:43:24+08:00">
+                2020-06-29
+              </time>
+            
+          </span>
+
+          
+
+
+          
+            
+          
+
+          
+          
+             <span id="/futrueBuilder-streamBuilder.html" class="leancloud_visitors" data-flag-title="优雅的使用 FutureBuilder and StreamBuilder 构建项目">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count"></span> ℃
+             </span>
+          
+
+          
+
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-pencil-square-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计：</span>
+                
+                <span title="字数统计：">
+                  2,606 (字)
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长：</span>
+                
+                <span title="阅读时长：">
+                  12 (分钟)
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/loading.gif" data-original="https://cdn.lishaoy.net/fureBuilderStreamBuilder/cover.png" class="full-image" alt="Flutter" title="Flutter"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>本篇文章将介绍从 <code>setState</code> 开始，到 <code>futureBuilder</code> 、 <code>streamBuilder</code> 来优雅的构建你的项目，而不引发 <code>setState</code> 带来的副作用，如对文章感兴趣，请 <a href="https://github.com/persilee/flutter_pro" target="_blank" rel="noopener">点击查看源码</a>。</p>
+<hr>
+
+<a id="more"></a>
+<h2 id="基础的setState更新数据"><a href="#基础的setState更新数据" class="headerlink" title="基础的setState更新数据"></a>基础的setState更新数据</h2><p>首页，我们使用基础的 <code>StatefulWidget</code> 来创建页面，如下：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaseStatefulDemo</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  _BaseStatefulDemoState createState() =&gt; _BaseStatefulDemoState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_BaseStatefulDemoState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">BaseStatefulDemo</span>&gt; </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Container();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后，我们使用 <code>Future</code> 来创建一些数据，来模拟网络请求，如下：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;<span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt;&gt; _getListData() <span class="keyword">async</span> &#123;</span><br><span class="line">  <span class="keyword">await</span> Future.delayed(<span class="built_in">Duration</span>(seconds: <span class="number">1</span>)); <span class="comment">// 1秒之后返回数据</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt;.generate(<span class="number">10</span>, (index) =&gt; <span class="string">'<span class="subst">$index</span> content'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在 <code>initState()</code> 方法中调用 <code>_getListData()</code> 来初始化数据，如下：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt; _pageData = <span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt;();</span><br><span class="line"></span><br><span class="line"><span class="meta">@override</span></span><br><span class="line"><span class="keyword">void</span> initState() &#123;</span><br><span class="line">  _getListData().then((data) =&gt; setState(() &#123;</span><br><span class="line">            _pageData = data;</span><br><span class="line">          &#125;));</span><br><span class="line">  <span class="keyword">super</span>.initState();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用 <code>ListView.builder</code> 来处理这些数据构建UI，如下：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@override</span></span><br><span class="line">Widget build(BuildContext context) &#123;</span><br><span class="line">  <span class="keyword">return</span> Scaffold(</span><br><span class="line">    appBar: AppBar(</span><br><span class="line">      title: Text(<span class="string">'Base Stateful Demo'</span>),</span><br><span class="line">    ),</span><br><span class="line">    body: ListView.builder(</span><br><span class="line">      itemCount: _pageData.length,</span><br><span class="line">      itemBuilder: (buildContext, index) &#123;</span><br><span class="line">        <span class="keyword">return</span> Column(</span><br><span class="line">          children: &lt;Widget&gt;[</span><br><span class="line">            ListTile(</span><br><span class="line">              title: Text(_pageData[index]),</span><br><span class="line">            ),</span><br><span class="line">            Divider(),</span><br><span class="line">          ],</span><br><span class="line">        );</span><br><span class="line">      &#125;,</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后，我们就可以看到界面了 😎 ，如图：</p>
+<div style="width: 36%; margin:auto">
+
+<img src="https://cdn.lishaoy.net/fureBuilderStreamBuilder/list-data.png" alt="no-shadow" title="list data">
+
+</div>
+
+<p>当然，你也可以将 <strong>UI</strong> 显示单独提取成一个方法，方便后期维护，使代码层次更清晰，如下：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@override</span></span><br><span class="line">Widget build(BuildContext context) &#123;</span><br><span class="line">  <span class="keyword">return</span> Scaffold(</span><br><span class="line">    appBar: AppBar(</span><br><span class="line">      title: Text(<span class="string">'Base Stateful Demo'</span>),</span><br><span class="line">    ),</span><br><span class="line">    body: ListView.builder(</span><br><span class="line">      itemCount: _pageData.length,</span><br><span class="line">      itemBuilder: (buildContext, index) &#123;</span><br><span class="line">        <span class="keyword">return</span> getListDataUi(<span class="built_in">int</span> index);</span><br><span class="line">      &#125;,</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Widget getListDataUi(<span class="built_in">int</span> index) &#123;</span><br><span class="line">  <span class="keyword">return</span> Column(</span><br><span class="line">              children: &lt;Widget&gt;[</span><br><span class="line">                ListTile(</span><br><span class="line">                  title: Text(_pageData[index]),</span><br><span class="line">                ),</span><br><span class="line">                Divider(),</span><br><span class="line">              ],</span><br><span class="line">            );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>继续，我们来完善它，正常从后端获取数据，后端应该会给我们返回不同的状态，以及数据加载中的状态，如：</p>
+<ul>
+<li>BusyState(加载中)：我们在界面上显示一个加载指示器</li>
+<li>DataFetchedState(数据加载完成)：我们延迟2秒，来模拟数据加载完成</li>
+<li>ErrorState(错误)：显示错误提示</li>
+<li>NoData(没有数据)：请求成功，但没有数据，显示提示</li>
+</ul>
+<p>先来处理 <strong>BusyState</strong> 加载指示器，如下：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bool</span> <span class="keyword">get</span> _fetchingData =&gt; _pageData == <span class="keyword">null</span>; <span class="comment">// 判断数据是否为空</span></span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        title: Text(<span class="string">'Base Stateful Demo'</span>),</span><br><span class="line">      ),</span><br><span class="line">      body: _fetchingData</span><br><span class="line">          ? Center(</span><br><span class="line">              child: CircularProgressIndicator( <span class="comment">// 加载指示器 </span></span><br><span class="line">                valueColor: AlwaysStoppedAnimation&lt;Color&gt;(Colors.yellow), <span class="comment">// 设置指示器颜色</span></span><br><span class="line">                backgroundColor: Colors.yellow[<span class="number">100</span>],  <span class="comment">// 设置背景色</span></span><br><span class="line">              ),</span><br><span class="line">            )</span><br><span class="line">          : ListView.builder(</span><br><span class="line">              itemCount: _pageData.length,</span><br><span class="line">              itemBuilder: (buildContext, index) &#123;</span><br><span class="line">                <span class="keyword">return</span> getListDataUi(index);</span><br><span class="line">              &#125;,</span><br><span class="line">            ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>效果如图：</p>
+<div style="width: 36%; margin:auto">
+
+<img src="https://cdn.lishaoy.net/fureBuilderStreamBuilder/indicator.png" alt="no-shadow" title="indicator">
+
+</div>
+
+<p>接着，我们来处理 <strong>ErrorState</strong> ，我给 <code>_getListData()</code> 添加 <code>hasError</code> 参数来模拟后端，如下</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;<span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt;&gt; _getListData(&#123;<span class="built_in">bool</span> hasError = <span class="keyword">false</span>&#125;) <span class="keyword">async</span> &#123;</span><br><span class="line">  <span class="keyword">await</span> Future.delayed(<span class="built_in">Duration</span>(seconds: <span class="number">1</span>)); <span class="comment">// 1秒之后返回数据</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (hasError) &#123;</span><br><span class="line">    <span class="keyword">return</span> Future.error(<span class="string">'获取数据出现问题，请再试一次'</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt;.generate(<span class="number">10</span>, (index) =&gt; <span class="string">'<span class="subst">$index</span> content'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后，在 <code>initState()</code> 方法中捕获异常更新数据，如下：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@override</span></span><br><span class="line"><span class="keyword">void</span> initState() &#123;</span><br><span class="line">  _getListData(hasError: <span class="keyword">true</span>)</span><br><span class="line">      .then((data) =&gt; setState(() &#123;</span><br><span class="line">            _pageData = data;</span><br><span class="line">          &#125;))</span><br><span class="line">      .catchError((error) =&gt; setState(() &#123;</span><br><span class="line">            _pageData = [error];</span><br><span class="line">          &#125;));</span><br><span class="line">  <span class="keyword">super</span>.initState();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>效果如图( <em>当然这里可以使用一个错误页面来展示</em> )：</p>
+<div style="width: 36%; margin:auto">
+
+<img src="https://cdn.lishaoy.net/fureBuilderStreamBuilder/error.png" alt="no-shadow" title="error">
+
+</div>
+
+<p>接着，我们来处理 <strong>NoData</strong> ，我给 <code>_getListData()</code> 添加 <code>hasError</code> 参数来模拟后端，如下：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;<span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt;&gt; _getListData(</span><br><span class="line">    &#123;<span class="built_in">bool</span> hasError = <span class="keyword">false</span>, <span class="built_in">bool</span> hasData = <span class="keyword">true</span>&#125;) <span class="keyword">async</span> &#123;</span><br><span class="line">  <span class="keyword">await</span> Future.delayed(<span class="built_in">Duration</span>(seconds: <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (hasError) &#123;</span><br><span class="line">    <span class="keyword">return</span> Future.error(<span class="string">'获取数据出现问题，请再试一次'</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!hasData) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt;();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt;.generate(<span class="number">10</span>, (index) =&gt; <span class="string">'<span class="subst">$index</span> content'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后，在 <code>initState()</code> 方法更新数据，如下：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@override</span></span><br><span class="line"><span class="keyword">void</span> initState() &#123;</span><br><span class="line">  _getListData(hasError: <span class="keyword">false</span>, hasData: <span class="keyword">false</span>)</span><br><span class="line">      .then((data) =&gt; setState(() &#123;</span><br><span class="line">            <span class="keyword">if</span> (data.length == <span class="number">0</span>) &#123;</span><br><span class="line">              data.add(<span class="string">'No data fount'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            _pageData = data;</span><br><span class="line">          &#125;))</span><br><span class="line">      .catchError((error) =&gt; setState(() &#123;</span><br><span class="line">            _pageData = [error];</span><br><span class="line">          &#125;));</span><br><span class="line">  <span class="keyword">super</span>.initState();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>效果如图：</p>
+<div style="width: 36%; margin:auto">
+
+<img src="https://cdn.lishaoy.net/fureBuilderStreamBuilder/no-data.png" alt="no-shadow" title="error">
+
+</div>
+
+<div class="note success"><p>这就是通过 <code>setState()</code> 来更新数据，是不是很简单，通常情况下我们这么使用是没什么问题，但是，如果我们的页面足够复杂，要处理的状态足够多，我们需要使用更多的 <code>setState()</code> ，意味着我们需要更多的代码来更新数据，而且，我们每次 <code>setState()</code> 的时候 <code>build()</code> 方法就会重新执行一次( <em>这就是上文提到的副作用</em> )。</p>
+<p>其实，<strong>Flutter</strong> 已经提供了更优雅的方式来更新我们的数据及处理状态，它就是我们接下来要讲的 <code>futureBuilder</code>。</p></div>
+<h2 id="FutureBuilder"><a href="#FutureBuilder" class="headerlink" title="FutureBuilder"></a>FutureBuilder</h2><p><code>FutureBuilder</code> 通过 <strong>future:</strong> 参数可以接收一个 <code>Future</code> ，并且通过 <strong>builder:</strong> 参数来构建 <strong>UI</strong> ，<strong>builder:</strong> 参数是一个函数，它提供了一个 <code>snapshot</code> 参数里面带着我们需要的状态和数据。</p>
+<p>接下来，我们将上面的 <code>StatefulWidget</code> 改成 <code>StatelessWidget</code> ，并使用 <code>FutureBuilder</code> 替换，如下:</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FutureBuilderDemo</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        title: Text(<span class="string">'Future Builder Demo'</span>),</span><br><span class="line">      ),</span><br><span class="line">      body: FutureBuilder(</span><br><span class="line">        future: _getListData(),</span><br><span class="line">        builder: (buildContext, snapshot) &#123;</span><br><span class="line">          <span class="keyword">if</span> (snapshot.hasError) &#123;</span><br><span class="line">            <span class="keyword">return</span> _getInfoMessage(snapshot.error);</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">if</span> (!snapshot.hasData) &#123;</span><br><span class="line">            <span class="keyword">return</span> Center(</span><br><span class="line">              child: CircularProgressIndicator(</span><br><span class="line">                valueColor: AlwaysStoppedAnimation&lt;Color&gt;(Colors.yellow),</span><br><span class="line">                backgroundColor: Colors.yellow[<span class="number">100</span>],</span><br><span class="line">              ),</span><br><span class="line">            );</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">var</span> listData = snapshot.data;</span><br><span class="line">          <span class="keyword">if</span> (listData.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> _getInfoMessage(<span class="string">'No data found'</span>);</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">return</span> ListView.builder(</span><br><span class="line">            itemCount: listData.length,</span><br><span class="line">            itemBuilder: (buildContext, index) &#123;</span><br><span class="line">              <span class="keyword">return</span> Column(</span><br><span class="line">                children: &lt;Widget&gt;[</span><br><span class="line">                  ListTile(</span><br><span class="line">                    title: Text(listData[index]),</span><br><span class="line">                  ),</span><br><span class="line">                  Divider(),</span><br><span class="line">                ],</span><br><span class="line">              );</span><br><span class="line">            &#125;,</span><br><span class="line">          );</span><br><span class="line">        &#125;,</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ...</span><br></pre></td></tr></table></figure>
+<p>我们使用 <code>_getInfoMessage()</code> 方法来处理状态提示，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Widget _getInfoMessage(String msg) &#123;</span><br><span class="line">  return Center(</span><br><span class="line">    child: Text(msg),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>就这样我们不使用任何一个 <code>setState()</code> 就能完成和上面一样的效果，并且不会产生副作用，是不是很给力 💪。</p>
+<div class="note info"><p>但是，它并不是完美的，比如，我们想刷新数据，我们需要重新调用 <code>_getListData()</code> 方法，结果它并没有刷新。</p></div>  
+<h2 id="StreamBuilder"><a href="#StreamBuilder" class="headerlink" title="StreamBuilder"></a>StreamBuilder</h2><p><code>StreamBuilder</code> 通过 <strong>stream:</strong> 参数可以接收一个 <code>stream</code> ，同样，通过 <strong>builder:</strong> 参数来构建 <strong>UI</strong> ，和 <code>futureBuilder</code> 用法类似，唯一的好处就是，我们可以随意控制 <code>stream</code> 的输入输出，添加任何的状态来更新指定状态下的 <strong>UI</strong> 。</p>
+<p>首先，我们使用 <code>enum</code> 来表示我们的状态，在文件的头部添加它，如下：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> StreamViewState &#123; Busy, DataRetrieved, NoData &#125;</span><br></pre></td></tr></table></figure>
+<p>接着，使用 <code>StreamController</code> 创建一个流控制器，把 <code>FutureBuilder</code> 替换成 <code>StreamBuilder</code> ，把 <strong>future:</strong> 参数 改成 <strong>stream:</strong> 参数，如下：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">final</span> StreamController&lt;StreamDemoState&gt; _stateController = StreamController&lt;StreamDemoState&gt;();</span><br><span class="line"></span><br><span class="line"><span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line"></span><br><span class="line">      ...</span><br><span class="line"></span><br><span class="line">      body: StreamBuilder(</span><br><span class="line">        stream: model.homeState,</span><br><span class="line">        builder: (buildContext, snapshot) &#123;</span><br><span class="line">          <span class="keyword">if</span> (snapshot.hasError) &#123;</span><br><span class="line">            <span class="keyword">return</span> _getInfoMessage(snapshot.error);</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">// 使用 枚举的 Busy 来更新数据</span></span><br><span class="line">          <span class="keyword">if</span> (!snapshot.hasData || StreamViewState.Busy) &#123;</span><br><span class="line">            <span class="keyword">return</span> Center(</span><br><span class="line">              child: CircularProgressIndicator(</span><br><span class="line">                valueColor: AlwaysStoppedAnimation&lt;Color&gt;(Colors.yellow),</span><br><span class="line">                backgroundColor: Colors.yellow[<span class="number">100</span>],</span><br><span class="line">              ),</span><br><span class="line">            );</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">//使用 枚举的 NoData 来更新数据</span></span><br><span class="line">          <span class="keyword">if</span> (listItems.length == StreamViewState.NoData) &#123;</span><br><span class="line">            <span class="keyword">return</span> _getInfoMessage(<span class="string">'No data found'</span>);</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">return</span> ListView.builder(</span><br><span class="line">            itemCount: listItems.length,</span><br><span class="line">            itemBuilder: (buildContext, index) &#123;</span><br><span class="line">              <span class="keyword">return</span> Column(</span><br><span class="line">                children: &lt;Widget&gt;[</span><br><span class="line">                  ListTile(</span><br><span class="line">                    title: Text(listItems[index]),</span><br><span class="line">                  ),</span><br><span class="line">                  Divider(),</span><br><span class="line">                ],</span><br><span class="line">              );</span><br><span class="line">            &#125;,</span><br><span class="line">          );</span><br><span class="line">        &#125;,</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>只是新增了枚举值来判断是否需要更新数据，其他基本保持不变。</p>
+<p>接下来，我需要修改 <code>_getListData()</code> 方法，使用流控制器添加状态及数据，如下：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Future _getListData(&#123;<span class="built_in">bool</span> hasError = <span class="keyword">false</span>, <span class="built_in">bool</span> hasData = <span class="keyword">true</span>&#125;) <span class="keyword">async</span> &#123;</span><br><span class="line">  _stateController.add(StreamViewState.Busy);</span><br><span class="line">  <span class="keyword">await</span> Future.delayed(<span class="built_in">Duration</span>(seconds: <span class="number">2</span>));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (hasError) &#123;</span><br><span class="line">    <span class="keyword">return</span> _stateController.addError(<span class="string">'error'</span>); <span class="comment">// 往 stream 里新增 error 数据</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!hasData) &#123;</span><br><span class="line">    <span class="keyword">return</span> _stateController.add(StreamViewState.NoData); <span class="comment">// 往 stream 里新增无数据状态</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  _listItems = <span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt;.generate(<span class="number">10</span>, (index) =&gt; <span class="string">'<span class="subst">$index</span> content'</span>);</span><br><span class="line">  _stateController.add(StreamViewState.DataRetrieved); <span class="comment">// 往 stream 里新增数据获取完成状态</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时我们并没有返回数据，所以我们需要创建 <code>listItems</code> 存储数据，然后把 <code>StatelessWidget</code> 改成 <code>StatefulWidget</code> ，以便我们根据 <code>stream</code> 的输出来更新数据，这个转换非常方便，<strong>VS Code</strong> 编辑器可以使用 <code>Option + Shift + R</code> （Mac）或者 <code>Ctrl + Shift + R</code> (Win)快捷键 ，<strong>Android Studio</strong> 使用<code>Option + Enter</code> 快捷键，之后在 <code>initState()</code> 方法中初始化数据，如下：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt; listItems;</span><br><span class="line"></span><br><span class="line"><span class="meta">@override</span></span><br><span class="line"><span class="keyword">void</span> initState() &#123;</span><br><span class="line">  _getListData();</span><br><span class="line">  <span class="keyword">super</span>.initState();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>到这里我们已经解决了 <code>FutureBuilder</code> 的局限性问题，我们可以新增一个 <code>FloatingActionButton</code> 来刷新数据，如下：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        title: Text(<span class="string">'Stream Builder Demo'</span>),</span><br><span class="line">      ),</span><br><span class="line">      floatingActionButton: FloatingActionButton(</span><br><span class="line">        backgroundColor: Colors.yellow,</span><br><span class="line">        child: Icon(</span><br><span class="line">          Icons.cached,</span><br><span class="line">          color: Colors.black87,</span><br><span class="line">        ),</span><br><span class="line">        onPressed: () &#123;</span><br><span class="line">          model.dispatch(FetchData());</span><br><span class="line">        &#125;,</span><br><span class="line">      ),</span><br><span class="line">      body: StreamBuilder(</span><br><span class="line"></span><br><span class="line">        ...</span><br><span class="line">        </span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>现在，我们的 <code>listItems</code> 数据并没真正的更新，点击 <code>FloatingActionButton</code> 只是更新的加载状态而已，而且我们的业务逻辑代码和 <strong>UI</strong> 代码还在同一个文件中，但是，他们已经解耦，所以，我们可以继续完善它，将业务逻辑代码和 <strong>UI</strong> 代码分离出来。</p>
+<h2 id="分离业务逻辑代码和-UI-代码"><a href="#分离业务逻辑代码和-UI-代码" class="headerlink" title="分离业务逻辑代码和 UI 代码"></a>分离业务逻辑代码和 <strong>UI</strong> 代码</h2><p>我们可以把处理 <code>stream</code> 的代码抽离成一个类，如下：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'dart:async'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'dart:math'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:pro_flutter/demo/stream_demo/stream_demo_event.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:pro_flutter/demo/stream_demo/stream_demo_state.dart'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">enum</span> StreamViewState &#123; Busy, DataRetrieved, NoData &#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StreamDemoModel</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> StreamController&lt;StreamDemoState&gt; _stateController = StreamController&lt;StreamDemoState&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt; _listItems;</span><br><span class="line"></span><br><span class="line">  Stream&lt;StreamDemoState&gt; <span class="keyword">get</span> streamState =&gt; _stateController.stream;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">void</span> dispatch(StreamDemoEvent event)&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Event dispatched: <span class="subst">$event<span class="string">');</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">    if(event is FetchData) &#123;</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">      _getListData(hasData: event.hasData, hasError: event.hasError);</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">    &#125;</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">  &#125;</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string"></span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">  Future _getListData(&#123;bool hasError = false, bool hasData = true&#125;) async &#123;</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">    _stateController.add(BusyState());</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">    await Future.delayed(Duration(seconds: 2));</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string"></span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">    if (hasError) &#123;</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">      return _stateController.addError('</span></span>error'</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!hasData) &#123;</span><br><span class="line">      <span class="keyword">return</span> _stateController.add(DataFetchedState(data: <span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt;()));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    _listItems = <span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt;.generate(<span class="number">10</span>, (index) =&gt; <span class="string">'<span class="subst">$index</span> content'</span>);</span><br><span class="line">    _stateController.add(DataFetchedState(data: _listItems));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后，把状态也封装成一个文件且将数据和状态关联，如下：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StreamDemoState</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">InitializedState</span> <span class="keyword">extends</span> <span class="title">StreamDemoState</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DataFetchedState</span> <span class="keyword">extends</span> <span class="title">StreamDemoState</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt; data;</span><br><span class="line"></span><br><span class="line">  DataFetchedState(&#123;<span class="keyword">this</span>.data&#125;);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">bool</span> <span class="keyword">get</span> hasData =&gt; data.length &gt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ErrorState</span> <span class="keyword">extends</span> <span class="title">StreamDemoState</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BusyState</span> <span class="keyword">extends</span> <span class="title">StreamDemoState</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>再封装一个事件文件，如下：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StreamDemoEvent</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FetchData</span> <span class="keyword">extends</span> <span class="title">StreamDemoEvent</span></span>&#123;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">bool</span> hasError;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">bool</span> hasData;</span><br><span class="line"></span><br><span class="line">  FetchData(&#123;<span class="keyword">this</span>.hasError = <span class="keyword">false</span>, <span class="keyword">this</span>.hasData = <span class="keyword">true</span>&#125;);</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="built_in">String</span> toString() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'FetchData &#123; hasError: <span class="subst">$hasError</span>, hasData: <span class="subst">$hasData</span> &#125;'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后，我们 <strong>UI</strong> 部分的代码如下：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_StreamBuilderDemoState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">StreamBuilderDemo</span>&gt; </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> model = StreamDemoModel(); <span class="comment">// 创建 model</span></span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> initState() &#123;</span><br><span class="line">    model.dispatch(FetchData(hasData: <span class="keyword">true</span>)); <span class="comment">// 获取 model 里的数据</span></span><br><span class="line">    <span class="keyword">super</span>.initState();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line"></span><br><span class="line">      ...</span><br><span class="line"></span><br><span class="line">      body: StreamBuilder(</span><br><span class="line">        stream: model.streamState,</span><br><span class="line">        builder: (buildContext, snapshot) &#123;</span><br><span class="line">          <span class="keyword">if</span> (snapshot.hasError) &#123;</span><br><span class="line">            <span class="keyword">return</span> _getInformationMessage(snapshot.error);</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">var</span> streamState = snapshot.data;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">if</span> (!snapshot.hasData || streamState <span class="keyword">is</span> BusyState) &#123;  <span class="comment">// 通过封装的状态类来判断是否更新UI</span></span><br><span class="line">            <span class="keyword">return</span> Center(</span><br><span class="line">              child: CircularProgressIndicator(</span><br><span class="line">                valueColor: AlwaysStoppedAnimation&lt;Color&gt;(Colors.yellow),</span><br><span class="line">                backgroundColor: Colors.yellow[<span class="number">100</span>],</span><br><span class="line">              ),</span><br><span class="line">            );</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">if</span> (streamState <span class="keyword">is</span> DataFetchedState) &#123; <span class="comment">// 通过封装的状态类来判断是否更新UI</span></span><br><span class="line">            <span class="keyword">if</span> (!homeState.hasData) &#123;</span><br><span class="line">              <span class="keyword">return</span> _getInformationMessage(<span class="string">'not found data'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">return</span> ListView.builder(</span><br><span class="line">            itemCount: streamState.data.length,  <span class="comment">// 此时，数据不再是本地数据，而是从 stream 中输出的数据</span></span><br><span class="line">            itemBuilder: (buildContext, index) =&gt;</span><br><span class="line">                _getListItem(index, streamState.data),</span><br><span class="line">          );</span><br><span class="line">        &#125;,</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ...</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时，业务逻辑代码和 <strong>UI</strong> 代码已完全分离，且可扩展性和维护增强。</p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div class="text-center line pages-end">
+				<span>本文结束<i class="fa fa-meh-o fa-fw"></i>感谢您的阅读</span>
+        </div>
+    
+</div>
+      
+    </div>
+
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert@1.0.0/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert@1.0.0/dist/sweetalert.css">
+  <p><span>本文标题:</span><a href="/futrueBuilder-streamBuilder.html">优雅的使用 FutureBuilder and StreamBuilder 构建项目</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 李少颖（persilee） 的个人博客">李少颖（persilee）</a></p>
+  <p><span>发布时间:</span>2020年06月29日 - 19:06</p>
+  <p><span>最后更新:</span>2020年06月29日 - 19:06</p>
+  <p><span>原始链接:</span><a href="/futrueBuilder-streamBuilder.html" title="优雅的使用 FutureBuilder and StreamBuilder 构建项目">https://www.h.lishaoy.net/futrueBuilder-streamBuilder.html</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.h.lishaoy.net/futrueBuilder-streamBuilder.html" aria-label=" 复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({
+          title: "",     
+          text: '复制成功',   
+          timer: 500,
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+      
+    </div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="李少颖（persilee） WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="李少颖（persilee） Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Flutter/" rel="tag"><i class="fa fa-tag fa-fw"></i> Flutter</a>
+          
+            <a href="/tags/Dart/" rel="tag"><i class="fa fa-tag fa-fw"></i> Dart</a>
+          
+            <a href="/tags/Future/" rel="tag"><i class="fa fa-tag fa-fw"></i> Future</a>
+          
+            <a href="/tags/Stream/" rel="tag"><i class="fa fa-tag fa-fw"></i> Stream</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/androidCtrip.html" rel="next" title="Android Flutter 混合开发高仿大厂App">
+                <i class="fa fa-chevron-left"></i> Android Flutter 混合开发高仿大厂App
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+            
+  <div class="comments" id="comments">
+    
+      <div class="comments v" id="comments"></div>
+    
+  </div>
+
+
+          
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="https://cdn.lishaoy.net/images/lsy.png" alt="李少颖（persilee）">
+          <p class="site-author-name" itemprop="name">李少颖（persilee）</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss2.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a rel="external nofollow" href="https://github.com/persilee" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a rel="external nofollow" href="https://twitter.com/persilee2" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                    
+                      Twitter
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a rel="external nofollow" href="https://segmentfault.com/u/lishaoy" target="_blank" title="segmentfault">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      segmentfault
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a rel="external nofollow" href="https://juejin.im/user/58b3d788570c350069747887" target="_blank" title="掘金">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      掘金
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a rel="external nofollow" href="https://www.jianshu.com/u/8a1ceccf9714" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a rel="external nofollow" href="http://lishaoy.poco.cn" target="_blank" title="POCO">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      POCO
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a rel="external nofollow" href="http://callmesoul.cn" title="Callmesoul" target="_blank">Callmesoul</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础的setState更新数据"><span class="nav-number">1.</span> <span class="nav-text">基础的setState更新数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FutureBuilder"><span class="nav-number">2.</span> <span class="nav-text">FutureBuilder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StreamBuilder"><span class="nav-number">3.</span> <span class="nav-text">StreamBuilder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分离业务逻辑代码和-UI-代码"><span class="nav-number">4.</span> <span class="nav-text">分离业务逻辑代码和 UI 代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">李少颖（persilee）</span>
+</div>
+<div class="powered-by">
+  <i class="fa fa-users fa-fw"></i>
+  <span id="busuanzi_container_site_uv">
+    终于等到你(UV): <span id="busuanzi_value_site_uv"></span>
+  </span>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <i class="fa fa-bar-chart-o fa-fw"></i>
+  <span id="busuanzi_container_site_pv">
+    欢迎再来(PV): <span id="busuanzi_value_site_pv"></span>
+  </span>
+
+  <div class="theme-info">
+    <div class="powered-by"></div>
+    <span class="post-count">Blog总字数: 44.6k字</span>
+  </div>
+</div>
+
+<!--
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+-->
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script type="text/javascript" src="https://cdn.lishaoy.net/js/index.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+  
+
+  
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+  <script src="https://cdn.lishaoy.net/js/av-min.js"></script>
+  
+  <script src="https://cdn.lishaoy.net/js/Valine.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = '';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        av: AV,
+        el: '#comments' ,
+        appId: 'aYLp6FBYzOGMYTUMR9qtvO3G-gzGzoHsz',
+        appKey: 'LQGYiMkEyJ6VYOba5K0LvduD',
+        placeholder: '想说点什么 ：）',
+        avatar: 'retro'
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn.lishaoy.net/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("aYLp6FBYzOGMYTUMR9qtvO3G-gzGzoHsz", "LQGYiMkEyJ6VYOba5K0LvduD");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src=""></script>
+  
+
+
+  
+
+  
+
+
+  <div id="load" style=""></div>
+  <!-- 新增看娘
+  <script async src="/live2dw/js/perTips.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js"></script>
+  -->
+
+  <!-- 页面点击小红心
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  -->
+
+  <!-- 背景动画
+  <script type="text/javascript" src="/js/src/particle.js"></script>
+  -->
+
+   <!-- 输入爆炸效果来自 http://xiaowiba.com （小尾巴） 如有侵权，请通知我撤销
+  <script type="text/javascript" src="/js/src/activate-power-mode.js"></script>
+  -->
+
+   <!-- UV、PV统计
+  <script async src="https://cdn.lishaoy.net/js/busuanzi.pure.mini.js"></script>
+  -->
+
+  <script type="text/javascript" src="https://cdn.lishaoy.net/js/all-min-d98fa596b6.js"></script>
+  <script src="https://cdn.lishaoy.net/js/video-js.js"></script>
+
+
+   <!-- 自己的脚本
+  <script type="text/javascript" src="/js/src/persilee.js"></script>
+  -->
+  <script> $(function(){ $('#loader').css('display','none');});</script>
+  <!--   google统计
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120619444-1"></script>  -->
+<style>
+    @font-face{
+      font-family: Pacifico;
+      src: url("//cdn.lishaoy.net/font/Pacifico.ttf");
+    }
+    .site-title {
+      font-family: 'Pacifico', 'Lobster Two', 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    .comments.no-post {
+      background: transparent;
+    }
+    .no-post.v *{
+      color: #fff;
+    }
+
+    .video-js {
+      max-width: -webkit-fill-available;
+      max-width: 850px;
+    }
+
+    .video {
+      position: relative;
+      padding-bottom: 69.66%;
+      height: 0;
+      overflow: hidden;
+    }
+    .video iframe,
+    .video object,
+    .video embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .no-post.v::-webkit-input-placeholder{
+      color: #eee;
+    }
+    .v .vlist p {
+      margin: 12px 0;
+    }
+    .v .vbtn {
+      background: #fbfbfb;
+      padding: .3rem 1.2em;
+      border: 1px solid #dddddd75;
+    }
+    .no-post.v .vbtn {
+      background: #2222220a;
+    }
+    .no-post.v .vbtn:active, .no-post.v .vbtn:hover {
+      color: rgba(255, 87, 34, 0.86);
+      border-color: rgba(255, 87, 34, 0.9);
+      background-color: #fff;
+    }
+    .post-toc .nav .active-current > a:hover {
+      color: rgba(255, 87, 34, 0.86);
+    }
+    .no-post.v .vwrap {
+      border: 1px solid #f0f0f036;;
+    }
+    .no-post.v a {
+      color: #fff;
+    }
+    .v ul {
+      padding-left: 25px;
+    }
+    .v ul li {
+      list-style: disc;
+      padding: 2px 15px 0 0;
+    }
+    .v .vlist strong , .vinput.vpreview strong {
+        color: #87daff;
+        font-size: 108%;
+    }
+    .v .vlist .vcard .vhead .vsys {
+        background: rgba(255, 87, 34, 0.06);
+        color: rgba(96, 125, 139, 0.45);
+        border: 1px solid #87daff1f;
+        padding: 1px 5px;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .no-post.v .vlist .vcard .vhead .vsys{
+      background: rgba(255, 255, 255, 0.36);
+      color: rgba(121, 85, 72, 0.56);
+      padding: 1px 5px;
+      font-size: 12px;
+      line-height: 1.4;
+      border: none;
+    }
+
+    .no-post.v .vlist .vcard .vcontent a {
+      color: #fffffff2;
+      border-bottom-color: #ccc;
+    }
+
+    .v .vlist .vcard .vcontent a:hover {
+        color: #607D8B;
+        border-bottom-color: #607D8B;
+    }
+
+    .no-post.v .vlist .vcard section {
+        border-bottom: 1px dashed #f5f5f55e;
+    }
+
+    .no-post.v .vlist .vcard section .vfooter .vtime {
+        color: #eee;
+    }
+
+    .v .vlist .vcard section .vfooter .vtime {
+        color: #9E9E9E;
+    }
+
+    .v .vwrap .vheader .vinput {
+        width: 33.33%;
+        border-bottom: 1px dashed #dedede45;
+    }
+    .no-post.v .vwrap .vheader .vinput::-webkit-input-placeholder, .no-post.v .vwrap .vedit .vinput::-webkit-input-placeholder {
+        color: #eee;
+    }
+    .no-post.v .vwrap .vheader .vinput:-ms-input-placeholder, .no-post.v .vwrap .vedit .vinput::-webkit-input-placeholder{  /* Internet Explorer 10-11 */
+        color: #eee;
+    }
+
+
+    .no-post.v .vcontrol .col {
+        color: #eee;
+    }
+    .v .txt-right {
+        display: none;
+    }
+
+    .v .vlist .vcard .vcontent .code, .v .vlist .vcard .vcontent code, .v .vlist .vcard .vcontent pre , .vinput.vpreview code , .vinput.vpreview pre {
+      color: #ff5722;
+      background: rgba(244,67,54,0.26);
+      border-radius: 2px;
+      box-shadow: 0 0 2px rgba(255,87,34,0.36);
+      font-size: 86%;
+      padding: 1px 4px;
+    }
+    .v .vbtn:active, .v .vbtn:hover {
+      color: #FF5722;
+      border-color: #FF5722;
+      background-color: #fff;
+    }
+    .v .vlist .vcard .vcontent img {
+      display: inline-block;
+    }
+
+    .v .vwrap .vheader .vinput:focus {
+      border-bottom: 1px solid #ffffff6e;
+    }
+    .v .vlist .vcard .vcontent pre , .vinput.vpreview pre {
+        background: #87daff21;
+        border-radius: 4px;
+        box-shadow: 0 0 2px #ffffff33;
+    }
+    .v .vlist .vcard .vcontent pre code ,.vinput.vpreview pre code {
+        color: #005098e3;
+        background: #87daff00;
+        border-radius: 4px;
+        box-shadow: 0 0 2px #87daff05;
+    }
+    .comments.no-post .vlist .vcard .vcontent pre code , .comments.no-post .vinput.vpreview pre code {
+        color: #7fd3f9;
+    }
+    .v .vlist .vcard .vcontent.expand:after {
+      color: #ff0000de;
+      font-size: 110%;
+      font-weight: bold;
+      background: #87daff38;
+      border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+    .comments.no-post .vlist .vcard .vcontent.expand:after {
+      color: #fff;
+    }
+    @media screen and (max-width: 414px) {
+        .v .vlist {
+            padding-left: 0;
+        }
+    }
+    @media screen and (max-width: 520px) {
+      .v .vlist .vcard .vhead .vsys {
+        display: inline-block;
+      }
+    }
+    .v .vlist .vcard .vcontent.expand:before {
+        background: linear-gradient(180deg,hsla(0, 0%, 100%, 0),hsla(199, 100%, 76%, 0.22));
+        background: -webkit-gradient(linear,left top,left bottom,from(hsla(0,0%,100%,0)),to(hsla(199, 100%, 76%, 0.22));
+    }
+</style>
+
+</body>
+</html>
