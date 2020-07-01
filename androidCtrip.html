@@ -138,11 +138,11 @@
 <meta name="keywords" content="Flutter,iOS,Android,Dart">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android Flutter 混合开发高仿大厂App">
-<meta property="og:url" content="https://www.h.lishaoy.net/androidCtrip.html">
+<meta property="og:url" content="https://h.lishaoy.net/androidCtrip.html">
 <meta property="og:site_name" content="persilee&#39;s Blog">
 <meta property="og:description" content="自上篇 Flutter 10天高仿大厂App及小技巧积累总结 的续篇，这次更是干货满满。 这篇文章将概述 Android组件化的架构搭建 及 Flutter 和 Android 如何混合开发 (整个App只有首页是用原生Android完成，其他页面都是引入之前的做好的Flutter页面) ，主宿主程序由 Android 搭建，采用了组件化的架构搭建整个 App ，不同业务，对应不同的 modul">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://www.h.lishaoy.net/images/loading.gif">
+<meta property="og:image" content="https://h.lishaoy.net/images/loading.gif">
 <meta property="og:image" content="https://www.pgyer.com/app/qrcode/AsHK?sign=&auSign=&code=">
 <meta property="og:image" content="https://cdn.lishaoy.net/ctrip/android/project.png">
 <meta property="og:image" content="https://cdn.lishaoy.net/ctrip/android/second_floor.gif">
@@ -155,7 +155,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android Flutter 混合开发高仿大厂App">
 <meta name="twitter:description" content="自上篇 Flutter 10天高仿大厂App及小技巧积累总结 的续篇，这次更是干货满满。 这篇文章将概述 Android组件化的架构搭建 及 Flutter 和 Android 如何混合开发 (整个App只有首页是用原生Android完成，其他页面都是引入之前的做好的Flutter页面) ，主宿主程序由 Android 搭建，采用了组件化的架构搭建整个 App ，不同业务，对应不同的 modul">
-<meta name="twitter:image" content="https://www.h.lishaoy.net/images/loading.gif">
+<meta name="twitter:image" content="https://h.lishaoy.net/images/loading.gif">
 
 
 
@@ -184,7 +184,7 @@
 
 
 
-  <link rel="canonical" href="https://www.h.lishaoy.net/androidCtrip.html">
+  <link rel="canonical" href="https://h.lishaoy.net/androidCtrip.html">
 
 
 
@@ -418,7 +418,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.h.lishaoy.net/androidCtrip.html">
+    <link itemprop="mainEntityOfPage" href="https://h.lishaoy.net/androidCtrip.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李少颖（persilee）">
@@ -715,32 +715,22 @@
         
 <div class="my_post_copyright">
   <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-  <!-- JS库 sweetalert 可修改路径 -->
-  <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.7.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert@1.0.0/dist/sweetalert.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert@1.0.0/dist/sweetalert.css">
   <p><span>本文标题:</span><a href="/androidCtrip.html">Android Flutter 混合开发高仿大厂App</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 李少颖（persilee） 的个人博客">李少颖（persilee）</a></p>
   <p><span>发布时间:</span>2020年06月19日 - 06:06</p>
   <p><span>最后更新:</span>2020年06月26日 - 06:06</p>
-  <p><span>原始链接:</span><a href="/androidCtrip.html" title="Android Flutter 混合开发高仿大厂App">https://www.h.lishaoy.net/androidCtrip.html</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.h.lishaoy.net/androidCtrip.html" aria-label=" 复制成功！"></i></span>
+  <p><span>原始链接:</span><a href="/androidCtrip.html" title="Android Flutter 混合开发高仿大厂App">https://h.lishaoy.net/androidCtrip.html</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://h.lishaoy.net/androidCtrip.html" aria-label=" 复制成功！"></i></span>
   </p>
-  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
 </div>
-<script> 
+<script>
     var clipboard = new Clipboard('.fa-clipboard');
-    clipboard.on('success', $(function(){
-      $(".fa-clipboard").click(function(){
-        swal({
-          title: "",     
-          text: '复制成功',   
-          timer: 500,
-          showConfirmButton: false
-        });
-      });
-    }));  
+    clipboard.on('success', function(){
+
+    });
 </script>
+
 
       
     </div>

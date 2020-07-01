@@ -138,7 +138,7 @@
 <meta name="keywords" content="javascript,scope,变量提升">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈JavaScript作用域">
-<meta property="og:url" content="https://www.h.lishaoy.net/javascriptScope.html">
+<meta property="og:url" content="https://h.lishaoy.net/javascriptScope.html">
 <meta property="og:site_name" content="persilee&#39;s Blog">
 <meta property="og:description" content="我们在面试时，总会碰到一些奇奇怪怪的关于 作用域 的面试题，其实弄清楚原理，万变不离其宗，大部分的面试题都可以得 ‘姐’。  所以，今天我们来谈谈 JavaScript 的 作用域(javascript scope) ，这是老生常谈的话题，这里我们会从 作用域 开始，会延伸到 预解析规则（预编译） 、 变量提升 、函数提升 、表达式 、语句 、IIFE 、 匿名函数表达式 、 具名函数表达式 等">
 <meta property="og:locale" content="zh-Hans">
@@ -176,7 +176,7 @@
 
 
 
-  <link rel="canonical" href="https://www.h.lishaoy.net/javascriptScope.html">
+  <link rel="canonical" href="https://h.lishaoy.net/javascriptScope.html">
 
 
 
@@ -399,7 +399,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.h.lishaoy.net/javascriptScope.html">
+    <link itemprop="mainEntityOfPage" href="https://h.lishaoy.net/javascriptScope.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李少颖（persilee）">
@@ -735,32 +735,22 @@
         
 <div class="my_post_copyright">
   <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-  <!-- JS库 sweetalert 可修改路径 -->
-  <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.7.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert@1.0.0/dist/sweetalert.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert@1.0.0/dist/sweetalert.css">
   <p><span>本文标题:</span><a href="/javascriptScope.html">浅谈JavaScript作用域</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 李少颖（persilee） 的个人博客">李少颖（persilee）</a></p>
   <p><span>发布时间:</span>2018年04月01日 - 01:04</p>
   <p><span>最后更新:</span>2018年05月22日 - 02:05</p>
-  <p><span>原始链接:</span><a href="/javascriptScope.html" title="浅谈JavaScript作用域">https://www.h.lishaoy.net/javascriptScope.html</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.h.lishaoy.net/javascriptScope.html" aria-label=" 复制成功！"></i></span>
+  <p><span>原始链接:</span><a href="/javascriptScope.html" title="浅谈JavaScript作用域">https://h.lishaoy.net/javascriptScope.html</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://h.lishaoy.net/javascriptScope.html" aria-label=" 复制成功！"></i></span>
   </p>
-  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
 </div>
-<script> 
+<script>
     var clipboard = new Clipboard('.fa-clipboard');
-    clipboard.on('success', $(function(){
-      $(".fa-clipboard").click(function(){
-        swal({
-          title: "",     
-          text: '复制成功',   
-          timer: 500,
-          showConfirmButton: false
-        });
-      });
-    }));  
+    clipboard.on('success', function(){
+
+    });
 </script>
+
 
       
     </div>
