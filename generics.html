@@ -150,7 +150,7 @@
 <meta property="og:image" content="https://cdn.lishaoy.net/generics/fruit.png">
 <meta property="og:image" content="https://cdn.lishaoy.net/generics/List%3C%3F%3E.png">
 <meta property="og:image" content="https://cdn.lishaoy.net/generics/List%3C%3F%3E1.png">
-<meta property="og:updated_time" content="2020-07-24T08:12:40.374Z">
+<meta property="og:updated_time" content="2020-07-24T08:16:53.933Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android：写了这么多代码，你真的理解泛型吗">
 <meta name="twitter:description" content="在我们的实际工作中 泛型(Generics) 是无处不在的，我们也写过不少，看到的更多，如，源码、开源框架… 随处可见，但是，我们真正理解泛型吗？理解多少呢？例如：Box 、Box&amp;lt;Object&amp;gt; 、Box&amp;lt;?&amp;gt; 、Box&amp;lt;T&amp;gt; 、Box&amp;lt;? extends T&amp;gt; 、Box&amp;lt;? super T&amp;gt; 之间的区别是什么？本篇文章将会对 泛型(">
@@ -451,7 +451,7 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-07-24T16:12:40+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-07-24T16:16:53+08:00">
                 2020-07-24
               </time>
             
@@ -643,7 +643,7 @@
 <p>输出结果：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">key:per, value:6</span><br><span class="line">key:per, value:lsy</span><br><span class="line"></span><br><span class="line">Process finished with <span class="built_in">exit</span> code 0</span><br></pre></td></tr></table></figure>
 <p>如上代码，<code>new ImplMultipleGeneric</code> 将 <code>K</code> 实例化为 <code>String</code>，将 <code>V</code> 实例化为 <code>Integer</code> ，因此， <code>ImplMultipleGeneric</code> 构造函数参数类型分别为 <code>String</code> 和 <code>Integer</code>,在编写 <code>new ImplMultipleGeneric</code> 代码时，编辑器会自动填写 <code>&lt;&gt;</code> 的值</p>
-<p>由于，Java 编译器会从声明 <code>ImplMultipleGeneric</code> 推断出 <code>K</code> 和 <code>V</code> 的类型，以此我们可以简写为，如下：</p>
+<p>由于，Java 编译器会从声明 <code>ImplMultipleGeneric</code> 推断出 <code>K</code> 和 <code>V</code> 的类型，因此我们可以简写为，如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">MultipleGeneric&lt;String, Integer&gt; m1 = <span class="keyword">new</span> ImplMultipleGeneric&lt;&gt;(<span class="string">"per"</span>,<span class="number">6</span>);</span><br><span class="line">System.out.println(<span class="string">"key:"</span> + m1.getKey() + <span class="string">", value:"</span> + m1.getValue());</span><br><span class="line"></span><br><span class="line">MultipleGeneric&lt;String,String&gt; m2 = <span class="keyword">new</span> ImplMultipleGeneric&lt;&gt;(<span class="string">"per"</span>,<span class="string">"lsy"</span>);</span><br><span class="line">System.out.println(<span class="string">"key:"</span> + m2.getKey() + <span class="string">", value:"</span> + m2.getValue());</span><br></pre></td></tr></table></figure>
 <h2 id="泛型接口-Generic-Interface"><a href="#泛型接口-Generic-Interface" class="headerlink" title="泛型接口(Generic Interface)"></a>泛型接口(Generic Interface)</h2><p>定义泛型接口和定义泛型类相似(泛型类的技术可同用于泛型接口)，如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">name</span>&lt;<span class="title">T1</span>,<span class="title">T2</span>,...,<span class="title">Tn</span>&gt;</span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
