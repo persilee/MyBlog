@@ -1,3 +1,4 @@
+https://h.lishaoy.net/generics.html
 https://h.lishaoy.net/flutter-flare.html
 https://h.lishaoy.net/futrueBuilder-streamBuilder.html
 https://h.lishaoy.net/androidCtrip.html
