@@ -150,7 +150,7 @@
 <meta property="og:image" content="https://cdn.lishaoy.net/generics/fruit.png">
 <meta property="og:image" content="https://cdn.lishaoy.net/generics/List%3C%3F%3E.png">
 <meta property="og:image" content="https://cdn.lishaoy.net/generics/List%3C%3F%3E1.png">
-<meta property="og:updated_time" content="2020-07-24T08:30:45.828Z">
+<meta property="og:updated_time" content="2020-07-27T22:47:22.867Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android：写了这么多代码，你真的理解泛型吗">
 <meta name="twitter:description" content="在我们的实际工作中 泛型(Generics) 是无处不在的，我们也写过不少，看到的更多，如，源码、开源框架… 随处可见，但是，我们真正理解泛型吗？理解多少呢？例如：Box 、Box&amp;lt;Object&amp;gt; 、Box&amp;lt;?&amp;gt; 、Box&amp;lt;T&amp;gt; 、Box&amp;lt;? extends T&amp;gt; 、Box&amp;lt;? super T&amp;gt; 之间的区别是什么？本篇文章将会对 泛型(">
@@ -377,7 +377,7 @@
     <div class="post-time-count">24</div>
     <div class="text-desc">
 			<div class="date-text">更新于</div>
-      <div class="post-tiem">7月24</div>
+      <div class="post-tiem">7月28</div>
       <div class="post-year">2020</div>
 		</div>
   </div>
@@ -451,8 +451,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-07-24T16:30:45+08:00">
-                2020-07-24
+              <time title="更新于" itemprop="dateModified" datetime="2020-07-28T06:47:22+08:00">
+                2020-07-28
               </time>
             
           </span>
@@ -536,7 +536,7 @@
 <hr>
 
 <a id="more"></a>
-<p>本篇文章的示例代码放在 <a href="https://github.com/persilee/genericsDemo" target="_blank" rel="noopener">Github</a> 上，所有知识点，如图：</p>
+<p>本篇文章的示例代码放在 <a href="https://github.com/persilee/android_practice" target="_blank" rel="noopener">Github</a> 上，所有知识点，如图：</p>
 <div style="width: 100%; margin:auto">
 
 <img src="https://cdn.lishaoy.net/generics/generic1.xmind.png" alt="no-shadow">
@@ -718,7 +718,7 @@
 <p>这时候，James 只能获取 <code>FruitPlateGen&lt;Fruit&gt;</code> 和 <code>FruitPlateGen&lt;Apple&gt;</code> 的盘子，如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">James james = <span class="keyword">new</span> James();</span><br><span class="line">james.getAiFruitPlateGen3(<span class="keyword">new</span> FruitPlateGen&lt;Apple&gt;());</span><br><span class="line">james.getAiFruitPlateGen3(<span class="keyword">new</span> FruitPlateGen&lt;Fruit&gt;());</span><br></pre></td></tr></table></figure>
 <p>下限通配符 <code>FruitPlateGen&lt;? super Apple&gt;</code> 匹配 <code>Apple</code> 和 <code>Apple</code> 的任何父类型，所以，我们可以传入 <code>Apple</code>、<code>Fruit</code>。</p>
-<h3 id="通配符和子类型-Wildcards-and-Subtyping"><a href="#通配符和子类型-Wildcards-and-Subtyping" class="headerlink" title="通配符和子类型(Wildcards and Subtyping)"></a>通配符和子类型(Wildcards and Subtyping)</h3><p>在 <a href="http://h.lishaoy.net/generics.html#%E6%B3%9B%E5%9E%8B%EF%BC%8C%E7%BB%A7%E6%89%BF%E5%92%8C-%E5%AD%90%E7%B1%BB%E5%9E%8B-Generics-Inheritance-and-Subtypes">泛型，继承和子类型</a> 章节有讲到，虽然，<code>Orange</code> 是 <code>Fruit</code> 的子类，但是，<code>FruitPlateGen&lt;Orange&gt;</code> 不是 <code>FruitPlateGen&lt;Fruit&gt;</code> 的子类。但是，你可以使用通配符在泛型类或接口之间创建关系。</p>
+<h3 id="通配符和子类型-Wildcards-and-Subtyping"><a href="#通配符和子类型-Wildcards-and-Subtyping" class="headerlink" title="通配符和子类型(Wildcards and Subtyping)"></a>通配符和子类型(Wildcards and Subtyping)</h3><p>在 <a href="https://h.lishaoy.net/generics.html#泛型，继承和子类型-Generics-Inheritance-and-Subtypes">泛型，继承和子类型</a> 章节有讲到，虽然，<code>Orange</code> 是 <code>Fruit</code> 的子类，但是，<code>FruitPlateGen&lt;Orange&gt;</code> 不是 <code>FruitPlateGen&lt;Fruit&gt;</code> 的子类。但是，你可以使用通配符在泛型类或接口之间创建关系。</p>
 <p>我们再来回顾下 <code>Fruit</code> 的继承关系，如图：</p>
 <div style="width: 56%; margin:auto">
 
@@ -849,7 +849,7 @@
   <p><span>本文标题:</span><a href="/generics.html">Android：写了这么多代码，你真的理解泛型吗</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 李少颖（persilee） 的个人博客">李少颖（persilee）</a></p>
   <p><span>发布时间:</span>2020年07月24日 - 15:07</p>
-  <p><span>最后更新:</span>2020年07月24日 - 16:07</p>
+  <p><span>最后更新:</span>2020年07月28日 - 06:07</p>
   <p><span>原始链接:</span><a href="/generics.html" title="Android：写了这么多代码，你真的理解泛型吗">https://h.lishaoy.net/generics.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://h.lishaoy.net/generics.html" aria-label=" 复制成功！"></i></span>
   </p>
@@ -932,6 +932,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/annotations-reflect.html" rel="prev" title="Android coder 需要理解的注解、反射和动态代理">
+                Android coder 需要理解的注解、反射和动态代理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -1009,7 +1013,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1031,7 +1035,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">42</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1197,7 +1201,7 @@
 
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">Blog总字数: 52.0k字</span>
+    <span class="post-count">Blog总字数: 58.5k字</span>
   </div>
 </div>
 
@@ -1824,6 +1828,10 @@
     }
     .no-post.v *{
       color: #fff;
+    }
+
+    .posts-expand .post-body>table  {
+        table-layout: auto;
     }
 
     img {
