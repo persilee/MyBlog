@@ -369,6 +369,231 @@
   
   
   
+  <div class="post-date" data-datetime="2020-07-31T13:49:17+08:00">
+    <div class="post-time-text">7月</div>
+    <div class="post-time-count">31</div>
+    <div class="text-desc">
+			<div class="date-text">更新于</div>
+      <div class="post-tiem">7月31</div>
+      <div class="post-year">2020</div>
+		</div>
+  </div>
+  
+  
+  
+
+  <div class="post-badge">
+    
+            <span class="post-category">
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+    
+  </div>
+
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://h.lishaoy.net/thread-concurrent.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李少颖（persilee）">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://cdn.lishaoy.net/images/lsy.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="persilee's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/thread-concurrent.html" itemprop="url">Android coder 并发编程你了解多少</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="发表于" itemprop="dateCreated datePublished" datetime="2020-07-31T13:49:17+08:00">
+                2020-07-31
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-07-31T13:49:33+08:00">
+                2020-07-31
+              </time>
+            
+          </span>
+
+          
+
+
+          
+            
+          
+
+          
+          
+             <span id="/thread-concurrent.html" class="leancloud_visitors" data-flag-title="Android coder 并发编程你了解多少">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count"></span> ℃
+             </span>
+          
+
+          
+
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-pencil-square-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计：</span>
+                
+                <span title="字数统计：">
+                  7,638 (字)
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长：</span>
+                
+                <span title="阅读时长：">
+                  31 (分钟)
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/loading.gif" data-original="https://cdn.lishaoy.net/thread-concurrent/concurrent1.png" class="full-image" alt="concurrent" title="concurrent"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<section id="nice" data-tool="mdnice编辑器" data-website="https://www.mdnice.com" style="font-size: 16px; color: black; padding: 0 10px; line-height: 1.6; word-spacing: 0px; letter-spacing: 0px; word-break: break-word; word-wrap: break-word; text-align: left; font-family: Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, 'PingFang SC', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"><p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; margin: 0; color: black; box-sizing: border-box; margin-bottom: 16px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif; font-size: 15px; text-align: start; white-space: normal; text-size-adjust: auto; line-height: 1.75em;">对于 <strong style="font-weight: bold; color: black;">Android</strong> 开发人员来说，并发编程知识的使用并不是那么频繁(相对于 <strong style="font-weight: bold; color: black;">Java</strong> 开发者而言)，但是，我们想写一些框架或者阅读开源框架源码都需要掌握并发编程的相关知识，而且，并发编程相关知识也是面试高频问题之一，所以，我们也要全面的掌握并发编程知识，本篇文章将从浅入深概述并发编程知识。</p>
+<hr data-tool="mdnice编辑器" style="height: 1px; margin: 0; margin-top: 10px; margin-bottom: 10px; border: none; border-top: 1px solid black;"></section>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/thread-concurrent.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
   <div class="post-date" data-datetime="2020-07-28T06:33:01+08:00">
     <div class="post-time-text">7月</div>
     <div class="post-time-count">28</div>
@@ -450,7 +675,7 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-07-28T07:15:29+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-07-28T17:18:36+08:00">
                 2020-07-28
               </time>
             
@@ -1100,7 +1325,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1122,7 +1347,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-count">43</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1272,7 +1497,7 @@
 
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">Blog总字数: 58.5k字</span>
+    <span class="post-count">Blog总字数: 66.2k字</span>
   </div>
 </div>
 
@@ -1899,6 +2124,10 @@
     }
     .no-post.v *{
       color: #fff;
+    }
+
+    table {
+      table-layout: auto;
     }
 
     .posts-expand .post-body>table  {
