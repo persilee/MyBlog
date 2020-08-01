@@ -2082,7 +2082,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff54ff;
+  background: #8708e7;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -4791,6 +4791,9 @@ pre,
 @media (max-width: 767px) {
   .header-inner {
     margin-bottom: 0px;
+  }
+  .post-body pre {
+    padding: 0;
   }
   .header.dark .site-nav {
     background: rgba(51,51,51,0.831);
