@@ -154,7 +154,7 @@
 <meta property="og:image" content="https://cdn.lishaoy.net/thread-concurrent/qnode1.png">
 <meta property="og:image" content="https://cdn.lishaoy.net/thread-concurrent/qnode2.png">
 <meta property="og:image" content="https://cdn.lishaoy.net/thread-concurrent/qnode3.png">
-<meta property="og:updated_time" content="2020-08-01T16:33:37.538Z">
+<meta property="og:updated_time" content="2020-08-01T17:57:38.138Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android coder 并发编程你了解多少">
 <meta name="twitter:description" content="对于 Android 开发人员来说，并发编程知识的使用并不是那么频繁(相对于 Java 开发者而言)，但是，我们想写一些框架或者阅读开源框架源码都需要掌握并发编程的相关知识，而且，并发编程相关知识也是面试高频问题之一，所以，我们也要全面的掌握并发编程知识，本篇文章将从浅入深概述并发编程知识。">
@@ -455,7 +455,7 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-02T00:33:37+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-02T01:57:38+08:00">
                 2020-08-02
               </time>
             
@@ -569,11 +569,10 @@
 <li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; color: rgb(1,1,1); font-weight: 500; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;">className extends Thread，重新 <code style="font-size: 14px; word-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0 2px; background-color: rgba(27,31,35,.05); font-family: Operator Mono, Consolas, Monaco, Menlo, monospace; word-break: break-all; color: rgb(239, 112, 96);">run()</code> 方法</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; color: rgb(1,1,1); font-weight: 500; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;">className implements Runnable，然后，由 <code style="font-size: 14px; word-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0 2px; background-color: rgba(27,31,35,.05); font-family: Operator Mono, Consolas, Monaco, Menlo, monospace; word-break: break-all; color: rgb(239, 112, 96);">Thread</code> 运行</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; color: rgb(1,1,1); font-weight: 500; font-size: 15px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;">className implements Callable，然后，由 <code style="font-size: 14px; word-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0 2px; background-color: rgba(27,31,35,.05); font-family: Operator Mono, Consolas, Monaco, Menlo, monospace; word-break: break-all; color: rgb(239, 112, 96);">Thread</code> 运行</section></li></ul>
 <p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; margin: 0; color: black; box-sizing: border-box; margin-bottom: 16px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif; font-size: 15px; text-align: start; white-space: normal; text-size-adjust: auto; line-height: 1.75em;">代码如下：</p>
 <pre class="custom" data-tool="mdnice编辑器" style="margin-top: 10px; margin-bottom: 10px; border-radius: 6px;"><code class="hljs" style="overflow-x: auto; padding: 16px; background: #272822; color: #ddd; display: block; font-family: Operator Mono, Consolas, Monaco, Menlo, monospace; font-size: 12px; -webkit-overflow-scrolling: touch; border-radius: 6px;"><span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">public</span> <span class="hljs-class" style="line-height: 26px;"><span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">class</span> <span class="hljs-title" style="font-weight: bold; color: white; line-height: 26px;">NewThread</span> </span>{
-<span>
-<span>    <span class="hljs-comment" style="color: #75715e; line-height: 26px;">/<strong>
-<span>     <em> 继承 Thread，重写 run() 方法
-<span>     </span></em>/</span>
-<span>    <span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">private</span> <span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">static</span> <span class="hljs-class" style="line-height: 26px;"><span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">class</span> <span class="hljs-title" style="font-weight: bold; color: white; line-height: 26px;">UseThread</span> <span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">extends</span> <span class="hljs-title" style="font-weight: bold; color: white; line-height: 26px;">Thread</span> </span>{
+  <span class="hljs-comment" style="color: #75715e; line-height: 26px;">
+    // 继承 Thread，重写 run() 方法
+  </span>
+   <span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">private</span> <span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">static</span> <span class="hljs-class" style="line-height: 26px;"><span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">class</span> <span class="hljs-title" style="font-weight: bold; color: white; line-height: 26px;">UseThread</span> <span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">extends</span> <span class="hljs-title" style="font-weight: bold; color: white; line-height: 26px;">Thread</span> </span>{
 <span>
 <span>        <span class="hljs-meta" style="color: #75715e; line-height: 26px;">@Override</span>
 <span>        <span class="hljs-function" style="line-height: 26px;"><span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">public</span> <span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">void</span> <span class="hljs-title" style="color: #a6e22e; font-weight: bold; line-height: 26px;">run</span><span class="hljs-params" style="line-height: 26px;">()</span> </span>{
@@ -582,22 +581,20 @@
 <span>            System.out.println(<span class="hljs-string" style="color: #a6e22e; line-height: 26px;">“extends Thread”</span>);
 <span>        }
 <span>    }
-<span>
-<span>    <span class="hljs-comment" style="color: #75715e; line-height: 26px;">/</span></span></span></span></span></span></span></span></span></span></span></span></strong>
-<span>     <em> 实现 Runnable 接口
-<span>     </span></em>/</span>
-<span>    <span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">private</span> <span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">static</span> <span class="hljs-class" style="line-height: 26px;"><span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">class</span> <span class="hljs-title" style="font-weight: bold; color: white; line-height: 26px;">UseRunnable</span> <span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">implements</span> <span class="hljs-title" style="font-weight: bold; color: white; line-height: 26px;">Runnable</span> </span>{
+    <span class="hljs-comment" style="color: #75715e; line-height: 26px;">
+     // 实现 Runnable 接口
+    </span>
+    <span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">private</span> <span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">static</span> <span class="hljs-class" style="line-height: 26px;"><span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">class</span> <span class="hljs-title" style="font-weight: bold; color: white; line-height: 26px;">UseRunnable</span> <span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">implements</span> <span class="hljs-title" style="font-weight: bold; color: white; line-height: 26px;">Runnable</span> </span>{
 <span>
 <span>        <span class="hljs-meta" style="color: #75715e; line-height: 26px;">@Override</span>
 <span>        <span class="hljs-function" style="line-height: 26px;"><span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">public</span> <span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">void</span> <span class="hljs-title" style="color: #a6e22e; font-weight: bold; line-height: 26px;">run</span><span class="hljs-params" style="line-height: 26px;">()</span> </span>{
 <span>            System.out.println(<span class="hljs-string" style="color: #a6e22e; line-height: 26px;">“implements Runnable”</span>);
 <span>        }
 <span>    }
-<span>
-<span>    <span class="hljs-comment" style="color: #75715e; line-height: 26px;">/*<em>
-<span>     </span></em> 实现 Callable 接口
-<span>     <em>/</em></span>
-<span>    <span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">private</span> <span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">static</span> <span class="hljs-class" style="line-height: 26px;"><span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">class</span> <span class="hljs-title" style="font-weight: bold; color: white; line-height: 26px;">UseCallable</span> <span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">implements</span> <span class="hljs-title" style="font-weight: bold; color: white; line-height: 26px;">Callable</span>&lt;<span class="hljs-title" style="font-weight: bold; color: white; line-height: 26px;">String</span>&gt; </span>{
+   <span class="hljs-comment" style="color: #75715e; line-height: 26px;">
+     // 实现 Callable 接口
+     </span>
+  <span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">private</span> <span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">static</span> <span class="hljs-class" style="line-height: 26px;"><span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">class</span> <span class="hljs-title" style="font-weight: bold; color: white; line-height: 26px;">UseCallable</span> <span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">implements</span> <span class="hljs-title" style="font-weight: bold; color: white; line-height: 26px;">Callable</span>&lt;<span class="hljs-title" style="font-weight: bold; color: white; line-height: 26px;">String</span>&gt; </span>{
 <span>
 <span>        <span class="hljs-meta" style="color: #75715e; line-height: 26px;">@Override</span>
 <span>        <span class="hljs-function" style="line-height: 26px;"><span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">public</span> String <span class="hljs-title" style="color: #a6e22e; font-weight: bold; line-height: 26px;">call</span><span class="hljs-params" style="line-height: 26px;">()</span> <span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">throws</span> Exception </span>{
@@ -829,17 +826,17 @@
 <span>        countThread1.start();
 <span>        Thread.sleep(<span class="hljs-number" style="line-height: 26px;">66</span>);
 <span>        System.out.println(sharedThread.getCount());
-<span>        System.out.println(<span class="hljs-number" style="line-height: 26px;">6666</span>  <span class="hljs-number" style="line-height: 26px;">2</span>);
+<span>        System.out.println(<span class="hljs-number" style="line-height: 26px;">6666</span> <em> <span class="hljs-number" style="line-height: 26px;">2</span>);
 <span>    }
 <span>}
-<span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+<span></span></span></span></em></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
 <p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; margin: 0; color: black; box-sizing: border-box; margin-bottom: 16px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif; font-size: 15px; text-align: start; white-space: normal; text-size-adjust: auto; line-height: 1.75em;">运行结果，如下：</p>
 <pre class="custom" data-tool="mdnice编辑器" style="margin-top: 10px; margin-bottom: 10px; border-radius: 6px;"><code class="hljs" style="overflow-x: auto; padding: 16px; background: #272822; color: #ddd; display: block; font-family: Operator Mono, Consolas, Monaco, Menlo, monospace; font-size: 12px; -webkit-overflow-scrolling: touch; border-radius: 6px;"><span class="hljs-number" style="line-height: 26px;">7045</span>
 <span><span class="hljs-number" style="line-height: 26px;">13332</span>
 <span>
 <span>BUILD SUCCESSFUL in <span class="hljs-number" style="line-height: 26px;">247</span>ms
 <span></span></span></span></span></code></pre>
-<p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; margin: 0; color: black; box-sizing: border-box; margin-bottom: 16px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif; font-size: 15px; text-align: start; white-space: normal; text-size-adjust: auto; line-height: 1.75em;">运行了几次，都是小于 13332(6666 * 2)，这就是线程间共享的同步问题，解决此问题我们需要使用 <code style="font-size: 14px; word-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0 2px; background-color: rgba(27,31,35,.05); font-family: Operator Mono, Consolas, Monaco, Menlo, monospace; word-break: break-all; color: rgb(239, 112, 96);">synchronized</code>。</p>
+<p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; margin: 0; color: black; box-sizing: border-box; margin-bottom: 16px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif; font-size: 15px; text-align: start; white-space: normal; text-size-adjust: auto; line-height: 1.75em;">运行了几次，都是小于 13332(6666  2)，这就是线程间共享的同步问题，解决此问题我们需要使用 <code style="font-size: 14px; word-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0 2px; background-color: rgba(27,31,35,.05); font-family: Operator Mono, Consolas, Monaco, Menlo, monospace; word-break: break-all; color: rgb(239, 112, 96);">synchronized</code>。</p>
 <p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; margin: 0; color: black; box-sizing: border-box; margin-bottom: 16px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif; font-size: 15px; text-align: start; white-space: normal; text-size-adjust: auto; line-height: 1.75em;">所以，我们把以上代码稍作修改，如：</p>
 <pre class="custom" data-tool="mdnice编辑器" style="margin-top: 10px; margin-bottom: 10px; border-radius: 6px;"><code class="hljs" style="overflow-x: auto; padding: 16px; background: #272822; color: #ddd; display: block; font-family: Operator Mono, Consolas, Monaco, Menlo, monospace; font-size: 12px; -webkit-overflow-scrolling: touch; border-radius: 6px;"><span class="hljs-class" style="line-height: 26px;"><span class="hljs-keyword" style="color: #f92672; font-weight: bold; line-height: 26px;">class</span> <span class="hljs-title" style="font-weight: bold; color: white; line-height: 26px;">SharedThread</span> </span>{
 <span>
@@ -1451,7 +1448,7 @@
   <p><span>本文标题:</span><a href="/thread-concurrent.html">Android coder 并发编程你了解多少</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 李少颖（persilee） 的个人博客">李少颖（persilee）</a></p>
   <p><span>发布时间:</span>2020年07月31日 - 13:07</p>
-  <p><span>最后更新:</span>2020年08月02日 - 00:08</p>
+  <p><span>最后更新:</span>2020年08月02日 - 01:08</p>
   <p><span>原始链接:</span><a href="/thread-concurrent.html" title="Android coder 并发编程你了解多少">https://h.lishaoy.net/thread-concurrent.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://h.lishaoy.net/thread-concurrent.html" aria-label=" 复制成功！"></i></span>
   </p>
