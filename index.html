@@ -375,12 +375,237 @@
   
   
   
+  <div class="post-date" data-datetime="2020-08-04T02:16:13+08:00">
+    <div class="post-time-text">8月</div>
+    <div class="post-time-count">04</div>
+    <div class="text-desc">
+			<div class="date-text">更新于</div>
+      <div class="post-tiem">8月04</div>
+      <div class="post-year">2020</div>
+		</div>
+  </div>
+  
+  
+  
+
+  <div class="post-badge">
+    
+            <span class="post-category">
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+    
+  </div>
+
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://h.lishaoy.net/serializable.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李少颖（persilee）">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://cdn.lishaoy.net/images/lsy.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="persilee's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/serializable.html" itemprop="url">解读Android中的序列化与Json解析</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="发表于" itemprop="dateCreated datePublished" datetime="2020-08-04T02:16:13+08:00">
+                2020-08-04
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-04T03:49:34+08:00">
+                2020-08-04
+              </time>
+            
+          </span>
+
+          
+
+
+          
+            
+          
+
+          
+          
+             <span id="/serializable.html" class="leancloud_visitors" data-flag-title="解读Android中的序列化与Json解析">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count"></span> ℃
+             </span>
+          
+
+          
+
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-pencil-square-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计：</span>
+                
+                <span title="字数统计：">
+                  3,965 (字)
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长：</span>
+                
+                <span title="阅读时长：">
+                  18 (分钟)
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/loading.gif" data-original="https://cdn.lishaoy.net/serializable/serializable.png" class="full-image" alt="Serializable" title="Serializable"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<section id="nice" data-tool="mdnice编辑器" data-website="https://www.mdnice.com" style="font-size: 16px; padding: 0 10px; word-spacing: 0px; word-break: break-word; word-wrap: break-word; text-align: left; line-height: 1.75; color: #595959; font-family: Optima-Regular, Optima, PingFangTC-Light, PingFangSC-light, PingFangTC-light; letter-spacing: 2px; background-image: linear-gradient(90deg, rgba(50, 0, 0, 0.05) 3%, rgba(0, 0, 0, 0) 3%), linear-gradient(360deg, rgba(50, 0, 0, 0.05) 3%, rgba(0, 0, 0, 0) 3%); background-size: 20px 20px; background-position: center center;"><p data-tool="mdnice编辑器" style="padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: #595959; margin: 10px 0px; letter-spacing: 2px; font-size: 14px; word-spacing: 2px;">我们在日常工作中，网络数据传输最主流的的格式就是 <code style="font-size: 14px; word-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0 2px; background-color: rgba(27,31,35,.05); font-family: Operator Mono, Consolas, Monaco, Menlo, monospace; word-break: break-all; color: #595959; box-shadow: none;">json</code>，我们常使用 <strong style="color: #595959; font-weight: bold;"><span>「</span>Gson<span>」</span></strong> 开源框架来处理它，那么它们是如何工作的呢？本篇文章将解读 <strong style="color: #595959; font-weight: bold;"><span>「</span>Android<span>」</span></strong> 中的序列化与 <code style="font-size: 14px; word-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0 2px; background-color: rgba(27,31,35,.05); font-family: Operator Mono, Consolas, Monaco, Menlo, monospace; word-break: break-all; color: #595959; box-shadow: none;">json</code> 解析，如：Java 语言提供的 <code style="font-size: 14px; word-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0 2px; background-color: rgba(27,31,35,.05); font-family: Operator Mono, Consolas, Monaco, Menlo, monospace; word-break: break-all; color: #595959; box-shadow: none;">Serializable</code>、Android 提供的 <code style="font-size: 14px; word-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0 2px; background-color: rgba(27,31,35,.05); font-family: Operator Mono, Consolas, Monaco, Menlo, monospace; word-break: break-all; color: #595959; box-shadow: none;">Parceable</code>。</p>
+<hr data-tool="mdnice编辑器" style="margin: 0; margin-top: 10px; margin-bottom: 10px; height: 1px; padding: 0; border: none; border-top: 2px solid #d9b8fa;background: none;"></section>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/serializable.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
   <div class="post-date" data-datetime="2020-07-31T13:49:17+08:00">
     <div class="post-time-text">7月</div>
     <div class="post-time-count">31</div>
     <div class="text-desc">
 			<div class="date-text">更新于</div>
-      <div class="post-tiem">8月02</div>
+      <div class="post-tiem">8月04</div>
       <div class="post-year">2020</div>
 		</div>
   </div>
@@ -428,7 +653,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/thread-concurrent.html" itemprop="url">Android coder 并发编程你了解多少</a></h2>
+                <a class="post-title-link" href="/thread-concurrent.html" itemprop="url">Android并发编程你了解多少</a></h2>
         
 
         <div class="post-meta">
@@ -456,8 +681,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-02T01:57:38+08:00">
-                2020-08-02
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-04T03:54:05+08:00">
+                2020-08-04
               </time>
             
           </span>
@@ -471,7 +696,7 @@
 
           
           
-             <span id="/thread-concurrent.html" class="leancloud_visitors" data-flag-title="Android coder 并发编程你了解多少">
+             <span id="/thread-concurrent.html" class="leancloud_visitors" data-flag-title="Android并发编程你了解多少">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -605,7 +830,7 @@
     <div class="post-time-count">28</div>
     <div class="text-desc">
 			<div class="date-text">更新于</div>
-      <div class="post-tiem">8月02</div>
+      <div class="post-tiem">8月04</div>
       <div class="post-year">2020</div>
 		</div>
   </div>
@@ -681,8 +906,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-02T00:34:18+08:00">
-                2020-08-02
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-04T03:50:53+08:00">
+                2020-08-04
               </time>
             
           </span>
@@ -2411,231 +2636,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-date" data-datetime="2018-11-11T01:04:15+08:00">
-    <div class="post-time-text">11月</div>
-    <div class="post-time-count">11</div>
-    <div class="text-desc">
-			<div class="date-text">更新于</div>
-      <div class="post-tiem">11月25</div>
-      <div class="post-year">2018</div>
-		</div>
-  </div>
-  
-  
-  
-
-  <div class="post-badge">
-    
-            <span class="post-category">
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Dart/" itemprop="url" rel="index">
-                    <span itemprop="name">Dart</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-    
-  </div>
-
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://h.lishaoy.net/fristFlutter.html">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="李少颖（persilee）">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://cdn.lishaoy.net/images/lsy.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="persilee's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/fristFlutter.html" itemprop="url">Flutter：手拉手带你极速构建漂亮的跨平台移动应用 ✿ 初体验（实战）</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="发表于" itemprop="dateCreated datePublished" datetime="2018-11-11T01:04:15+08:00">
-                2018-11-11
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-11-25T21:56:21+08:00">
-                2018-11-25
-              </time>
-            
-          </span>
-
-          
-
-
-          
-            
-          
-
-          
-          
-             <span id="/fristFlutter.html" class="leancloud_visitors" data-flag-title="Flutter：手拉手带你极速构建漂亮的跨平台移动应用 ✿ 初体验（实战）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度 </span>
-               
-                 <span class="leancloud-visitors-count"></span> ℃
-             </span>
-          
-
-          
-
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-pencil-square-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计：</span>
-                
-                <span title="字数统计：">
-                  1,580 (字)
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长：</span>
-                
-                <span title="阅读时长：">
-                  7 (分钟)
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/loading.gif" data-original="https://cdn.lishaoy.net/fristFlutter/flutterCover7.png" class="full-image" alt="Flutter" title="Flutter"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<p>我们上篇文章已经把 <strong>Flutter</strong> 的开发运行环境搭建好了 <a href="https://h.lishaoy.net/flutterInstall.html">Flutter：环境搭建</a> ，本篇文章将完成您的第一个 <strong>Flutter</strong> 小应用，不用但是不会，跟着文章做就行，开始不必太纠结这些代码细节，明白它是干什么的就行，只是一个使用体验，体验 <strong>Flutter</strong> 框架给你带来的开发感受，后面会有具体的组件（widget）的文章。</p>
-<hr>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/fristFlutter.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2686,7 +2686,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2708,7 +2708,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -2858,7 +2858,7 @@
 
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">Blog总字数: 65.5k字</span>
+    <span class="post-count">Blog总字数: 69.5k字</span>
   </div>
 </div>
 

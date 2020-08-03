@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://h.lishaoy.net/thread-concurrent.html</loc>
-    <lastmod>2020-08-01T17:57:38.138Z</lastmod>
+    <lastmod>2020-08-03T19:54:05.660Z</lastmod>
   </url>  <url>
     <loc>https://h.lishaoy.net/annotations-reflect.html</loc>
-    <lastmod>2020-08-01T16:34:18.533Z</lastmod>
+    <lastmod>2020-08-03T19:50:53.104Z</lastmod>
+  </url>  <url>
+    <loc>https://h.lishaoy.net/serializable.html</loc>
+    <lastmod>2020-08-03T19:49:34.828Z</lastmod>
   </url>  <url>
     <loc>https://h.lishaoy.net/generics.html</loc>
     <lastmod>2020-07-27T22:47:22.867Z</lastmod>
