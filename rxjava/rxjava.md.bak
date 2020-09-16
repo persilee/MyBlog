@@ -19,6 +19,8 @@ photos:
 
 <!-- more -->
 
+本篇文章的示例代码放在 [Github](https://github.com/persilee/android_practice) 上。
+
 ## 观察者模式(Observer pattern)
 
 在使用 **RxJava** 之前，我们需要先理解观察者设计模式，因为，**RxJava** 就使用了观察者设计模式。
